@@ -21,9 +21,9 @@
                             </section>
                         </fieldset>
                         <fieldset>
-                        <section id="endereco">
-                            <p>Informação do endereço:</p>
-                            <input type="text" placeholder="Cep" name="txtCep" minlength="8" maxlength="8" pattern="[0-9]{5}[0-9]{3}" required>
+                            <section id="endereco">
+                                <p>Informação do endereço:</p>
+                                <input type="text" placeholder="Cep" name="txtCep" minlength="8" maxlength="8" pattern="[0-9]{5}[0-9]{3}" required>
                                 <input type="text" placeholder="UF" name="txtUF" minlength="2" maxlength="2" pattern="[aA-zZ]{2}" required>
                                 <input type="text" placeholder="Numero" name="txtNumero" pattern="[0-9]" required>
                                 <input type="text" placeholder="Cidade" name="txtCidade" minlength="5" maxlength="30" required>
