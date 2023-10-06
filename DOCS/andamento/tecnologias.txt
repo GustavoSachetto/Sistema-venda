@@ -1,0 +1,3 @@
+Tecnologias a utilizar:
+
+HTML, CSS, BOOTSTRAP, JAVASCRIPT, JQUERY, PHP e SQL;
