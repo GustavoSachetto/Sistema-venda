@@ -29,7 +29,7 @@
                             </form>
                             <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
                         </fieldset>
-                        <button type="submit" id="btnSubmit">Enviar</button>
+                        <button typxe="submit" id="btnSubmit">Enviar</button>
                     </form>
                 </section>
             </article>

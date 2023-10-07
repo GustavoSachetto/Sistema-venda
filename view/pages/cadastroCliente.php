@@ -15,12 +15,12 @@
                     <form method="post" action="">
                         <h2>Cadastro cliente</h2>
                         <fieldset id="cliente">
-                            <p>Informação do cliente:</p>
+                            <p>Informações do cliente:</p><br>
                             <input type="text" placeholder="Nome" name="txtNome" minlength="5" maxlength="80" required>
                             <input type="text" placeholder="CPF" name="txtCPF" minlength="5" maxlength="11" required>
                         </fieldset>
                         <fieldset id="endereco">
-                            <p>Informação do endereço:</p>
+                            <p>Informações do endereço:</p><br>
                             <input type="text" placeholder="Cep" name="txtCep" minlength="8" maxlength="8" pattern="[0-9]{5}[0-9]{3}" required>
                             <input type="text" placeholder="UF" name="txtUF" minlength="2" maxlength="2" pattern="[aA-zZ]{2}" required>
                             <input type="text" placeholder="Numero" name="txtNumero" pattern="[0-9]" required>

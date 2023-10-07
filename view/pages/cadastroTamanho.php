@@ -15,7 +15,7 @@
                     <form method="post" action="">
                         <h2>Cadastro tamanho</h2>
                         <fieldset>
-                            <p>Informação do tamanho:</p>
+                            <p>Informação do tamanho:</p><br>
                             <input type="text" placeholder="Tamanho" name="txtTamanho" minlength="1" maxlength="5" pattern="[aA-zZ]+" required>
                         </fieldset>
                         <button type="submit" id="btnSubmit">Enviar</button>
