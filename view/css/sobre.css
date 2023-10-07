@@ -1,0 +1,46 @@
+main {
+    margin: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px;
+}
+
+.sobre {
+    text-align: center;
+}
+
+.integrantes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.integrantes h3 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.integrantes p {
+    margin: 0;
+    text-align: center;
+}
+
+.integrantes img {
+    width: 190px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.pessoa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 270px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: gainsboro;
+}
