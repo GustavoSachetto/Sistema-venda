@@ -36,6 +36,9 @@
                 </section>
             </article>
         </main>
-        <?php require ('../layout/footer.php') ?>
+        <?php 
+            include ('../../controller/recebeCliente.php');
+            require ('../layout/footer.php'); 
+        ?>
     </body>
 </html>
