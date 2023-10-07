@@ -15,15 +15,17 @@
                         <h2>Cadastro venda</h2>
                         <fieldset>
                             <p>Informação do cliente:</p>
-                            <input type="text" placeholder="Pesquisar">
+                            <form action="" method="get">
+                                <input type="text" name="txtBuscaCliente" placeholder="Pesquisar">
+                                <button type="submit">Buscar</button>
+                            </form>
                         </fieldset>
                         <fieldset>
                             <p>Informação do produto:</p>
-                            <select name="txtProduto">
-                                <option value="1">Camiseta</option>
-                                <option value="2">Blusa</option>
-                                <option value="3">Calça</option>
-                            </select>
+                            <form action="" method="get">
+                                <input type="text" name="txtBuscaProduto" placeholder="Pesquisar">
+                                <button type="submit">Buscar</button>
+                            </form>
                             <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
                         </fieldset>
                         <button type="submit" id="btnSubmit">Enviar</button>
