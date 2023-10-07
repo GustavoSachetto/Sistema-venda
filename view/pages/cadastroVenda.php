@@ -15,18 +15,18 @@
                     <form method="post" action="">
                         <h2>Cadastro venda</h2>
                         <fieldset>
-                            <p>Informação do cliente:</p>
-                            <form action="" method="get">
+                            <p>Informação do cliente:</p><br>
+                            <div>
                                 <input type="text" name="txtBuscaCliente" placeholder="Pesquisar">
                                 <button type="submit">Buscar</button>
-                            </form>
+                            </div>
                         </fieldset>
                         <fieldset>
-                            <p>Informação do produto:</p>
-                            <form action="" method="get">
-                                <input type="text" name="txtBuscaProduto" placeholder="Pesquisar">
-                                <button type="submit">Buscar</button>
-                            </form>
+                            <p>Informação do produto:</p><br>
+                                <div>
+                                    <input type="text" name="txtBuscaProduto" placeholder="Pesquisar">
+                                    <button type="submit">Buscar</button>
+                                </div>
                             <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
                         </fieldset>
                         <button typxe="submit" id="btnSubmit">Enviar</button>
