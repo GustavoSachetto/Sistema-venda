@@ -4,16 +4,16 @@ class conexao{
     public function __construct($dbname, $host, $user, $password) {
         try {
             $this -> pdo = New PDO ("mysql:dbname=" . $dbname . ";host=" . $host, $user, $password);
-            echo "Conexão com PDO";
+            echo "CONEXÃO DO PDO";
         } catch (PDOException $erro) {
-            echo "Erro de conexão no PDO: " . $erro -> getMessage();
+            echo "ERRO DE CONEXÃO NO PDO:" . $erro -> getMessage();
             exit();
         } catch (Exception $erro) {
-            echo "Erro não passou da conexão: " . $erro -> getMessage();
+            echo "ERRO NÃO PASSOU DA CONEXÃO:" . $erro -> getMessage();
             exit();
         }
     }
-    
+
     public function insereCliente($cadNome, $cadCpf, $cadCep, $cadUF, $cadNumero, $cadCidade, $cadBairro, $cadRua, $cadLogradouro, $cadComplemento, $cadObservacao) {
 
         $insereCliente = $this -> pdo -> prepare ("insert into cliente(nomeCliente, cpf, CEP, UF, nResidencial, cidade, bairro, rua, tipoLogradouro, complemento, observacao) values (:n, :cpf, :cep, :uf, :numero, :cid, :bairro, :rua, :log, :comp, :obs)");
