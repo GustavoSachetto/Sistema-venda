@@ -10,7 +10,9 @@
         $cadGen = addslashes($_POST['txtGen']);
         $cadTipo = addslashes($_POST['txtTipo']);
         $cadMarca = addslashes($_POST['txtMarca']);
+        $cadTamanho = addslashes($_POST['slcTamanho']);
+        $cadQuantidade = addslashes($_POST['txtQuantidade']);
 
-        $conexao -> insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca);
+        $conexao -> insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca, $cadTamanho, $cadQuantidade);
     }    
 ?>

@@ -25,7 +25,7 @@
                         </fieldset>
                         <fieldset>
                             <p>Informação do tamanho produto:</p>
-                            <select name="txtTamanho">
+                            <select name="slcTamanho">
                                 <option value="1">P</option>
                                 <option value="2">PP</option>
                                 <option value="3">M</option>
@@ -39,6 +39,9 @@
                 </section>
             </article>
         </main>
-        <?php require ('../layout/footer.php') ?>
+        <?php 
+            include ('../../controller/recebeProduto.php');
+            require ('../layout/footer.php'); 
+        ?>
     </body>
 </html>
