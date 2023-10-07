@@ -8,7 +8,10 @@
         <?php require ('../layout/head.php') ?>
     </head>
     <body>
-        <?php require ('../layout/header.php') ?>
+        <?php 
+            require ('../layout/header.php');
+            include ('../../controller/exibirTamanho.php');
+        ?>
         <main>
             <article>
                 <section>
@@ -26,11 +29,7 @@
                         <fieldset>
                             <p>Informação do tamanho produto:</p><br>
                             <select name="slcTamanho">
-                                <option value="1">P</option>
-                                <option value="2">PP</option>
-                                <option value="3">M</option>
-                                <option value="4">G</option>
-                                <option value="5">GG</option>
+                                <?php opçoes($resultado)?>
                             </select>
                             <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
                         </fieldset>
