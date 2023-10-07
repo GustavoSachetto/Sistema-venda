@@ -28,8 +28,8 @@
                             <input type="text" placeholder="Bairro" name="txtBairro" minlength="5" maxlength="30" required>
                             <input type="text" placeholder="Cidade" name="txtCidade" minlength="5" maxlength="30" required>
                             <input type="text" placeholder="UF" name="txtUF" minlength="2" maxlength="2" pattern="[aA-zZ]{2}" required>
-                            <input type="text" placeholder="Logradouro" name="txtLogradouro" minlength="5" maxlength="10" required>
-                            <input type="text" placeholder="Observacao" name="txtObservacao" minlength="0" maxlength="30">
+                            <input type="text" placeholder="Logradouro" name="txtLogradouro" minlength="2" maxlength="10" required>
+                            <input type="text" placeholder="Observacao" name="txtObservacao" maxlength="30">
                         </fieldset>
                         <button type="submit">Enviar</button>
                     </form>
