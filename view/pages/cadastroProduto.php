@@ -18,7 +18,7 @@
                     <form method="post" action="">
                         <h2>Cadastro produto</h2>
                         <fieldset id="produto">
-                            <p>Informação do produto:</p><br>
+                            <p>Informações do produto:</p><br>
                             <input type="text" placeholder="Nome produto" name="txtNomeP" minlength="4" maxlength="70" required>
                             <input type="number" placeholder="Valor" name="txtValor" min="1" max="99999.99" step="0.01" required>
                             <input type="text" placeholder="Categoria" name="txtCat" minlength="4" maxlength="30" required>
@@ -27,7 +27,7 @@
                             <input type="text" placeholder="Marca" name="txtMarca" minlength="4" maxlength="30" required>
                         </fieldset>
                         <fieldset>
-                            <p>Informação do tamanho produto:</p><br>
+                            <p>Informações do tamanho produto:</p><br>
                             <select name="slcTamanho">
                                 <?php opcoes($resultado)?>
                             </select>
