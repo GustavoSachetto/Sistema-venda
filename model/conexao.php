@@ -14,6 +14,15 @@ class conexao{
         }
     }
 
+    public function consultaBanco($consulta) {
+        $consultaBanco = $this -> pdo -> query($consulta);
+        $consultaBanco -> execute();
+
+        while ($resultado = $consultaBanco -> fetchAll(PDO::FETCH_ASSOC)) {
+            return $resultado;
+        }
+    }
+
     public function insereCliente($cadNome, $cadCpf, $cadCep, $cadUF, $cadNumero, $cadCidade, $cadBairro, $cadRua, $cadLogradouro, $cadComplemento, $cadObservacao) {
 
         $insereCliente = $this -> pdo -> prepare ("insert into cliente(nomeCliente, cpf, CEP, UF, nResidencial, cidade, bairro, rua, tipoLogradouro, complemento, observacao) values (:n, :cpf, :cep, :uf, :numero, :cid, :bairro, :rua, :log, :comp, :obs)");
