@@ -12,6 +12,8 @@ alter table cliente add CEP char(8) not null;
 alter table cliente add complemento varchar(10) null;
 alter table cliente add observacao varchar(30) null;
 
+/*alter table produto drop constraint nomeProduto;*/
+
 alter table produto add tipo varchar(30) not null;
 alter table produto add marca varchar(30) not null;
 alter table produto add categoria varchar(30) not null;
