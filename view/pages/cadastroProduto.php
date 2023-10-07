@@ -10,7 +10,7 @@
     <body>
         <?php 
             require ('../layout/header.php');
-            include ('../../controller/exibirTamanho.php');
+            include ('../../controller/recebeProduto.php');
         ?>
         <main>
             <article>
@@ -29,7 +29,7 @@
                         <fieldset>
                             <p>Informação do tamanho produto:</p><br>
                             <select name="slcTamanho">
-                                <?php opçoes($resultado)?>
+                                <?php opcoes($resultado)?>
                             </select>
                             <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
                         </fieldset>
@@ -38,9 +38,6 @@
                 </section>
             </article>
         </main>
-        <?php 
-            include ('../../controller/recebeProduto.php');
-            require ('../layout/footer.php'); 
-        ?>
+        <?php require ('../layout/footer.php'); ?>
     </body>
 </html>

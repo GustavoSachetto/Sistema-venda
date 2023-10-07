@@ -3,6 +3,16 @@
     $config = parse_ini_file('../../model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
 
+    const TAMANHOS = "SELECT * FROM tamanho";
+    
+    $resultado = $conexao -> consultaBanco(TAMANHOS);
+    
+    function opcoes($resultado) {
+        foreach ($resultado as $item) {
+            echo "<option value=" . $item['codTam'] . ">" . $item['tipoTamanho'] . "</option>";
+        }        
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $cadNomeP = addslashes($_POST['txtNomeP']);
         $cadValor = addslashes($_POST['txtValor']);

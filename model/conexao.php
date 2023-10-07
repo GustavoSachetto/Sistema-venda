@@ -54,6 +54,10 @@ class conexao{
         $insereProduto->execute();
     }
 
+    public function insereTamanhoProduto($) {
+        
+    }
+
     public function insereTamanho($cadTam){
         $insereTamanho = $this -> pdo -> prepare ("insert into tamanho(tipoTamanho)
         value (:t)");
