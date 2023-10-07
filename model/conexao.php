@@ -39,9 +39,10 @@ class conexao{
         $insereCliente->bindValue(":comp", $cadComplemento);
         $insereCliente->bindValue(":obs", $cadObservacao);
         $insereCliente->execute();
+
     }
 
-    public function insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca) {
+    public function insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca, $cadQuantidade, $codProduto, $codTamanho) {
         $insereProduto = $this -> pdo -> prepare ("insert into produto(nomeProduto, valor, categoria, genero, tipo, marca) 
         values (:n, :v, :cat, :gen, :tipo, :marca)");
 
@@ -52,10 +53,16 @@ class conexao{
         $insereProduto->bindValue(":tipo", $cadTipo);
         $insereProduto->bindValue(":marca", $cadMarca);
         $insereProduto->execute();
+
+        $this -> insereTamanhoProduto($cadQuantidade, $codProduto, $codTamanho);
     }
 
-    public function insereTamanhoProduto($) {
-        
+    public function insereTamanhoProduto($cadQuantidade, $codProduto, $codTamanho) {
+        $insereTamanhoProduto = $this -> pdo -> prepare("insert into tamanhop(quantidade, codProduto, codTam) values (:quant, :codP, :codT)");
+        $insereTamanhoProduto->bindValue(":quant", $cadQuantidade);
+        $insereTamanhoProduto->bindValue(":codP", $codProduto);
+        $insereTamanhoProduto->bindValue(":codT", $codTamanho);
+        $insereTamanhoProduto->execute();
     }
 
     public function insereTamanho($cadTam){

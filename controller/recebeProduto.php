@@ -4,7 +4,11 @@
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
 
     const TAMANHOS = "SELECT * FROM tamanho";
-    
+    const CODPRODUTO = "SHOW TABLE STATUS LIKE 'produto'";
+
+    $resultado = $conexao -> consultaBanco(CODPRODUTO);
+    $codProduto = $resultado[0]['Auto_increment'];
+
     $resultado = $conexao -> consultaBanco(TAMANHOS);
     
     function opcoes($resultado) {
@@ -20,9 +24,9 @@
         $cadGen = addslashes($_POST['txtGen']);
         $cadTipo = addslashes($_POST['txtTipo']);
         $cadMarca = addslashes($_POST['txtMarca']);
-        $cadTamanho = addslashes($_POST['slcTamanho']);
         $cadQuantidade = addslashes($_POST['txtQuantidade']);
+        $codTamanho = addslashes($_POST['slcTamanho']);
 
-        $conexao -> insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca, $cadTamanho, $cadQuantidade);
+        $conexao -> insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca, $cadQuantidade, $codProduto, $codTamanho);
     }    
 ?>
