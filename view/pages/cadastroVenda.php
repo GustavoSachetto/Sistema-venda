@@ -8,28 +8,15 @@
         <?php require ('../layout/head.php') ?>
     </head>
     <body>
-        <?php require ('../layout/header.php') ?>
+        <?php 
+            require ('../layout/header.php'); 
+            include ('../../controller/recebeVenda.php');
+        ?>
         <main>
             <article>
                 <section>
                     <form method="post" action="">
                         <h2>Cadastro venda</h2>
-                        <fieldset>
-                            <p>Informação do cliente:</p><br>
-                            <div>
-                                <input type="text" name="txtBuscaCliente" placeholder="Pesquisar">
-                                <button type="submit">Buscar</button>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <p>Informação do produto:</p><br>
-                                <div>
-                                    <input type="text" name="txtBuscaProduto" placeholder="Pesquisar">
-                                    <button type="submit">Buscar</button>
-                                </div>
-                            <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
-                        </fieldset>
-                        <button typxe="submit" id="btnSubmit">Enviar</button>
                     </form>
                 </section>
             </article>

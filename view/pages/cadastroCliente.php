@@ -8,7 +8,10 @@
         <?php require ('../layout/head.php') ?>
     </head>
     <body>
-        <?php require ('../layout/header.php') ?>
+        <?php 
+            require ('../layout/header.php'); 
+            include ('../../controller/recebeCliente.php');
+        ?>
         <main>
             <article>
                 <section>
@@ -36,9 +39,6 @@
                 </section>
             </article>
         </main>
-        <?php 
-            include ('../../controller/recebeCliente.php');
-            require ('../layout/footer.php'); 
-        ?>
+        <?php require ('../layout/footer.php') ?>
     </body>
 </html>
