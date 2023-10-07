@@ -23,6 +23,9 @@
                 </section>
             </article>
         </main>
-        <?php require ('../layout/footer.php') ?>
+        <?php 
+            include ('../../controller/recebeTamanho.php');
+            require ('../layout/footer.php'); 
+        ?>
     </body>
 </html>
