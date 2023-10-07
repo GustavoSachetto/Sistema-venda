@@ -15,19 +15,14 @@
                         <h2>Cadastro venda</h2>
                         <fieldset>
                             <p>Informação do cliente:</p>
-                            <select name="txtCliente">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
                             <input type="text" placeholder="Pesquisar">
                         </fieldset>
                         <fieldset>
                             <p>Informação do produto:</p>
                             <select name="txtProduto">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                                <option value="1">Camiseta</option>
+                                <option value="2">Blusa</option>
+                                <option value="3">Calça</option>
                             </select>
                             <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
                         </fieldset>

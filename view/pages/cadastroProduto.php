@@ -13,16 +13,25 @@
                 <section>
                     <form method="post" action="">
                         <h2>Cadastro produto</h2>
+                        <fieldset id="produto">
+                            <p>Informação do produto:</p>
+                            <input type="text" placeholder="Nome produto" name="txtNomeP" minlength="4" maxlength="70" required>
+                            <input type="number" placeholder="Valor" name="txtValor" min="1" max="99999.99" step="0.01" required>
+                            <input type="text" placeholder="Categoria" name="txtCat" minlength="4" maxlength="30" required>
+                            <input type="text" placeholder="Genero" name="txtGen" minlength="4" maxlength="10" required>
+                            <input type="text" placeholder="Tipo" name="txtTipo" minlength="4" maxlength="30" required>
+                            <input type="text" placeholder="Marca" name="txtMarca" minlength="4" maxlength="30" required>
+                        </fieldset>
                         <fieldset>
-                            <section id="produto">
-                                <p>Informação do produto:</p>
-                                <input type="text" placeholder="Nome produto" name="txtNomeP" minlength="4" maxlength="70" required>
-                                <input type="number" placeholder="Valor" name="txtValor" min="1" max="99999.99" step="0.01" required>
-                                <input type="text" placeholder="Categoria" name="txtCat" minlength="4" maxlength="30" required>
-                                <input type="text" placeholder="Genero" name="txtGen" minlength="4" maxlength="10" required>
-                                <input type="text" placeholder="Tipo" name="txtTipo" minlength="4" maxlength="30" required>
-                                <input type="text" placeholder="Marca" name="txtMarca" minlength="4" maxlength="30" required>
-                            </section>
+                            <p>Informação do tamanho produto:</p>
+                            <select name="txtTamanho">
+                                <option value="1">P</option>
+                                <option value="2">PP</option>
+                                <option value="3">M</option>
+                                <option value="4">G</option>
+                                <option value="5">GG</option>
+                            </select>
+                            <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
                         </fieldset>
                         <button type="submit">Enviar</button>
                     </form>

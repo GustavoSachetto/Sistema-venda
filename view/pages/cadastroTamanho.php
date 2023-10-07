@@ -16,7 +16,6 @@
                         <fieldset>
                             <p>Informação do tamanho:</p>
                             <input type="text" placeholder="Tamanho" name="txtTamanho" minlength="1" maxlength="5" pattern="[aA-zZ]+" required>
-                            <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
                         </fieldset>
                         <button type="submit" id="btnSubmit">Enviar</button>
                     </form>
