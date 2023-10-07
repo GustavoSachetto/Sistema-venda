@@ -1,16 +1,16 @@
 use projetovenda;
 
 insert into cliente(nomeCliente, cpf, CEP, UF, nResidencial, cidade, bairro, rua, tipoLogradouro, complemento, observacao) values
-("João da Silva","55214047897","12345678","SP", 13 ,"São Bernando Do Campo","Jardim Alegre","Rua Principal","Casa","nenhuma","nenhuma"),
-("Silva da silva","78954625784","78945612","SP", 15 ,"Caieiras","Jardim Angela","Rua Azul","Casa","nenhum","nenhum"),
-("Lima da silva","25078945617","87945658","SP", 26 ,"São Paulo","Bairro Alegre","Rua Paulo Gustavo","Predio","nenhum","nenhum"),
-("João da Silva","55214547898","12345674","RJ", 90,"Belford Roxo","Jardim Alegre","Avenida Principal","Casa","nenhum","nenhum"),
-("João da Silva","55216547897","12365678","SP", 87 ,"São Bernando Do Campo","Jardim Triste","Rua do portao","Casa","nenhum","nenhum"),
+("João da Silva","55214047897","12345678","SP", 13 ,"São Bernando Do Campo","Jardim Alegre","Rua Principal","Casa","",""),
+("Silva da silva","78954625784","78945612","SP", 15 ,"Caieiras","Jardim Angela","Rua Azul","Casa","",""),
+("Lima da silva","25078945617","87945658","SP", 26 ,"São Paulo","Bairro Alegre","Rua Paulo Gustavo","Predio","",""),
+("João da Silva","55214547898","12345674","RJ", 90,"Belford Roxo","Jardim Alegre","Avenida Principal","Casa","",""),
+("João da Silva","55216547897","12365678","SP", 87 ,"São Bernando Do Campo","Jardim Triste","Rua do portao","Casa","",""),
 ("Felipe Zanuto","55218547897","12865678","SP", 55,"São Jose do rio preto","Jardins","Rua do bolo","Predio","nenhum","Cao Bravo"),
-("felipe da Silva","55766547897","17365678","SP", 12,"Ribeirao preto","Parque Derrota","Rua dos comercios","Casa","nenhum","nenhum"),
-("João da Silva","85214447897","14268878","SP", 33 ,"Lapa","Parque das graças","Rua dos pagos","Casa","nenhum","nenhum"),
-("maria da Silva","55216337807","12363378","MG",23 ,"Uberaba","Jardim dos milagres","Rua Chico Xavier","Casa","nenhum","nenhum"),
-("João do Joao","55210047897","12365008","SP", 5,"São Bernando Do Campo","bairro dos jardins","Rua do tempo","Casa","nenhum","nenhum");
+("felipe da Silva","55766547897","17365678","SP", 12,"Ribeirao preto","Parque Derrota","Rua dos comercios","Casa","Casa A",""),
+("João da Silva","85214447897","14268878","SP", 33 ,"Lapa","Parque das graças","Rua dos pagos","Casa","",""),
+("maria da Silva","55216337807","12363378","MG",23 ,"Uberaba","Jardim dos milagres","Rua Chico Xavier","Casa","",""),
+("João do Joao","55210047897","12365008","SP", 5,"São Bernando Do Campo","bairro dos jardins","Rua do tempo","Casa","","");
 
 insert into produto(valor, nomeProduto, marca, tipo, genero, categoria) values
 ( "20.00", "Camisa rosa", "nike", "camiseta" ,"unisex", "roupas basicas"),

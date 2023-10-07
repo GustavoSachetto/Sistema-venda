@@ -25,5 +25,3 @@ create table venda(
   codProduto int not null,
   constraint fkprodutoVenda foreign key (codProduto) references produto (codProduto)
 );
-
--- drop database projetovenda;
