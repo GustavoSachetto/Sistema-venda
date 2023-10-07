@@ -5,3 +5,27 @@
     padding: 0;
     text-decoration: none;
 }
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: inline-flex;
+    list-style: none;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+main {
+    min-height: calc(100vh - 80px);
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
+}

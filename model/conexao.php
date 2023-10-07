@@ -4,12 +4,12 @@ class conexao{
     public function __construct($dbname, $host, $user, $password) {
         try {
             $this -> pdo = New PDO ("mysql:dbname=" . $dbname . ";host=" . $host, $user, $password);
-            echo "CONEXÃO DO PDO";
+            return "CONEXÃO DO PDO";
         } catch (PDOException $erro) {
-            echo "ERRO DE CONEXÃO NO PDO:" . $erro -> getMessage();
+            return "ERRO DE CONEXÃO NO PDO:" . $erro -> getMessage();
             exit();
         } catch (Exception $erro) {
-            echo "ERRO NÃO PASSOU DA CONEXÃO:" . $erro -> getMessage();
+            return "ERRO NÃO PASSOU DA CONEXÃO:" . $erro -> getMessage();
             exit();
         }
     }
