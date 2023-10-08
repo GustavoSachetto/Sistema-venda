@@ -13,15 +13,6 @@ header {
     padding: 10px;
 }
 
-nav ul {
-    display: inline-flex;
-    list-style: none;
-}
-
-nav li {
-    margin: 0 15px;
-}
-
 main {
     min-height: calc(100vh - 110px);
 }
