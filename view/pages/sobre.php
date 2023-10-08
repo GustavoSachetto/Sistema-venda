@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sobre</title>
-        <link rel="stylesheet" href="../css/sobre.css">
         <?php require ('../layout/head.php') ?>
+        <link rel="stylesheet" href="../css/sobre.css">
     </head>
     <body>
         <?php require ('../layout/header.php') ?>
