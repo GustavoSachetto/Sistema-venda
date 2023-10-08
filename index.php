@@ -23,7 +23,7 @@
                             Cliente
                         </button>
                         <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Exibir clientes</a></li>
+                        <li><a class="dropdown-item" href="view/pages/cliente.php">Exibir clientes</a></li>
                         <li><a class="dropdown-item" href="view/pages/cadastroCliente.php">Cadastrar clientes</a></li>
                         </ul>
                     </div>
@@ -32,7 +32,7 @@
                             Tamanho
                         </button>
                         <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Exibir Tamanhos</a></li>
+                        <li><a class="dropdown-item" href="view/pages/tamanho.php">Exibir Tamanhos</a></li>
                         <li><a class="dropdown-item" href="view/pages/cadastroTamanho.php">Cadastrar Tamanhos</a></li>
                         </ul>
                     </div>
@@ -41,7 +41,7 @@
                             Produto
                         </button>
                         <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Exibir Produtos</a></li>
+                        <li><a class="dropdown-item" href="view/pages/produto.php">Exibir Produtos</a></li>
                         <li><a class="dropdown-item" href="view/pages/cadastroProduto.php">Cadastrar Produtos</a></li>
                         </ul>
                     </div>
