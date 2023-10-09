@@ -13,6 +13,17 @@ header {
     padding: 10px;
 }
 
+.btn-menu {
+    display: none;
+    border: 2px solid black;
+    border-radius: 7px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+}
+
 main {
     min-height: calc(100vh - 110px);
 }
@@ -20,4 +31,22 @@ main {
 footer p {
     margin: 0;
     text-align: center;
+}
+
+@media (max-width:900px) {
+    .btn-menu {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        top: 80px;
+        right: 20px;
+    }
+
+    nav div {
+        margin: 10px 0;
+    }
 }
