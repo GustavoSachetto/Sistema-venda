@@ -72,5 +72,9 @@ class conexao{
         $insereTamanhoProduto->bindValue(":codT", $codTamanho);
         $insereTamanhoProduto->execute();
     }
+
+    public function consultaCliente() {
+        
+    }
 }
 ?>
