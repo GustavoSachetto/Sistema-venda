@@ -1,0 +1,27 @@
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    width: 110px;
+}
+
+th {
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: gainsboro;
+}
+
+button {
+    border: none;
+    background: transparent;
+}
