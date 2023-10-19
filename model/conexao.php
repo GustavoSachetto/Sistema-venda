@@ -14,8 +14,17 @@ class conexao{
         }
     }
 
-    public function consultaCliente() {
-        $consulta = "SELECT * FROM cliente ORDER BY codCliente ASC";
+    public function consultaCliente($buscaNome, $buscaCpf, $buscaCep, $buscaUF, $buscaCidade, $buscaBairro, $buscaCod) {
+        
+        $consulta = "SELECT * FROM cliente WHERE 
+        nomeCliente LIKE '%$buscaNome%'   AND 
+        cpf         LIKE '%$buscaCpf%'    AND 
+        CEP         LIKE '%$buscaCep%'    AND 
+        UF          LIKE '%$buscaUF%'     AND
+        cidade      LIKE '%$buscaCidade%' AND
+        bairro      LIKE '%$buscaBairro%' AND
+        codCliente  LIKE '%$buscaCod%'      ";
+
         $resultado = $this -> consultaBanco($consulta);
 
         return $resultado;

@@ -9,9 +9,8 @@
         <link rel="stylesheet" href="../css/sobre.css">
     </head>
     <body>
-        <?php 
-            require ('../layout/header.php');
-            require ('../layout/footer.php'); 
-        ?>
+        <?php require ('../layout/header.php') ?>
+        
+        <?php require ('../layout/footer.php') ?>
     </body>
 </html>

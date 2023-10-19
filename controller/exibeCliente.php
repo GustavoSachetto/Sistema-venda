@@ -6,8 +6,21 @@
     $consulta = "SELECT count(*) FROM cliente";
     $verifica = $conexao -> consultaBanco($consulta);
 
+    $buscaNome = $buscaCpf = $buscaCep = $buscaUF = $buscaCidade = $buscaBairro = $buscaCod = "";
+    
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $buscaNome = addslashes($_POST['txtNome']);
+        $buscaCpf = addslashes($_POST['txtCPF']);
+        $buscaCep = addslashes($_POST['txtCep']);
+        $buscaUF = addslashes($_POST['txtUF']);
+        $buscaCidade = addslashes($_POST['txtCidade']);
+        $buscaBairro = addslashes($_POST['txtBairro']);
+        $buscaCod = addslashes($_POST['txtCod']);
+    } 
+
+    $resultado = $conexao -> consultaCliente($buscaNome, $buscaCpf, $buscaCep, $buscaUF, $buscaCidade, $buscaBairro, $buscaCod);
+
     if ($verifica[0]['count(*)'] !== 0) {
-        $resultado = $conexao -> consultaCliente();
         
         echo "
         <table>

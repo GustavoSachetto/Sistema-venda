@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastro cliente</title>
-        <?php require ('../layout/head.php') ?>
         <link rel="stylesheet" href="../css/form.css">
+        <?php require ('../layout/head.php') ?>
     </head>
     <body>
         <?php 
@@ -21,7 +21,7 @@
                         <fieldset id="cliente">
                             <p>Informações do cliente:</p><br>
                             <input type="text" placeholder="Nome" name="txtNome" minlength="5" maxlength="80" required>
-                            <input type="text" placeholder="CPF" name="txtCPF" minlength="5" maxlength="11" required>
+                            <input type="text" placeholder="CPF" name="txtCPF" minlength="11" maxlength="11" required>
                         </fieldset>
                         <fieldset id="endereco">
                             <p>Informações do endereço:</p><br>
