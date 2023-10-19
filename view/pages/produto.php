@@ -13,6 +13,6 @@
             require ('../layout/header.php'); 
             include ('../../controller/exibeProduto.php');
             require ('../layout/footer.php'); 
-            ?>
+        ?>
     </body>
 </html>
