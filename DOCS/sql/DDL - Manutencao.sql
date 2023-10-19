@@ -29,7 +29,7 @@ alter table venda drop column codProduto;
 
 create table tamanho(
 	codTam int auto_increment not null primary key,
-    tipoTamanho char(5) not null 
+    tipoTamanho char(5) unique
 );
 
 create table tamanhoP(

@@ -9,10 +9,12 @@
         <link rel="stylesheet" href="../css/table.css">
     </head>
     <body>
-        <?php 
-            require ('../layout/header.php'); 
-            include ('../../controller/exibeProduto.php');
-            require ('../layout/footer.php'); 
-        ?>
+        <?php require ('../layout/header.php') ?>
+        <main>
+            <article>
+                <?php include ('../../controller/exibeProduto.php') ?>
+            </article>
+        </main>
+        <?php require ('../layout/footer.php') ?>
     </body>
 </html>
