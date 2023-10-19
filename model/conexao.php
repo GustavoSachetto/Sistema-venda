@@ -14,6 +14,34 @@ class conexao{
         }
     }
 
+    public function consultaCliente() {
+        $consulta = "SELECT * FROM cliente ORDER BY codCliente ASC";
+        $resultado = $this -> consultaBanco($consulta);
+
+        return $resultado;
+    }
+
+    public function consultaTamanho() {
+        $consulta = "SELECT * FROM tamanho ORDER BY codTam ASC";
+        $resultado = $this -> consultaBanco($consulta);
+
+        return $resultado;
+    }
+
+    public function consultaProduto() {
+        $consulta = "SELECT * FROM produto ORDER BY codProduto ASC";
+        $resultado = $this -> consultaBanco($consulta);
+
+        return $resultado;
+    }
+
+    public function consultaTamanhoProduto() {
+        $consulta = "SELECT * FROM tamanhop ORDER BY codProduto ASC";
+        $resultado = $this -> consultaBanco($consulta);
+
+        return $resultado;
+    }
+
     public function consultaBanco($consulta) {
         $consultaBanco = $this -> pdo -> query($consulta);
         $consultaBanco -> execute();
@@ -71,10 +99,6 @@ class conexao{
         $insereTamanhoProduto->bindValue(":codP", $codProduto);
         $insereTamanhoProduto->bindValue(":codT", $codTamanho);
         $insereTamanhoProduto->execute();
-    }
-
-    public function consultaCliente() {
-        
     }
 }
 ?>
