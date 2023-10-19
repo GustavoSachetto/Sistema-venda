@@ -45,8 +45,18 @@
                         <li>
                             <a class="dropdown-item" href="view/pages/cadastroProduto.php">Cadastrar</a>
                         </li>
+                    </ul>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-lg" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tamanho
+                    </button>
+                    <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="view/pages/cadastroTamanho.php">Tamanho</a>
+                            <a class="dropdown-item" href="view/pages/tamanho.php">Exibir</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="view/pages/cadastroTamanho.php">Cadastrar</a>
                         </li>
                     </ul>
                 </div>
