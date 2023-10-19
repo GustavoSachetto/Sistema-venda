@@ -32,5 +32,7 @@
                 <td>Teste</td>
                 <td>Teste</td>
                 <td>Teste</td>
+                <td><button>Editar</button></td>
+                <td><button>Excluir</button></td>
             </tr>
         </table>
