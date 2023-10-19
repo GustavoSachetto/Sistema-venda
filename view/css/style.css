@@ -15,8 +15,7 @@ header {
 
 .btn-menu {
     display: none;
-    border: 2px solid black;
-    border-radius: 7px;
+    background: transparent;
 }
 
 nav {
