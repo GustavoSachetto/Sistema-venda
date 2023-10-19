@@ -1,38 +1,51 @@
-        <?php 
+<?php
+    require_once '../../model/conexao.php';
+    $config = parse_ini_file('../../model/config.ini');
+    $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
+
+    $consulta = "SELECT count(*) FROM cliente";
+    $verifica = $conexao -> consultaBanco($consulta);
+
+    if ($verifica[0]['count(*)'] !== 0) {
+        $resultado = $conexao -> consultaCliente();
         
-        ?>
-        
+        echo "
         <table>
             <tr>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Codigo Cliente</th>
-                <th>Logradouro</th>
-                <th>Bairro</th>
-                <th>Rua</th>
-                <th>Estado</th>
-                <th>Numero Residencial</th>
-                <th>Cidade</th>
-                <th>CEP</th>
-                <th>Complemento</th>
-                <th>Observação</th>
-                <th>Editar</th>
-                <th>Excluir</th>
+                <td>Nome</td>
+                <td>CPF</td>
+                <td>Bairro</td>
+                <td>Rua</td>
+                <td>CEP</td>
+                <td>Cidade</td>
+                <td>Número Residencial</td>
+                <td>UF</td>
+                <td>Tipo Logradouro</td>
+                <td>Complemento</td>
+                <td>Observação</td>
+                <td>Código do Cliente</td>
             </tr>
-            <tr>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td><button>Editar</button></td>
-                <td><button>Excluir</button></td>
-            </tr>
-        </table>
+        ";
+        foreach ($resultado as $valor) {
+            echo "
+                <tr>
+                    <td>" . stripslashes($valor['nomeCliente']) . "</td>
+                    <td>" . stripslashes($valor['cpf']) . "</td>
+                    <td>" . stripslashes($valor['bairro']) . "</td>
+                    <td>" . stripslashes($valor['rua']) . "</td>
+                    <td>" . stripslashes($valor['CEP']) . "</td>
+                    <td>" . stripslashes($valor['cidade']) . "</td>
+                    <td>" . stripslashes($valor['nResidencial']). "</td>
+                    <td>" . stripslashes($valor['UF']) . "</td>
+                    <td>" . stripslashes($valor['tipoLogradouro']) . "</td>
+                    <td>" . stripslashes($valor['complemento']) . "</td>
+                    <td>" . stripslashes($valor['observacao']) . "</td>
+                    <td>" . stripslashes($valor['codCliente']) . "</td>
+                </tr>
+            ";
+        }
+        echo "</table>";
+    } else {
+        echo "<p>Nenhum cliente cadastrado!</p>";
+    }
+?>
