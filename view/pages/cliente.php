@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="../css/table.css">
     </head>
     <body>
-    <?php require ('../layout/header.php') ?>
+        <?php require ('../layout/header.php') ?>
         <main>
             <article>
                 <section>
@@ -19,7 +19,7 @@
                             <input type="text" placeholder="CPF" name="txtCPF" maxlength="11">
                             <input type="text" placeholder="Cep" name="txtCep" minlength="8" maxlength="8" pattern="[0-9]{5}[0-9]{3}">
                             <input type="text" placeholder="UF" name="txtUF" minlength="2" maxlength="2" pattern="[aA-zZ]{2}">
-                            <input type="text" placeholder="Cidade" name="txtCidade" maxlength="30">
+                            <input type="text" placeholder="Cidade" name="txtCidade" maxlength="30">    
                             <input type="text" placeholder="Bairro" name="txtBairro" maxlength="30">
                             <input type="text" placeholder="Codigo cliente" name="txtCod">
                             <button type="submit">Buscar</button>

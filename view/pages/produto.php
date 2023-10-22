@@ -12,7 +12,20 @@
         <?php require ('../layout/header.php') ?>
         <main>
             <article>
-                <?php include ('../../controller/exibeProduto.php') ?>
+                <section>
+                    <form method="post" action="">
+                        <fieldset>
+                            <input type="text" placeholder="Nome" name="txtNome" maxlength="80">
+                            <input type="text" placeholder="Categoria" name="txtCategoria" maxlength="30">
+                            <input type="text" placeholder="Genero" name="txtGen" minlength="8" maxlength="8" pattern="[0-9]{5}[0-9]{3}">
+                            <input type="text" placeholder="Marca" name="txtMarca" minlength="2" maxlength="2" pattern="[aA-zZ]{2}">
+                            <input type="text" placeholder="Tipo" name="txtTipo" maxlength="30">    
+                            <input type="text" placeholder="Codigo produto" name="txtCod">
+                            <button type="submit">Buscar</button>
+                        </fieldset>
+                    </form>
+                </section>
+                <section><?php include ('../../controller/exibeProduto.php') ?></section>
             </article>
         </main>
         <?php require ('../layout/footer.php') ?>
