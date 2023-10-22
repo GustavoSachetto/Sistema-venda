@@ -37,8 +37,15 @@ class conexao{
         return $resultado;
     }
 
-    public function consultaProduto() {
-        $consulta = "SELECT * FROM produto ORDER BY codProduto ASC";
+    public function consultaProduto($buscaNome, $buscaCate, $buscaGen, $buscaMarca, $buscaTipo, $buscaCod) {
+        $consulta = "SELECT * FROM produto WHERE 
+        nomeProduto LIKE '%$buscaNome%'   AND 
+        categoria   LIKE '%$buscaCate%'   AND 
+        genero      LIKE '%$buscaGen%'    AND 
+        marca       LIKE '%$buscaMarca%'  AND
+        tipo        LIKE '%$buscaTipo%'   AND
+        codProduto  LIKE '%$buscaCod%'      ";
+
         $resultado = $this -> consultaBanco($consulta);
 
         return $resultado;

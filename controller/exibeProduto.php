@@ -5,9 +5,21 @@
 
     $consulta = "SELECT count(*) FROM produto";
     $verifica = $conexao -> consultaBanco($consulta);
+
+    $buscaNome = $buscaCate = $buscaGen = $buscaMarca = $buscaTipo = $buscaCod = "";
+    
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $buscaNome = addslashes($_POST['txtNome']);
+        $buscaCate = addslashes($_POST['txtCate']);
+        $buscaGen = addslashes($_POST['txtGen']);
+        $buscaMarca = addslashes($_POST['txtMarca']);
+        $buscaTipo = addslashes($_POST['txtTipo']);
+        $buscaCod = addslashes($_POST['txtCod']);
+    } 
+
+    $produtos = $conexao -> consultaProduto($buscaNome, $buscaCate, $buscaGen, $buscaMarca, $buscaTipo, $buscaCod);
     
     if ($verifica[0]['count(*)'] !== 0) {
-        $produtos = $conexao -> consultaProduto();
         $tamanhos = $conexao -> consultaTamanho();
         $tamanhosProduto = $conexao -> consultaTamanhoProduto();
 
