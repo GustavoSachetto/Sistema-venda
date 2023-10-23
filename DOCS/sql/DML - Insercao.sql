@@ -40,11 +40,10 @@ insert into tamanho(tipoTamanho) values
 ( 5, 3 , 90 ),
 ( 6, 1 , 90 ),
 ( 7, 2 , 39 ),
-( 8, 6 , 17 ),
 ( 9, 5 , 28 ),
 ( 10, 5 , 69 );
 
-insert into venda(codCliente,dataHora) values
+insert into venda(codCliente, dataHora) values
 (  1 , "2022-04-19 12:04:25" ),
 (  2 , "2022-06-08 15:04:25" ),
 (  3 , "2023-10-25 20:10:30" ),
