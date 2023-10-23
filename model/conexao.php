@@ -23,7 +23,7 @@ class conexao{
         UF          LIKE '%$buscaUF%'     AND
         cidade      LIKE '%$buscaCidade%' AND
         bairro      LIKE '%$buscaBairro%' AND
-        codCliente  LIKE '%$buscaCod%'      ";
+        codCliente  LIKE '%$buscaCod%'     ";
 
         $resultado = $this -> consultaBanco($consulta);
 
@@ -44,7 +44,7 @@ class conexao{
         genero      LIKE '%$buscaGen%'    AND 
         marca       LIKE '%$buscaMarca%'  AND
         tipo        LIKE '%$buscaTipo%'   AND
-        codProduto  LIKE '%$buscaCod%'      ";
+        codProduto  LIKE '%$buscaCod%'     ";
 
         $resultado = $this -> consultaBanco($consulta);
 

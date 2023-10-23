@@ -1,28 +1,28 @@
 use projetovenda;
 
 insert into cliente(nomeCliente, cpf, CEP, UF, nResidencial, cidade, bairro, rua, tipoLogradouro, complemento, observacao) values
-("João da Silva","55214047897","12345678","SP", 13 ,"São Bernando Do Campo","Jardim Alegre","Rua Principal","Casa","",""),
-("Silva da silva","78954625784","78945612","SP", 15 ,"Caieiras","Jardim Angela","Rua Azul","Casa","",""),
-("Lima da silva","25078945617","87945658","SP", 26 ,"São Paulo","Bairro Alegre","Rua Paulo Gustavo","Predio","",""),
-("João da Silva","55214547898","12345674","RJ", 90,"Belford Roxo","Jardim Alegre","Avenida Principal","Casa","",""),
-("João da Silva","55216547897","12365678","SP", 87 ,"São Bernando Do Campo","Jardim Triste","Rua do portao","Casa","",""),
-("Felipe Zanuto","55218547897","12865678","SP", 55,"São Jose do rio preto","Jardins","Rua do bolo","Predio","nenhum","Cao Bravo"),
-("felipe da Silva","55766547897","17365678","SP", 12,"Ribeirao preto","Parque Derrota","Rua dos comercios","Casa","Casa A",""),
-("João da Silva","85214447897","14268878","SP", 33 ,"Lapa","Parque das graças","Rua dos pagos","Casa","",""),
-("maria da Silva","55216337807","12363378","MG",23 ,"Uberaba","Jardim dos milagres","Rua Chico Xavier","Casa","",""),
-("João do Joao","55210047897","12365008","SP", 5,"São Bernando Do Campo","bairro dos jardins","Rua do tempo","Casa","","");
+("Antonio Rodrigues","55214047897","12345678","SP", 13 ,"São Bernando Do Campo","Jardim Alegre","José quintanilha","Casa","Andar 15",""),
+("Silva da silva","78954625784","78945612","GO", 15 ,"Caieiras","Parque vitoria","Damasco","Casa","",""),
+("Lima da silva","25078945617","87945658","SP", 26 ,"São Paulo","Parque paulista","Paulo Gustavo","Predio","Casa B",""),
+("Felipe da Silva","55214547898","12345674","RJ", 9005,"Belford Roxo","Antonio fernandez","Avenida guilherme alcantra","Casa","",""),
+("João da Silva","44216547897","12365678","SP", 288 ,"Franco da rocha","Jardim Triste","Faria lima","Casa","",""),
+("Felipe Zanuto","28921854789","12865678","AM", 55,"Francisco Morato","Jardins","Whiliam","Predio","nenhum","Cao Bravo"),
+("Marcelo Andrade","55766547897","17365678","ES", 12,"Ribeirao preto","Monte Verde","Pedreira andre","Casa","Casa A","Após as 14:00"),
+("Fernando Samparo","85214447897","14268878","SP", 333 ,"Lapa","Parque das graças","Wilbert","Casa","","Chamar por guilherme na portaria"),
+("Gustavo Sachetto","12216337807","12363378","MG",23 ,"Praia Grande","Legre confrade","Damião Guerreiro","Casa","Casa C",""),
+("Higor Lima","55268368802","12365008","SP", 5,"Mairiporam","Manganes dos jardins","Poupa tempo","Casa","","");
 
 insert into produto(valor, nomeProduto, marca, tipo, genero, categoria) values
-( "20.00", "Camisa rosa", "nike", "camiseta" ,"unisex", "roupas basicas"),
-( "100.00","Camiseta Corinthians", "nike", "camiseta" , "unisex", "roupas basicas"), 
-( "15.00" , "Bandana Vermelha", "Lenços", "Unisex", " Acessorio " , "Lenços Plus" ),
-( "20.00" , "Camisa Vermelha", "Camisetas", "Feminina", " Roupa " , "Nike" ),
-( "50.00" , "Calça Cargo Bege", "Calças", "Masculino", " Roupa " , "Nike"  ),
-( "11.90" , "Cueca Box Vermelha", "Cuecas", "Masculino", " Roupa " , "Puma" ),
-( "20.00" , "Baby Look Cinza", "Blusas", "Feminino", " Roupa " , "Nike" ),
-( "20.00" , " Baby Look Cinza", "Blusas", "Feminino", " Roupa " , "Nike" ),
-( "15.00" , "Escapulatorio Corinthians", "Colares E Acessorios", "Unisex", " Acessorio " , " Correntes E Cia" ),
-( "65.00" , "Camisa Branca Corinthians", "Camisetas", "Unisex", " Roupa " , "Nike" );
+( "20.00", "Camisa rosa", "nike", "camiseta", "unisex" ,"roupas basicas"),
+( "100.00","Camiseta Corinthians", "nike", "camiseta", "masculino", "roupas luxo"), 
+( "15.00" , "Bandana Vermelha", "Lenços Plus", "Lenços", "Unisex", "Acessorio"),
+( "20.00" , "Camisa Vermelha", "Nicoboco", "Camisetas", "Feminina", "Roupa"),
+( "50.00" , "Calça Cargo Bege", "Nike", "Calças", "Masculino", "Calça"),
+( "11.90" , "Cueca Box Vermelha", "Puma", "Cuecas", "Masculino", "Roupa intima"),
+( "20.00" , "Baby Look Cinza", "Adidas", "Blusas", "Feminino", "Camiseta"),
+( "2000.00" , " Baby Look Preta", "Prada", "Blusas", "Feminino", "Camiseta"),
+( "15.00" , "Escapulatorio Corinthians", "Correntes E Cia", "Colares E Acessorios", "Unisex", "Acessorio"),
+( "65.00" , "Camisa Branca Corinthians", "Nike", "Camisetas", "Unisex", "Roupa");
 
 insert into tamanho(tipoTamanho) values
 ( "PP" ),
@@ -33,9 +33,9 @@ insert into tamanho(tipoTamanho) values
 ( "XGG" );    
 
  insert into tamanhoP(codProduto, codTam, quantidade) values
-( 1, 4 , 70 ),
+( 1, 1 , 70 ),
 ( 2, 2 , 78 ),
-( 3, 1 , 45 ),
+( 3, 3 , 45 ),
 ( 4, 4 , 31 ),
 ( 5, 3 , 90 ),
 ( 6, 1 , 90 ),
