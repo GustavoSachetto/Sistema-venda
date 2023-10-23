@@ -76,6 +76,9 @@
             </nav>
         </header>
       	<main>
+            <article>
+                
+            </article>
         </main>
         <footer>
             <p>Desenvolvido por <strong>Gustavo Sachetto</strong></p>
