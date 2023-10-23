@@ -59,7 +59,7 @@
                     <td>" . stripslashes($produto['genero']) . "</td>
                     <td>" . stripslashes($produto['marca']) . "</td>
                     <td>" . stripslashes($produto['tipo']) . "</td>
-                    <td>" . stripslashes($produto['valor']) . "</td>
+                    <td>" . "R$ " . stripslashes(number_format($produto['valor'], 2, ",", ".")) . "</td>
                     <td>" . stripslashes($produtoTamanho) . "</td>
                     <td>" . stripslashes($quantidade) . "</td>
                     <td>" . stripslashes($produto['codProduto']) . "</td>
