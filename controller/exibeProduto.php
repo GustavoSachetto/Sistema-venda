@@ -26,15 +26,16 @@
         echo "
         <table>
             <tr>
+                <td>#</td>
                 <td>Nome</td>
                 <td>Categoria</td>
                 <td>Genero</td>
                 <td>Marca</td>
                 <td>Tipo</td>
-                <td>Valor</td>
                 <td>Tamanho</td>
                 <td>Quantidade</td>
-                <td>codProduto</td>
+                <td>Valor Un</td>
+                <td>Ações</td>
             </tr>
         ";
         foreach ($produtos as $produto) {
@@ -54,15 +55,19 @@
 
             echo "
                 <tr>
+                    <td>" . stripslashes($produto['codProduto']) . "</td>
                     <td>" . stripslashes($produto['nomeProduto']) . "</td>
                     <td>" . stripslashes($produto['categoria']) . "</td>
                     <td>" . stripslashes($produto['genero']) . "</td>
                     <td>" . stripslashes($produto['marca']) . "</td>
                     <td>" . stripslashes($produto['tipo']) . "</td>
-                    <td>" . "R$ " . stripslashes(number_format($produto['valor'], 2, ",", ".")) . "</td>
                     <td>" . stripslashes($produtoTamanho) . "</td>
                     <td>" . stripslashes($quantidade) . "</td>
-                    <td>" . stripslashes($produto['codProduto']) . "</td>
+                    <td>" . "R$ " . number_format($produto['valor'], 2, ",", ".") . "</td>
+                    <td>
+                        <button>Editar</button>
+                        <button>Excluir</button>
+                    </td>
                 </tr>
             ";
         }

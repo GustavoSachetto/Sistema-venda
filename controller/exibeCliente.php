@@ -25,35 +25,35 @@
         echo "
         <table>
             <tr>
+                <td>#</td>
                 <td>Nome</td>
                 <td>CPF</td>
-                <td>Bairro</td>
-                <td>Rua</td>
                 <td>CEP</td>
+                <td>Rua</td>
+                <td>Número</td>
+                <td>Bairro</td>
                 <td>Cidade</td>
-                <td>Número Residencial</td>
                 <td>UF</td>
                 <td>Tipo Logradouro</td>
                 <td>Complemento</td>
                 <td>Observação</td>
-                <td>Código do Cliente</td>
             </tr>
         ";
         foreach ($resultado as $valor) {
             echo "
                 <tr>
+                    <td>" . stripslashes($valor['codCliente']) . "</td>
                     <td>" . stripslashes($valor['nomeCliente']) . "</td>
                     <td>" . stripslashes($valor['cpf']) . "</td>
-                    <td>" . stripslashes($valor['bairro']) . "</td>
-                    <td>" . stripslashes($valor['rua']) . "</td>
                     <td>" . stripslashes($valor['CEP']) . "</td>
-                    <td>" . stripslashes($valor['cidade']) . "</td>
+                    <td>" . stripslashes($valor['rua']) . "</td>
                     <td>" . stripslashes($valor['nResidencial']). "</td>
+                    <td>" . stripslashes($valor['bairro']) . "</td>
+                    <td>" . stripslashes($valor['cidade']) . "</td>
                     <td>" . stripslashes($valor['UF']) . "</td>
                     <td>" . stripslashes($valor['tipoLogradouro']) . "</td>
                     <td>" . stripslashes($valor['complemento']) . "</td>
                     <td>" . stripslashes($valor['observacao']) . "</td>
-                    <td>" . stripslashes($valor['codCliente']) . "</td>
                 </tr>
             ";
         }
