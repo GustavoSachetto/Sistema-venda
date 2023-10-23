@@ -5,10 +5,10 @@ insert into cliente(nomeCliente, cpf, CEP, UF, nResidencial, cidade, bairro, rua
 ("Silva da silva","78954625784","78945612","GO", 15 ,"Caieiras","Parque vitoria","Damasco","Casa","",""),
 ("Lima da silva","25078945617","87945658","SP", 26 ,"São Paulo","Parque paulista","Paulo Gustavo","Predio","Casa B",""),
 ("Felipe da Silva","55214547898","12345674","RJ", 9005,"Belford Roxo","Antonio fernandez","Avenida guilherme alcantra","Casa","",""),
-("João da Silva","44216547897","12365678","SP", 288 ,"Franco da rocha","Jardim Triste","Faria lima","Casa","",""),
+("João da Silva","44216547897","12365678","SP", 288 ,"Franco da rocha","Jardim Triste","Faria lima","Casa","Nenhum",""),
 ("Felipe Zanuto","28921854789","12865678","AM", 55,"Francisco Morato","Jardins","Whiliam","Predio","nenhum","Cao Bravo"),
-("Marcelo Andrade","55766547897","17365678","ES", 12,"Ribeirao preto","Monte Verde","Pedreira andre","Casa","Casa A","Após as 14:00"),
-("Fernando Samparo","85214447897","14268878","SP", 333 ,"Lapa","Parque das graças","Wilbert","Casa","","Chamar por guilherme na portaria"),
+("Marcelo Andrade","55766547897","17365678","ES", 12, "Capitão dourado","Monte Verde","Pedreira andre","Rua","Casa A","Depois do meio dia"),
+("Fernando Samparo","85214447897","14268878","SP", 333 ,"Lapa","Parque das graças","Wilbert","Casa","","Chamar por guilherme"),
 ("Gustavo Sachetto","12216337807","12363378","MG",23 ,"Praia Grande","Legre confrade","Damião Guerreiro","Casa","Casa C",""),
 ("Higor Lima","55268368802","12365008","SP", 5,"Mairiporam","Manganes dos jardins","Poupa tempo","Casa","","");
 
