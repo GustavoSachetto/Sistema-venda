@@ -4,7 +4,7 @@ use projetovenda;
 
 create table produto(
 	codProduto int auto_increment not null primary key,
-	nomeProduto varchar (70) not null unique,
+	nomeProduto varchar (70) not null,
 	quantidade int not null,
 	valor decimal(7,2) not null
 );
