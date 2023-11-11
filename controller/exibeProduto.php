@@ -20,8 +20,6 @@
     $produtos = $conexao -> consultaProduto($buscaNome, $buscaCate, $buscaGen, $buscaMarca, $buscaTipo, $buscaCod);
     
     if ($verifica[0]['count(*)'] !== 0) {
-        $tamanhos = $conexao -> consultaTamanho();
-        $tamanhosProduto = $conexao -> consultaTamanhoProduto();
 
         echo "
         <table>
@@ -39,19 +37,6 @@
             </tr>
         ";
         foreach ($produtos as $produto) {
-            
-            foreach ($tamanhosProduto as $tamanhoProduto) {
-                if ($produto['codProduto'] === $tamanhoProduto['codProduto']) {
-                    $quantidade = $tamanhoProduto['quantidade'];
-                    $codTam = $tamanhoProduto['codTam'];
-
-                    foreach ($tamanhos as $tamanho) {
-                        if ($tamanho['codTam'] === $codTam) {
-                            $produtoTamanho = $tamanho['tipoTamanho'];
-                        }
-                    }
-                }
-            }
 
             echo "
                 <tr>
@@ -61,8 +46,8 @@
                     <td>" . stripslashes($produto['genero']) . "</td>
                     <td>" . stripslashes($produto['marca']) . "</td>
                     <td>" . stripslashes($produto['tipo']) . "</td>
-                    <td>" . stripslashes($produtoTamanho) . "</td>
-                    <td>" . stripslashes($quantidade) . "</td>
+                    <td>" . stripslashes($produto['tipoTamanho']) . "</td>
+                    <td>" . stripslashes($produto['quantidade']) . "</td>
                     <td>" . "R$ " . number_format($produto['valor'], 2, ",", ".") . "</td>
                     <td>
                         <button>Editar</button>

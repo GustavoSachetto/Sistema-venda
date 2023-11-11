@@ -16,3 +16,17 @@ select cliente.nomeCliente, produto.nomeProduto from cliente
 inner join venda on cliente.codCliente = venda.codCliente
 inner join vendaitem on venda.codVenda = vendaItem.codVenda
 inner join produto on vendaItem.codProduto = produto.codProduto;
+
+SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade FROM produto
+INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
+INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam;
+
+SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade FROM produto
+INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
+INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam WHERE 
+produto.nomeProduto LIKE '%%'   AND 
+produto.categoria   LIKE '%%'   AND 
+produto.genero      LIKE '%%'    AND 
+produto.marca       LIKE '%%'  AND
+produto.tipo        LIKE '%%'   AND
+produto.codProduto  LIKE '%%';
