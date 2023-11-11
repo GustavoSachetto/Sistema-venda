@@ -16,7 +16,7 @@
         <main>
             <article>
                 <section>
-                    <form method="post" action="">
+                    <form method="post" action="?codProduto=<?= $codProduto ?>">
                         <h2>Cadastro produto</h2>
                         <fieldset id="produto">
                             <p>Informações do produto:</p><br>
