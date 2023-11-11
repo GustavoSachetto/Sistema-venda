@@ -27,14 +27,18 @@
                             <input type="text" placeholder="Tipo" name="txtTipo" minlength="4" maxlength="30" required>
                             <input type="text" placeholder="Marca" name="txtMarca" minlength="4" maxlength="30" required>
                         </fieldset>
+                        <button type="submit" name="envProduto">Enviar</button>
+                    </form>
+                    <form name="formTamanho" method="post" action="">
+                        <h2>Cadastro tamanho</h2>
                         <fieldset>
                             <p>Informações do tamanho produto:</p><br>
                             <select name="slcTamanho">
-                                <?php opcoes($resultado)?>
+                                <?php opcoes($tamanhos)?>
                             </select>
                             <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
                         </fieldset>
-                        <button type="submit">Enviar</button>
+                        <button type="submit" name="envTamanho">Enviar</button>
                     </form>
                 </section>
             </article>

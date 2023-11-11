@@ -89,7 +89,7 @@ class conexao{
         $insereTamanho->execute();
     }
 
-    public function insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca, $cadQuantidade, $codProduto, $codTamanho) {
+    public function insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca) {
         $insereProduto = $this -> pdo -> prepare ("insert into produto(nomeProduto, valor, categoria, genero, tipo, marca) 
         values (:n, :v, :cat, :gen, :tipo, :marca)");
 
@@ -100,8 +100,6 @@ class conexao{
         $insereProduto->bindValue(":tipo", $cadTipo);
         $insereProduto->bindValue(":marca", $cadMarca);
         $insereProduto->execute();
-
-        $this -> insereTamanhoProduto($cadQuantidade, $codProduto, $codTamanho);
     }
 
     public function insereTamanhoProduto($cadQuantidade, $codProduto, $codTamanho) {
