@@ -23,7 +23,7 @@ class conexao{
         UF          LIKE '%$buscaUF%'     AND
         cidade      LIKE '%$buscaCidade%' AND
         bairro      LIKE '%$buscaBairro%' AND
-        codCliente  LIKE '%$buscaCod%'     ";
+        codCliente  LIKE '%$buscaCod%'    ORDER BY cliente.codCliente ASC";
 
         $resultado = $this -> consultaBanco($consulta);
 
@@ -64,7 +64,7 @@ class conexao{
 
     public function insereCliente($cadNome, $cadCpf, $cadCep, $cadUF, $cadCidade, $cadBairro, $cadRua, $cadLogradouro, $cadNumero, $cadComplemento, $cadObservacao) {
 
-        $insereCliente = $this -> pdo -> prepare ("insert into cliente(nomeCliente, cpf, CEP, UF, nResidencial, cidade, bairro, rua, tipoLogradouro, complemento, observacao) values (:n, :cpf, :cep, :uf, :numero, :cid, :bairro, :rua, :log, :comp, :obs)");
+        $insereCliente = $this -> pdo -> prepare ("INSERT INTO cliente(nomeCliente, cpf, CEP, UF, nResidencial, cidade, bairro, rua, tipoLogradouro, complemento, observacao) VALUES (:n, :cpf, :cep, :uf, :numero, :cid, :bairro, :rua, :log, :comp, :obs)");
 
         $insereCliente->bindValue(":n", $cadNome);
         $insereCliente->bindValue(":cpf", $cadCpf);
@@ -82,16 +82,16 @@ class conexao{
     }
 
     public function insereTamanho($cadTam){
-        $insereTamanho = $this -> pdo -> prepare ("insert into tamanho(tipoTamanho)
-        value (:t)");
+        $insereTamanho = $this -> pdo -> prepare ("INSERT INTO tamanho(tipoTamanho)
+        VALUE (:t)");
 
         $insereTamanho->bindValue(":t", $cadTam);
         $insereTamanho->execute();
     }
 
     public function insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca) {
-        $insereProduto = $this -> pdo -> prepare ("insert into produto(nomeProduto, valor, categoria, genero, tipo, marca) 
-        values (:n, :v, :cat, :gen, :tipo, :marca)");
+        $insereProduto = $this -> pdo -> prepare ("INSERT INTO produto(nomeProduto, valor, categoria, genero, tipo, marca) 
+        VALUES (:n, :v, :cat, :gen, :tipo, :marca)");
 
         $insereProduto->bindValue(":n", $cadNomeP);
         $insereProduto->bindValue(":v", $cadValor);
@@ -103,7 +103,7 @@ class conexao{
     }
 
     public function insereTamanhoProduto($cadQuantidade, $codProduto, $codTamanho) {
-        $insereTamanhoProduto = $this -> pdo -> prepare("insert into tamanhop(quantidade, codProduto, codTam) values (:quant, :codP, :codT)");
+        $insereTamanhoProduto = $this -> pdo -> prepare("INSERT INTO tamanhop(quantidade, codProduto, codTam) VALUES (:quant, :codP, :codT)");
         $insereTamanhoProduto->bindValue(":quant", $cadQuantidade);
         $insereTamanhoProduto->bindValue(":codP", $codProduto);
         $insereTamanhoProduto->bindValue(":codT", $codTamanho);
