@@ -29,7 +29,7 @@
                         </fieldset>
                         <button type="submit" name="envProduto">Enviar</button>
                     </form>
-                    <form name="formTamanho" method="post" action="">
+                    <form method="post" action="">
                         <h2>Cadastro tamanho</h2>
                         <fieldset>
                             <p>Informações do tamanho produto:</p><br>
