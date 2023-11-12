@@ -62,7 +62,7 @@ class conexao{
         }
     }
 
-    public function insereCliente($cadNome, $cadCpf, $cadCep, $cadUF, $cadNumero, $cadCidade, $cadBairro, $cadRua, $cadLogradouro, $cadComplemento, $cadObservacao) {
+    public function insereCliente($cadNome, $cadCpf, $cadCep, $cadUF, $cadCidade, $cadBairro, $cadRua, $cadLogradouro, $cadNumero, $cadComplemento, $cadObservacao) {
 
         $insereCliente = $this -> pdo -> prepare ("insert into cliente(nomeCliente, cpf, CEP, UF, nResidencial, cidade, bairro, rua, tipoLogradouro, complemento, observacao) values (:n, :cpf, :cep, :uf, :numero, :cid, :bairro, :rua, :log, :comp, :obs)");
 
@@ -70,11 +70,11 @@ class conexao{
         $insereCliente->bindValue(":cpf", $cadCpf);
         $insereCliente->bindValue(":cep", $cadCep);
         $insereCliente->bindValue(":uf", $cadUF);
-        $insereCliente->bindValue(":numero", $cadNumero);
         $insereCliente->bindValue(":cid", $cadCidade);
         $insereCliente->bindValue(":bairro", $cadBairro);
         $insereCliente->bindValue(":rua", $cadRua);
         $insereCliente->bindValue(":log", $cadLogradouro);
+        $insereCliente->bindValue(":numero", $cadNumero);
         $insereCliente->bindValue(":comp", $cadComplemento);
         $insereCliente->bindValue(":obs", $cadObservacao);
         $insereCliente->execute();
