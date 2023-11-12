@@ -22,11 +22,16 @@
                             <input type="text" placeholder="Cidade" name="txtCidade" maxlength="30">    
                             <input type="text" placeholder="Bairro" name="txtBairro" maxlength="30">
                             <input type="text" placeholder="Codigo cliente" name="txtCod">
-                            <button type="submit">Buscar</button>
+                            <button type="submit" name="envBusca">Buscar</button>
                         </fieldset>
                     </form>
                 </section>
-                <section><?php include ('../../controller/exibeCliente.php') ?></section>
+                <section>
+                    <?php 
+                        include ('../../controller/exibeCliente.php'); 
+                        include ('../../controller/alteracaoCliente.php');
+                    ?>
+                </section>
             </article>
         </main>
         <?php require ('../layout/footer.php') ?>

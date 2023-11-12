@@ -115,5 +115,11 @@ class conexao{
         $deleteProduto->bindValue(":codP", $codProduto);
         $deleteProduto->execute();
     }
+
+    public function deleteCliente($codCliente) {
+        $deleteCliente = $this-> pdo -> prepare("DELETE FROM cliente where codCliente = :codC");
+        $deleteCliente->bindValue(":codC", $codCliente);
+        $deleteCliente->execute();
+    }
 }
 ?>

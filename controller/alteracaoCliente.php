@@ -5,8 +5,8 @@
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_POST['excluir'])) {
-            $codCliente = addslashes($_POST['excluir']);    
-            $conexao -> deleteProduto($codCliente);
+            $codProduto = addslashes($_POST['excluir']);    
+            $conexao -> deleteCliente($codProduto);
         }
     }
 ?>
