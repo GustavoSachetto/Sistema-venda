@@ -66,10 +66,10 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="view/pages/venda.php">Histórico</a>
+                            <a class="dropdown-item" href="view/pages/venda.php">Exibir</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="view/pages/cadastroVenda.php">Gerar</a>
+                            <a class="dropdown-item" href="view/pages/cadastroVenda.php">Cadastrar</a>
                         </li>
                     </ul>
                 </div>
