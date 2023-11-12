@@ -21,11 +21,16 @@
                             <input type="text" placeholder="Marca" name="txtMarca" maxlength="30">
                             <input type="text" placeholder="Tipo" name="txtTipo" maxlength="30">    
                             <input type="text" placeholder="Codigo produto" name="txtCod">
-                            <button type="submit">Buscar</button>
+                            <button type="submit" name="envBusca">Buscar</button>
                         </fieldset>
                     </form>
                 </section>
-                <section><?php include ('../../controller/exibeProduto.php') ?></section>
+                <section>
+                    <?php 
+                        include ('../../controller/exibeProduto.php'); 
+                        include ('../../controller/alteracaoProduto.php');
+                    ?>
+                </section>
             </article>
         </main>
         <?php require ('../layout/footer.php') ?>

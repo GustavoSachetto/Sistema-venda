@@ -109,5 +109,11 @@ class conexao{
         $insereTamanhoProduto->bindValue(":codT", $codTamanho);
         $insereTamanhoProduto->execute();
     }
+
+    public function deleteProduto($codProduto) {
+        $deleteProduto = $this-> pdo -> prepare("DELETE FROM produto where codProduto = :codP");
+        $deleteProduto->bindValue(":codP", $codProduto);
+        $deleteProduto->execute();
+    }
 }
 ?>

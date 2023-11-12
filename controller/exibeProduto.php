@@ -9,19 +9,21 @@
     $buscaNome = $buscaCate = $buscaGen = $buscaMarca = $buscaTipo = $buscaCod = "";
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $buscaNome = addslashes($_POST['txtNome']);
-        $buscaCate = addslashes($_POST['txtCate']);
-        $buscaGen = addslashes($_POST['txtGen']);
-        $buscaMarca = addslashes($_POST['txtMarca']);
-        $buscaTipo = addslashes($_POST['txtTipo']);
-        $buscaCod = addslashes($_POST['txtCod']);
+        if (isset($_POST['envBusca'])) {
+            $buscaNome = addslashes($_POST['txtNome']);
+            $buscaCate = addslashes($_POST['txtCate']);
+            $buscaGen = addslashes($_POST['txtGen']);
+            $buscaMarca = addslashes($_POST['txtMarca']);
+            $buscaTipo = addslashes($_POST['txtTipo']);
+            $buscaCod = addslashes($_POST['txtCod']);
+        }
     } 
 
     $produtos = $conexao -> consultaProduto($buscaNome, $buscaCate, $buscaGen, $buscaMarca, $buscaTipo, $buscaCod);
     
     if ($verifica[0]['count(*)'] !== 0) {
 
-        echo "
+        echo "<form method='post' action=''>
         <table>
             <tr>
                 <td>#</td>
@@ -50,13 +52,13 @@
                     <td>" . stripslashes($produto['quantidade']) . "</td>
                     <td>" . "R$ " . number_format($produto['valor'], 2, ",", ".") . "</td>
                     <td>
-                        <button>Editar</button>
-                        <button>Excluir</button>
+                        <button type='submit' name='editar' value=" . $produto['codProduto'] . ">Editar</button>
+                        <button type='submit' name='excluir' value=" . $produto['codProduto'] . ">Excluir</button>
                     </td>
                 </tr>
             ";
         }
-        echo "</table>";
+        echo "</table></form>";
     } else {
         echo "<p>Nenhum produto cadastrado!</p>";
     }
