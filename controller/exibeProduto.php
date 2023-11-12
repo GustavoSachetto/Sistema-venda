@@ -52,7 +52,6 @@
                     <td>" . stripslashes($produto['quantidade']) . "</td>
                     <td>" . "R$ " . number_format($produto['valor'], 2, ",", ".") . "</td>
                     <td>
-                        <button type='submit' name='editar' value=" . $produto['codProduto'] . ">Editar</button>
                         <button type='submit' name='excluir' value=" . $produto['codProduto'] . ">Excluir</button>
                     </td>
                 </tr>
