@@ -37,7 +37,7 @@ class conexao{
         return $resultado;
     }
 
-    public function consultaProduto($buscaNome, $buscaCate, $buscaGen, $buscaMarca, $buscaTipo, $buscaCod) {
+    public function consultaProduto($buscaNome, $buscaCate, $buscaGen, $buscaMarca, $buscaTipo, $buscaCod, $buscaCodTam) {
         $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade FROM produto
         INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
         INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam WHERE 
@@ -46,6 +46,7 @@ class conexao{
         produto.genero      LIKE '%$buscaGen%'    AND 
         produto.marca       LIKE '%$buscaMarca%'  AND
         produto.tipo        LIKE '%$buscaTipo%'   AND
+        tamanho.codTam      LIKE '%$buscaCodTam%' AND
         produto.codProduto  LIKE '%$buscaCod%' ORDER BY produto.codProduto ASC";
 
         $resultado = $this -> consultaBanco($consulta);

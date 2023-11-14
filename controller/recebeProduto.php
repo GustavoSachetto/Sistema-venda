@@ -3,12 +3,12 @@
     $config = parse_ini_file('../../model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
 
-    const TAMANHOS = "SELECT * FROM tamanho";
     const CODPRODUTO = "SHOW TABLE STATUS LIKE 'produto'";
-
+    
     $resultado = $conexao -> consultaBanco(CODPRODUTO);
     $codProduto = $resultado[0]['Auto_increment'];
-    $tamanhos = $conexao -> consultaBanco(TAMANHOS);
+    
+    $tamanhos = $conexao -> consultaTamanho();
     
     function opcoes($tamanhos) {
         foreach ($tamanhos as $item) {

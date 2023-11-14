@@ -20,7 +20,7 @@ create table venda(
   codVenda int auto_increment not null primary key,
   
   codCliente int not null,
-  constraint fkclienteVenda foreign key (codCliente) references cliente (codCliente) on delete cascade,
+  constraint fkclienteVenda foreign key (codCliente) references cliente (codCliente),
   
   codProduto int not null,
   constraint fkprodutoVenda foreign key (codProduto) references produto (codProduto)

@@ -36,10 +36,10 @@ create table tamanhoP(
 	quantidade int not null,
 
 	codProduto int not null,
-	constraint fkcodProduto foreign key (codProduto) references produto(codProduto) on delete cascade,
+	constraint fkcodProduto foreign key (codProduto) references produto(codProduto),
 
 	codTam int not null,
-	constraint fkcodTam foreign key(codTam) references tamanho(codTam) on delete cascade
+	constraint fkcodTam foreign key(codTam) references tamanho(codTam)
 );
 
 alter table tamanhoP add constraint uqTam
@@ -53,8 +53,8 @@ create table vendaItem(
     codVendaitem int auto_increment primary key not null,
     
     codVenda int not null,
-    constraint fkvenda_vendaitem foreign key (codVenda) references venda(codVenda) on delete cascade,
+    constraint fkvenda_vendaitem foreign key (codVenda) references venda(codVenda),
     
     codProduto int not null,
-    constraint fkproduto_vendaitem foreign key (codProduto) references produto(codProduto) on delete cascade
+    constraint fkproduto_vendaitem foreign key (codProduto) references produto(codProduto)
 );

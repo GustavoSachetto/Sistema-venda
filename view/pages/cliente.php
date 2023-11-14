@@ -9,7 +9,10 @@
         <link rel="stylesheet" href="../css/table.css">
     </head>
     <body>
-        <?php require ('../layout/header.php') ?>
+        <?php 
+            require ('../layout/header.php'); 
+            include ('../../controller/buscaCliente.php');
+        ?>
         <main>
             <article>
                 <section>

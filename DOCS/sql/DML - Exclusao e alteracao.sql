@@ -18,3 +18,4 @@ update tamanho set tipoTamanho = "XXG" where codTam = 6;
 
 delete from vendaitem where codVenda = 17;
 delete from tamanhoP where codTam = 5;
+delete from produto where codProduto = 1;
