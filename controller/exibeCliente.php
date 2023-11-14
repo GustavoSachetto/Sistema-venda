@@ -23,6 +23,7 @@
                 <td>Tipo Logradouro</td>
                 <td>Complemento</td>
                 <td>Observação</td>
+                <td>Ações</td>
             </tr>
         ";
         foreach ($clientes as $cliente) {

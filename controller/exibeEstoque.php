@@ -19,7 +19,7 @@
                 <td>Tipo</td>
                 <td>Tamanho</td>
                 <td>Quantidade</td>
-                <td>Valor Un</td>
+                <td>Valor UN</td>
                 <td>Ações</td>
             </tr>
         ";

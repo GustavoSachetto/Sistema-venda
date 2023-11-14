@@ -5,21 +5,6 @@
 
     $consulta = "SELECT count(*) FROM produto";
     $verifica = $conexao -> consultaBanco($consulta);
-
-    $buscaNome = $buscaCate = $buscaGen = $buscaMarca = $buscaTipo = $buscaCod = "";
-    
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (isset($_POST['envBusca'])) {
-            $buscaNome = addslashes($_POST['txtNome']);
-            $buscaCate = addslashes($_POST['txtCate']);
-            $buscaGen = addslashes($_POST['txtGen']);
-            $buscaMarca = addslashes($_POST['txtMarca']);
-            $buscaTipo = addslashes($_POST['txtTipo']);
-            $buscaCod = addslashes($_POST['txtCod']);
-        }
-    } 
-
-    $produtos = $conexao -> consultaProduto($buscaNome, $buscaCate, $buscaGen, $buscaMarca, $buscaTipo, $buscaCod);
     
     if ($verifica[0]['count(*)'] !== 0) {
 
@@ -32,9 +17,7 @@
                 <td>Genero</td>
                 <td>Marca</td>
                 <td>Tipo</td>
-                <td>Tamanho</td>
-                <td>Quantidade</td>
-                <td>Valor Un</td>
+                <td>Valor UN</td>
                 <td>Ações</td>
             </tr>
         ";
@@ -48,11 +31,9 @@
                     <td>" . stripslashes($produto['genero']) . "</td>
                     <td>" . stripslashes($produto['marca']) . "</td>
                     <td>" . stripslashes($produto['tipo']) . "</td>
-                    <td>" . stripslashes($produto['tipoTamanho']) . "</td>
-                    <td>" . stripslashes($produto['quantidade']) . "</td>
                     <td>" . "R$ " . number_format($produto['valor'], 2, ",", ".") . "</td>
                     <td>
-                        <button type='submit' name='excluir' value=" . $produto['codProduto'] . ">Excluir</button>
+                        <button type='submit' name='editar' value=" . $produto['codProduto'] . ">Editar</button>
                     </td>
                 </tr>
             ";

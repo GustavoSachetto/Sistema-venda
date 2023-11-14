@@ -49,6 +49,19 @@
                 </div>
                 <div>
                     <button type="button" class="btn btn-lg" data-bs-toggle="dropdown" aria-expanded="false">
+                        Estoque
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="view/pages/estoque.php">Exibir</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="view/pages/cadastroEstoque.php">Cadastrar</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-lg" data-bs-toggle="dropdown" aria-expanded="false">
                         Tamanho
                     </button>
                     <ul class="dropdown-menu">
