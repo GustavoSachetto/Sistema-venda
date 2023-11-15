@@ -4,18 +4,18 @@
         Menu
     </button>
     <nav>
-        <a href="../../index.php" role="button" class="btn btn-lg">Inicio</a>
-        <a href="../pages/sobre.php" role="button" class="btn btn-lg">Sobre</a>
+        <a href="../../index.html" role="button" class="btn btn-lg">Inicio</a>
+        <a href="../pages/sobre.html" role="button" class="btn btn-lg">Sobre</a>
         <div>
             <button type="button" class="btn btn-lg" data-bs-toggle="dropdown" aria-expanded="false">
                 Cliente
             </button>
             <ul class="dropdown-menu">
                 <li>
-                    <a class="dropdown-item" href="../pages/cliente.php">Exibir</a>
+                    <a class="dropdown-item" href="../pages/cliente.html">Exibir</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="../pages/cadastroCliente.php">Cadastrar</a>
+                    <a class="dropdown-item" href="../pages/cadastroCliente.html">Cadastrar</a>
                 </li>
             </ul>
         </div>
@@ -25,10 +25,10 @@
             </button>
             <ul class="dropdown-menu">
                 <li>
-                    <a class="dropdown-item" href="../pages/produto.php">Exibir</a>
+                    <a class="dropdown-item" href="../pages/produto.html">Exibir</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="../pages/cadastroProduto.php">Cadastrar</a>
+                    <a class="dropdown-item" href="../pages/cadastroProduto.html">Cadastrar</a>
                 </li>
             </ul>
         </div>
@@ -38,10 +38,10 @@
             </button>
             <ul class="dropdown-menu">
                 <li>
-                    <a class="dropdown-item" href="../pages/estoque.php">Exibir</a>
+                    <a class="dropdown-item" href="../pages/estoque.html">Exibir</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="../pages/cadastroEstoque.php">Cadastrar</a>
+                    <a class="dropdown-item" href="../pages/cadastroEstoque.html">Cadastrar</a>
                 </li>
             </ul>
         </div>
@@ -51,10 +51,10 @@
             </button>
             <ul class="dropdown-menu">
                 <li>
-                    <a class="dropdown-item" href="../pages/tamanho.php">Exibir</a>
+                    <a class="dropdown-item" href="../pages/tamanho.html">Exibir</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="../pages/cadastroTamanho.php">Cadastrar</a>
+                    <a class="dropdown-item" href="../pages/cadastroTamanho.html">Cadastrar</a>
                 </li>
             </ul>
         </div>
@@ -64,10 +64,10 @@
             </button>
             <ul class="dropdown-menu">
                 <li>
-                    <a class="dropdown-item" href="../pages/venda.php">Exibir</a>
+                    <a class="dropdown-item" href="../pages/venda.html">Exibir</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="../pages/cadastroVenda.php">Cadastrar</a>
+                    <a class="dropdown-item" href="../pages/cadastroVenda.html">Cadastrar</a>
                 </li>
             </ul>
         </div>
