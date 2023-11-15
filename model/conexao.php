@@ -15,7 +15,6 @@ class conexao{
     }
 
     public function consultaCliente($buscaNome, $buscaCpf, $buscaCep, $buscaUF, $buscaCidade, $buscaBairro, $buscaCod) {
-        
         $consulta = "SELECT * FROM cliente WHERE 
         nomeCliente LIKE '%$buscaNome%'   AND 
         cpf         LIKE '%$buscaCpf%'    AND 
