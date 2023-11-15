@@ -1,5 +1,7 @@
 $(document).ready(function () {
+
     let selecionar = $('#slcProduto');
+
     selecionar.change(() => {
         codigoProduto = selecionar.val();
         produtos.forEach(item => {
