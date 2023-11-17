@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro estoque</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="../js/responsivo.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../css/form.css">
+        <script src="../js/selecionaProduto.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Sistema - venda</h1>
+            <button id="btn-menu" class="btn-menu">
+                Menu
+            </button>
+            <nav>
+                <a href="../../index.html" role="button" class="btn btn-lg">Inicio</a>
+                <a href="../pages/sobre.html" role="button" class="btn btn-lg">Sobre</a>
+                <div>
+                    <button type="button" class="btn btn-lg" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cliente
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="../pages/cliente.html">Exibir</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="../pages/cadastroCliente.html">Cadastrar</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-lg" data-bs-toggle="dropdown" aria-expanded="false">
+                        Produto
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="../pages/produto.html">Exibir</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="../pages/cadastroProduto.html">Cadastrar</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-lg" data-bs-toggle="dropdown" aria-expanded="false">
+                        Estoque
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="../pages/estoque.html">Exibir</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="../pages/cadastroEstoque.html">Cadastrar</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-lg" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tamanho
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="../pages/tamanho.html">Exibir</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="../pages/cadastroTamanho.html">Cadastrar</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-lg" data-bs-toggle="dropdown" aria-expanded="false">
+                        Venda
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="../pages/venda.html">Exibir</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="../pages/cadastroVenda.html">Cadastrar</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <section>
+                    <form method="post" action="">
+                        <h2>Cadastro estoque</h2>
+                        <fieldset id="produto">
+                            <p>Informações do produto:</p><br>
+                                <select id="slcProduto" name="slcProduto">
+                                    <option value="">Selecione pelo nome</option>
+                                    <option value="">Camisa rosa</option>
+                                    <option value="">Camisa beje</option>
+                                    <option value="">Camisa azul</option>
+                                    <option value="">Camisa preta</option>
+                                    <option value="">Camisa branca</option>
+                                </select>
+                            </fieldset>
+                            <fieldset>
+                                <p><mark>Nome produto:</mark> <span id="nomeP">Camisa rosa</span></p>
+                                <p><mark>Codigo produto:</mark> <span id="codP">1786</span></p>
+                                <p><mark>Categoria:</mark> <span id="cateP">Roupas luxo</span></p>
+                                <p><mark>Genero:</mark> <span id="geneP">Masculino</span></p>
+                                <p><mark>Marca:</mark> <span id="marcaP">Nike</span></p>
+                                <p><mark>Tipo:</mark> <span id="tipoP">Camisa</span></p>
+                                <p><mark>Valor unitário:</mark> <span id="valorP">R$379,99</span></p>
+                            </fieldset>
+                        <fieldset id="tamanho">
+                            <p>Informações do tamanho produto:</p><br>
+                            <select name="slcTamanho">
+                                <option value="">PP</option>
+                                <option value="">P</option>
+                                <option value="">M</option>
+                                <option value="">G</option>
+                                <option value="">GG</option>
+                                <option value="">XG</option>
+                            </select>
+                            <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
+                        </fieldset>
+                        <button type="submit" name="envEstoque">Enviar</button>
+                    </form>
+                </section>
+            </article>
+        </main>
+        <footer>
+            <p>Desenvolvido por <strong>Gustavo Sachetto</strong></p>
+        </footer>
+    </body>
+</html>
