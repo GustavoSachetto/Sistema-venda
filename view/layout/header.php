@@ -1,8 +1,8 @@
-<nav class="sidebar">
+<nav class="sidebar close">
     <header>
         <div class="container-header">
             <span class="container-img">
-                <img src="view/img/logo.png" alt="logo">
+                <img src="../img/logo.png" alt="logo">
             </span>
             <span class="text container-text">
                 <h4>Sistema-venda</h4>
@@ -19,7 +19,7 @@
                 <li class="menu-link">
                     <i class='bx bx-home-alt'></i>
                     <div class="text">
-                        <a class="painel-link" href="../../index.html">Painel</a>
+                        <a class="painel-link" href="../../index.php">Painel</a>
                     </div>
                 </li>
                 <li class="dropdown">
