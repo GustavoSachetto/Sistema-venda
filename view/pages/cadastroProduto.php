@@ -7,6 +7,7 @@
         <title>Sistema-venda | cadastro produto</title>
         <?php require ('../layout/head.php') ?>
         <link rel="stylesheet" href="../css/form.css">
+        <script src="../js/trocaForm.js"></script>
     </head>
     <body>
         <?php 
@@ -24,11 +25,11 @@
                         </div>
                     </div>
                 </section>
-                <section>
+                <section id="produto">
                     <h3>Produto / cadastro</h3>
-                    <form method="post" action="?codProduto=<?= $codProduto ?>">
+                    <form method="post" action="">
                         <h2>Cadastro produto</h2>
-                        <fieldset id="produto">
+                        <fieldset>
                             <p>Informações do produto:</p><br>
                             <input type="text" placeholder="Nome produto" name="txtNomeP" minlength="4" maxlength="70" required>
                             <input type="number" placeholder="Valor" name="txtValor" min="1" max="99999.99" step="0.01" required>
@@ -40,15 +41,16 @@
                         <hr>
                         <div class="container-button">
                             <button type="reset"><i class='bx bx-trash'></i> <span>Limpar</span></button>
-                            <button type="submit"><i class='bx bx-message-square-add'></i> <span>Cadastrar</span></button>
+                            <button type="submit" id="envProduto" name="envProduto"><i class='bx bx-message-square-add'></i> <span>Cadastrar</span></button>
                         </div>
                     </form>
                 </section>
-                <section>                
+                <section id="tamanho">                
                     <h3>Cliente / tamanho</h3>
                     <form method="post" action="">
                         <h2>Cadastro tamanho</h2>
                         <fieldset>
+                            <span>Código produto: <?= $codProduto ?></span><br>
                             <p>Informações do tamanho produto:</p><br>
                             <select name="slcTamanho">
                                 <?php opcoes($tamanhos)?>
@@ -58,7 +60,7 @@
                         <hr>
                         <div class="container-button">
                             <button type="reset"><i class='bx bx-trash'></i> <span>Limpar</span></button>
-                            <button type="submit"><i class='bx bx-message-square-add'></i> <span>Cadastrar</span></button>
+                            <button type="submit" id="envTamanho" name="envTamanho"><i class='bx bx-message-square-add'></i> <span>Cadastrar</span></button>
                         </div>
                     </form>
                 </section>

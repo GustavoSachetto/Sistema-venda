@@ -58,7 +58,7 @@
                         <hr>
                         <div class="container-button">
                             <button type="reset"><i class='bx bx-trash'></i> <span>Limpar</span></button>
-                            <button type="submit"><i class='bx bx-message-square-add'></i> <span>Cadastrar</span></button>
+                            <button type="submit" id="envEstoque" name="envEstoque"><i class='bx bx-message-square-add'></i> <span>Cadastrar</span></button>
                         </div>
                     </form>
                 </section>
