@@ -45,7 +45,7 @@
                         </div>
                     </form>
                 </section>
-                <section id="tamanho">                
+                <section id="tamanho" class="tamanho">                
                     <h3>Cliente / tamanho</h3>
                     <form method="post" action="">
                         <h2>Cadastro tamanho</h2>
