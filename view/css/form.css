@@ -44,6 +44,25 @@ main section > form input {
     background: transparent;
 }
 
+main section > form select {
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 4px 12px;
+    color: var(--text-color-dark);
+    border: 1px solid var(--text-color);
+    background: transparent;
+}
+
+main section > form select > option {
+
+}
+
+main section > form select > option::selection {
+    background-color: var(--link-color);
+}
+
 main section > form input::placeholder {
     color: var(--text-color);
 }
@@ -90,4 +109,3 @@ main section > form .container-button > button[type="reset"]:hover {
     background: transparent;
     border: 1px solid black;
 }
-
