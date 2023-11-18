@@ -17,6 +17,14 @@
         <main>
             <article>
                 <section>
+                    <div class="container-user">
+                        <i class='bx bxs-user-circle'></i>
+                        <div class="user">
+                            <span>Douglas junior</span>
+                            <span class="type-user">ADMIN</span>
+                        </div>
+                    </div>
+                    <h3>Cliente / cadastro</h3>
                     <form method="post" action="">
                         <h2>Cadastro cliente</h2>
                         <fieldset id="cliente">
@@ -36,7 +44,11 @@
                             <input type="text" placeholder="Complemento" name="txtComplemento" minlength="0" maxlength="10">
                             <input type="text" placeholder="Observacao" name="txtObservacao" maxlength="30">
                         </fieldset>
-                        <button type="submit">Enviar</button>
+                        <hr>
+                        <div class="container-button">
+                            <button type="reset"><i class='bx bx-trash'></i> <span>Limpar</span></button>
+                            <button type="submit"><i class='bx bx-message-square-add'></i> <span>Cadastrar</span></button>
+                        </div>
                     </form>
                 </section>
             </article>
