@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastro produto</title>
+        <title>Sistema-venda | cadastro produto</title>
         <?php require ('../layout/head.php') ?>
         <link rel="stylesheet" href="../css/form.css">
     </head>
@@ -25,7 +25,7 @@
                     </div>
                 </section>
                 <section>
-                    <h3>Cliente / produto</h3>
+                    <h3>Produto / cadastro</h3>
                     <form method="post" action="?codProduto=<?= $codProduto ?>">
                         <h2>Cadastro produto</h2>
                         <fieldset id="produto">

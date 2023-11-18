@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastro cliente</title>
+        <title>Sistema-venda | cadastro cliente</title>
         <link rel="stylesheet" href="../css/form.css">
         <?php require ('../layout/head.php') ?>
         <script src="../js/autoComplete.js"></script>
@@ -24,6 +24,8 @@
                             <span class="type-user">ADMIN</span>
                         </div>
                     </div>
+                </section>
+                <section>
                     <h3>Cliente / cadastro</h3>
                     <form method="post" action="">
                         <h2>Cadastro cliente</h2>

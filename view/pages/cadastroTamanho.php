@@ -23,7 +23,9 @@
                             <span class="type-user">ADMIN</span>
                         </div>
                     </div>
-                    <h3>Cliente / tamanho</h3>
+                </section>
+                <section>
+                    <h3>Tamanho / cadastro</h3>
                     <form method="post" action="">
                         <h2>Cadastro tamanho</h2>
                         <fieldset>
