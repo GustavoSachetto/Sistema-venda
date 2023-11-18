@@ -27,7 +27,7 @@
                 </section>
                 <section id="produto">
                     <h3>Produto / cadastro</h3>
-                    <form method="post" action="">
+                    <form method="post" action="" id="formProduto">
                         <h2>Cadastro produto</h2>
                         <fieldset>
                             <p>Informações do produto:</p><br>
@@ -47,7 +47,7 @@
                 </section>
                 <section id="tamanho" class="tamanho">                
                     <h3>Cliente / tamanho</h3>
-                    <form method="post" action="">
+                    <form method="post" action="" id="formTamanho">
                         <h2>Cadastro tamanho</h2>
                         <fieldset>
                             <span>Código produto: <?= $codProduto ?></span><br>

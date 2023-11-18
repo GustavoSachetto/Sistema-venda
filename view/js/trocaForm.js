@@ -1,10 +1,11 @@
 $(document).ready(function () {
     const envProduto = $('#envProduto');
-    const formProduto = $('#produto');
-    const formTamanho = $('.tamanho');
+    const formProduto = $('#formProduto');
     
-    envProduto.submit(() => {
-        formProduto.css('display', 'none');
-        formTamanho.classAdd('active');
+    envProduto.click(() => {
+        formProduto.submit(() => {
+            $('#produto').css('display', 'none');
+            $('#tamanho').addClass('active');
+        });
     });
 });
