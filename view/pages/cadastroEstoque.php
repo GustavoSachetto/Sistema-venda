@@ -7,7 +7,7 @@
         <title>Sistema-venda | cadastro estoque</title>
         <?php require ('../layout/head.php') ?>
         <link rel="stylesheet" href="../css/form.css">
-        <script src="../js/selecionaProduto.js"></script>
+        <script src="../js/form.js"></script>
     </head>
     <body>
         <?php 
@@ -39,7 +39,7 @@
                                     <?php opcoesP($produtos)?>
                                 </select>
                             </fieldset>
-                            <fieldset>
+                            <fieldset class="showProduto">
                                 <p><mark>Nome produto:</mark> <span id="nomeP"></span></p>
                                 <p><mark>Codigo produto:</mark> <span id="codP"></span></p>
                                 <p><mark>Categoria:</mark> <span id="cateP"></span></p>

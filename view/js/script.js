@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    // Sidebar
     const btnSidebar = $('.btn-sidebar');
     const tema = $('#tema');
     const textSwitch = $('.text-switch');

@@ -7,7 +7,7 @@
         <title>Sistema-venda | cadastro produto</title>
         <?php require ('../layout/head.php') ?>
         <link rel="stylesheet" href="../css/form.css">
-        <script src="../js/trocaForm.js"></script>
+        <script src="../js/form.js"></script>
     </head>
     <body>
         <?php 

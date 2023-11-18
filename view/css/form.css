@@ -25,13 +25,28 @@ main section > form fieldset {
     display: grid;
     grid-template-columns: 50% auto;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 13px;
 }
 
 main section > form fieldset p {
     font-size: 18px;
     margin: 0;
     color: var(--neutral-color);
+}
+
+
+main section > form fieldset.showProduto {
+    display: none;
+}
+
+main section > form fieldset.showProduto p {
+    margin: 8px 0;
+}
+
+main section > form fieldset.showProduto mark {
+    background: transparent;
+    font-weight: 500;
+    color: var(--text-color);
 }
 
 main section > form input {
@@ -44,8 +59,27 @@ main section > form input {
     background: transparent;
 }
 
+main section > form input:disabled {
+    opacity: 60%;
+}
+
 main section > form input::placeholder {
     color: var(--text-color);
+}
+
+main section > form select {
+    font-size: 18px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 4px 12px;
+    cursor: pointer;
+    color: var(--text-color-dark);
+    border: 1px solid var(--text-color);
+    background: transparent;
+}
+
+main section > form select > option {
+    background-color: var(--form-color);
 }
 
 main section > form .container-button {

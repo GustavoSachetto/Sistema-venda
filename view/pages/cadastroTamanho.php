@@ -7,6 +7,7 @@
         <title>Sistema-venda | cadastro tamanho</title>
         <?php require ('../layout/head.php') ?>
         <link rel="stylesheet" href="../css/form.css">
+        <script src="../js/form.js"></script>
     </head>
     <body>
         <?php 
