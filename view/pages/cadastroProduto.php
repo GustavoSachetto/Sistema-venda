@@ -23,6 +23,8 @@
                             <span class="type-user">ADMIN</span>
                         </div>
                     </div>
+                </section>
+                <section>
                     <h3>Cliente / produto</h3>
                     <form method="post" action="?codProduto=<?= $codProduto ?>">
                         <h2>Cadastro produto</h2>
@@ -41,6 +43,8 @@
                             <button type="submit"><i class='bx bx-message-square-add'></i> <span>Cadastrar</span></button>
                         </div>
                     </form>
+                </section>
+                <section>                
                     <h3>Cliente / tamanho</h3>
                     <form method="post" action="">
                         <h2>Cadastro tamanho</h2>
