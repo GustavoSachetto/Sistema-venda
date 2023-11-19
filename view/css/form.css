@@ -125,11 +125,3 @@ main section > form .container-button > button[type="reset"]:hover {
     background: transparent;
     border: 1px solid black;
 }
-
-main article > section.tamanho {
-    display: none;   
-}
-
-section.tamanho.active {
-    display: block;
-}
