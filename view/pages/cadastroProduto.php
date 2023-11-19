@@ -50,7 +50,8 @@
                     <form method="post" action="" id="formTamanho">
                         <h2>Cadastro tamanho</h2>
                         <fieldset>
-                            <span>Código produto: <?= $codProduto ?></span><br>
+                            <p>Informaçãos do produto:</p><br>
+                            <input name="codProduto" value="Código produto: <?= $proximoCod ?>" class="readonly" required readonly><br>
                             <p>Informações do tamanho produto:</p><br>
                             <select name="slcTamanho">
                                 <?php opcoes($tamanhos)?>
