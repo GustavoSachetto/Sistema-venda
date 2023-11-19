@@ -3,9 +3,7 @@
     $config = parse_ini_file('../../model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
     
-    const PRODUTO = "SELECT * FROM produto";
-
-    $produtos = $conexao -> consultaBanco(PRODUTO);
+    $produtos = $conexao -> consultaBanco("SELECT * FROM produto");
     $tamanhos = $conexao -> consultaTamanho();
 
     function opcoesP($produtos) {
@@ -22,7 +20,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $cadQuantidade = addslashes($_POST['txtQuantidade']);
-        $codProduto = $_POST['slcProduto'];
+        $codProduto =  addslashes($_POST['slcProduto']);
         $codTamanho = addslashes($_POST['slcTamanho']);
 
         $resultadoCadastro = $conexao -> insereTamanhoProduto($cadQuantidade, $codProduto, $codTamanho);

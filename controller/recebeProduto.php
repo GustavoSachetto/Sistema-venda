@@ -3,19 +3,6 @@
     $config = parse_ini_file('../../model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
 
-    const CODPRODUTO = "SHOW TABLE STATUS LIKE 'produto'";
-    
-    $resultado = $conexao -> consultaBanco(CODPRODUTO);
-    $proximoCod = $resultado[0]['Auto_increment'];
-    
-    $tamanhos = $conexao -> consultaTamanho();
-    
-    function opcoes($tamanhos) {
-        foreach ($tamanhos as $item) {
-            echo "<option value=" . $item['codTam'] . ">" . $item['tipoTamanho'] . "</option>";
-        }        
-    }
-
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $cadNomeP = addslashes($_POST['txtNomeP']);
         $cadValor = addslashes($_POST['txtValor']);

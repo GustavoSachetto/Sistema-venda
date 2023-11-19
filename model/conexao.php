@@ -1,5 +1,5 @@
 <?php 
-class conexao{
+class conexao {
     private $pdo;
     public function __construct($dbname, $host, $user, $password) {
         try {
@@ -103,8 +103,7 @@ class conexao{
     }
 
     public function insereTamanho($cadTam){
-        $insereTamanho = $this -> pdo -> prepare ("INSERT INTO tamanho(tipoTamanho)
-        VALUE (:t)");
+        $insereTamanho = $this -> pdo -> prepare ("INSERT INTO tamanho(tipoTamanho) VALUE (:t)");
 
         $insereTamanho->bindValue(":t", $cadTam);
 
@@ -185,8 +184,8 @@ class conexao{
     public function validaTamanhoProduto($cadQuantidade, $codProduto, $codTamanho) {
         $consulta = "SELECT COUNT(*) FROM tamanhop WHERE 
         quantidade = '$cadQuantidade' AND
-        codProduto = '$codProduto'    AND
-        codTam     = '$codTamanho '     ";
+        codProduto = '$codProduto   ' AND
+        codTam     = '$codTamanho   ' ";
         $resultado = $this -> consultaBanco($consulta);
         
         return $resultado[0]["COUNT(*)"];

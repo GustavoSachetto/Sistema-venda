@@ -1,3 +1,3 @@
-Tecnologias a utilizar:
+Tecnologias utilizadas:
 
 HTML, CSS, BOOTSTRAP, BOXICONS, JAVASCRIPT, JQUERY, SWEETALERT2, PHP e SQL;

@@ -5,14 +5,14 @@ main section h3 {
     margin: 18px 0;
 }
 
-main section > form h2 {
+main section>form h2 {
     font-size: 40px;
     font-weight: 600;
     margin: 14px 0;
     color: var(--secondary-color);
 }
 
-main section > form {
+main section>form {
     display: flex;
     flex-direction: column;
     padding: 15px 20px;
@@ -21,35 +21,34 @@ main section > form {
     border-radius: 10px;
 }
 
-main section > form fieldset {
+main section>form fieldset {
     display: grid;
     grid-template-columns: 50% auto;
     gap: 10px;
     margin-bottom: 13px;
 }
 
-main section > form fieldset p {
+main section>form fieldset p {
     font-size: 18px;
     margin: 0;
     color: var(--neutral-color);
 }
 
-
-main section > form fieldset.showProduto {
+main section>form fieldset.showProduto {
     display: none;
 }
 
-main section > form fieldset.showProduto p {
+main section>form fieldset.showProduto p {
     margin: 8px 0;
 }
 
-main section > form fieldset.showProduto mark {
+main section>form fieldset.showProduto mark {
     background: transparent;
     font-weight: 500;
     color: var(--text-color);
 }
 
-main section > form input {
+main section>form input {
     font-size: 18px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -59,16 +58,16 @@ main section > form input {
     background: transparent;
 }
 
-main section > form input.readonly{
+main section>form input.readonly {
     opacity: 60%;
     cursor: default;
 }
 
-main section > form input::placeholder {
+main section>form input::placeholder {
     color: var(--text-color);
 }
 
-main section > form select {
+main section>form select {
     font-size: 18px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -79,17 +78,17 @@ main section > form select {
     background: transparent;
 }
 
-main section > form select > option {
+main section>form select>option {
     background-color: var(--form-color);
 }
 
-main section > form .container-button {
+main section>form .container-button {
     display: flex;
     align-items: center;
     justify-content: right;
 }
 
-main section > form .container-button > button {
+main section>form .container-button>button {
     border: none;
     padding: 12px 2.7%;
     margin: 0 8px;
@@ -102,26 +101,26 @@ main section > form .container-button > button {
     transition: var(--transition-04);
 }
 
-main section > form .container-button > button[type="submit"] {
+main section>form .container-button>button[type="submit"] {
     background-color: var(--button-color-submit);
 }
 
-main section > form .container-button > button[type="submit"]:hover {
+main section>form .container-button>button[type="submit"]:hover {
     transform: scale(1.03);
     box-shadow: 1px 5px 10px #0000001f;
 }
 
-main section > form .container-button > button[type="submit"]:active {
+main section>form .container-button>button[type="submit"]:active {
     background-color: #6fd0f7;
     transition: none;
 }
 
-main section > form .container-button > button[type="reset"] {
+main section>form .container-button>button[type="reset"] {
     background-color: var(--button-color-reset);
 }
 
-main section > form .container-button > button[type="reset"]:hover {
-    color: black;
+main section>form .container-button>button[type="reset"]:hover {
+    color: var(--text-color-dark);
     background: transparent;
-    border: 1px solid black;
+    border: 1px solid var(--text-color-dark);
 }

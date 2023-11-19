@@ -16,7 +16,7 @@
         ?>
         <main>
             <article>
-                <section>
+                <section id="user">
                     <div class="container-user">
                         <i class='bx bxs-user-circle'></i>
                         <div class="user">
@@ -25,11 +25,11 @@
                         </div>
                     </div>
                 </section>
-                <section id="formProduto">
+                <section id="form">
                     <h3>Produto / cadastro</h3>
                     <form method="post" action="">
                         <h2>Cadastro produto</h2>
-                        <fieldset>
+                        <fieldset id="produto">
                             <p>Informações do produto:</p><br>
                             <input type="text" placeholder="Nome produto" name="txtNomeP" minlength="4" maxlength="70" required>
                             <input type="number" placeholder="Valor" name="txtValor" min="1" max="99999.99" step="0.01" required>
@@ -39,8 +39,14 @@
                             <input type="text" placeholder="Marca" name="txtMarca" minlength="4" maxlength="30" required>
                         </fieldset><hr>
                         <div class="container-button">
-                            <button type="reset"><i class='bx bx-trash'></i> <span>Limpar</span></button>
-                            <button type="submit"><i class='bx bx-message-square-add'></i> <span>Cadastrar</span></button>
+                            <button type="reset">
+                                <i class='bx bx-trash'></i>
+                                <span>Limpar</span>
+                            </button>
+                            <button type="submit">
+                                <i class='bx bx-message-square-add'></i>
+                                <span>Cadastrar</span>
+                            </button>
                         </div>
                     </form>
                 </section>

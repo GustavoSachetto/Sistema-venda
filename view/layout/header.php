@@ -16,11 +16,13 @@
         </div>
         <nav class="container-nav">
             <ul>
-                <li class="menu-link">
-                    <i class='bx bx-home-alt'></i>
-                    <div class="text">
-                        <a class="painel-link" href="../../index.php">Painel</a>
-                    </div>
+                <li>
+                    <a class="menu-link" href="../../index.php">
+                        <i class='bx bx-home-alt'></i>
+                        <div class="text">
+                            <span class="painel-link">Painel</span>
+                        </div>
+                    </a>
                 </li>
                 <li class="dropdown">
                     <div type="button" class="menu-link" data-bs-toggle="dropdown" aria-expanded="false">
