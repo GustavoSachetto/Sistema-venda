@@ -21,12 +21,32 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (isset($_POST['envEstoque'])) {
-            $cadQuantidade = addslashes($_POST['txtQuantidade']);
-            $codProduto = $_POST['slcProduto'];
-            $codTamanho = addslashes($_POST['slcTamanho']);
-    
-            $conexao -> insereTamanhoProduto($cadQuantidade, $codProduto, $codTamanho);
+        $cadQuantidade = addslashes($_POST['txtQuantidade']);
+        $codProduto = $_POST['slcProduto'];
+        $codTamanho = addslashes($_POST['slcTamanho']);
+
+        $resultadoCadastro = $conexao -> insereTamanhoProduto($cadQuantidade, $codProduto, $codTamanho);
+
+        if ($resultadoCadastro === true) {
+            echo '
+            <script>
+                Swal.fire({
+                    title: "Concluído!",
+                    text: "Estoque cadastrado com sucesso.",
+                    icon: "success"
+                });   
+            </script>
+            ';
+        } else {
+            echo '
+            <script>
+                Swal.fire({
+                    title: "Erro!",
+                    text: "Estoque já existente.",
+                    icon: "error"
+                });   
+            </script>
+            ';
         }
     }    
 ?>
