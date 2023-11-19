@@ -34,7 +34,7 @@
                         <h2>Cadastro estoque</h2>
                         <fieldset id="produto">
                             <p>Informações do produto:</p><br>
-                                <select id="slcProduto" name="slcProduto">
+                                <select id="slcProduto" name="slcProduto" required>
                                     <option value="">Selecione pelo nome</option>
                                     <?php opcoesP($produtos)?>
                                 </select>
@@ -50,7 +50,8 @@
                             </fieldset>
                         <fieldset id="tamanho">
                             <p>Informações do tamanho produto:</p><br>
-                            <select name="slcTamanho">
+                            <select name="slcTamanho" required>
+                                <option value="">Selecione um tamanho</option>
                                 <?php opcoesT($tamanhos)?>
                             </select>
                             <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
