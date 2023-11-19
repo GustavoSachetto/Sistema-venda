@@ -37,15 +37,4 @@ $(document).ready(function () {
             showProduto.slideUp();
         } 
     });
-    
-    // Troca formulario
-    const envProduto = $('#envProduto');
-    const formProduto = $('#formProduto');
-    
-    envProduto.click(() => {
-        formProduto.submit(() => {
-            $('#produto').css('display', 'none');
-            $('#tamanho').addClass('active');
-        });
-    });
 });
