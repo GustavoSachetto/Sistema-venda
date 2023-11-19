@@ -29,4 +29,5 @@ produto.categoria   LIKE '%%'   AND
 produto.genero      LIKE '%%'    AND 
 produto.marca       LIKE '%%'  AND
 produto.tipo        LIKE '%%'   AND
-produto.codProduto  LIKE '%%' ORDER BY produto.codProduto ASC;
+tamanho.codTam      LIKE '%%'  AND
+produto.codProduto  LIKE '%%'  ORDER BY produto.codProduto ASC;

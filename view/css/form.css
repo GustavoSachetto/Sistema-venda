@@ -59,8 +59,9 @@ main section > form input {
     background: transparent;
 }
 
-main section > form input:disabled {
+main section > form input.readonly{
     opacity: 60%;
+    cursor: default;
 }
 
 main section > form input::placeholder {
