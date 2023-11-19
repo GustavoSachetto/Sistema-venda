@@ -91,7 +91,15 @@ class conexao{
         $insereCliente->bindValue(":numero", $cadNumero);
         $insereCliente->bindValue(":comp", $cadComplemento);
         $insereCliente->bindValue(":obs", $cadObservacao);
-        $insereCliente->execute();
+        
+        $validaCliente = $this->validaCliente($cadCpf);
+        
+        if ($validaCliente === 0) {
+            $insereCliente->execute();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function insereTamanho($cadTam){
@@ -99,6 +107,7 @@ class conexao{
         VALUE (:t)");
 
         $insereTamanho->bindValue(":t", $cadTam);
+
         $validaTamanho = $this->validaTamanho($cadTam);
 
         if ($validaTamanho === 0) {
@@ -107,13 +116,6 @@ class conexao{
         } else {
             return false;
         }
-    }
-
-    public function validaTamanho($cadTam) {
-        $consulta = "SELECT COUNT(*) FROM tamanho WHERE tipoTamanho = '$cadTam'";
-        $resultado = $this -> consultaBanco($consulta);
-        
-        return $resultado[0]["COUNT(*)"];
     }
 
     public function insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca) {
@@ -126,7 +128,15 @@ class conexao{
         $insereProduto->bindValue(":gen", $cadGen);
         $insereProduto->bindValue(":tipo", $cadTipo);
         $insereProduto->bindValue(":marca", $cadMarca);
-        $insereProduto->execute();
+
+        $validaProduto = $this->validaProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca);
+
+        if ($validaProduto === 0) {
+            $insereProduto->execute();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function insereTamanhoProduto($cadQuantidade, $codProduto, $codTamanho) {
@@ -137,6 +147,35 @@ class conexao{
         $insereTamanhoProduto->execute();
     }
 
+    public function validaCliente($cadCpf) {
+        $consulta = "SELECT COUNT(*) FROM cliente WHERE cpf = '$cadCpf'";
+        $resultado = $this -> consultaBanco($consulta);
+        
+        return $resultado[0]["COUNT(*)"];
+    }
+
+
+    public function validaTamanho($cadTam) {
+        $consulta = "SELECT COUNT(*) FROM tamanho WHERE tipoTamanho = '$cadTam'";
+        $resultado = $this -> consultaBanco($consulta);
+        
+        return $resultado[0]["COUNT(*)"];
+    }
+
+    
+    public function validaProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca) {
+        $consulta = "SELECT COUNT(*) FROM produto WHERE 
+        nomeProduto = '$cadNomeP' AND
+        valor       = '$cadValor' AND
+        categoria   = '$cadCat  ' AND
+        genero      = '$cadGen  ' AND
+        tipo        = '$cadTipo ' AND
+        marca       = '$cadMarca' ";
+        $resultado = $this -> consultaBanco($consulta);
+        
+        return $resultado[0]["COUNT(*)"];
+    }
+    
     public function deleteProduto($codProduto) {
         $deleteProduto = $this-> pdo -> prepare("DELETE FROM produto where codProduto = :codP");
         $deleteProduto->bindValue(":codP", $codProduto);
