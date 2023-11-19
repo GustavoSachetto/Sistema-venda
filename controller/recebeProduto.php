@@ -17,45 +17,35 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (isset($_POST['envProduto'])) {
-            $cadNomeP = addslashes($_POST['txtNomeP']);
-            $cadValor = addslashes($_POST['txtValor']);
-            $cadCat = addslashes($_POST['txtCat']);
-            $cadGen = addslashes($_POST['txtGen']);
-            $cadTipo = addslashes($_POST['txtTipo']);
-            $cadMarca = addslashes($_POST['txtMarca']);
-    
-            $resultadoCadastro = $conexao -> insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca);
+        $cadNomeP = addslashes($_POST['txtNomeP']);
+        $cadValor = addslashes($_POST['txtValor']);
+        $cadCat = addslashes($_POST['txtCat']);
+        $cadGen = addslashes($_POST['txtGen']);
+        $cadTipo = addslashes($_POST['txtTipo']);
+        $cadMarca = addslashes($_POST['txtMarca']);
 
-            if ($resultadoCadastro === true) {
-                echo '
-                <script>
-                    Swal.fire({
-                        title: "Concluído!",
-                        text: "Produto cadastrado com sucesso.",
-                        icon: "success"
-                    });   
-                </script>
-                ';
-            } else {
-                echo '
-                <script>
-                    Swal.fire({
-                        title: "Erro!",
-                        text: "Produto já existente.",
-                        icon: "error"
-                    });   
-                </script>
-                ';
-            }
-        }
+        $resultadoCadastro = $conexao -> insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca);
         
-        if (isset($_POST['envTamanho'])) {
-            $cadQuantidade = addslashes($_POST['txtQuantidade']);
-            $codProduto = addslashes($_POST['codProduto']);
-            $codTamanho = addslashes($_POST['slcTamanho']);
-            
-            $conexao -> insereTamanhoProduto($cadQuantidade, $codProduto, $codTamanho);
+        if ($resultadoCadastro === true) {
+            echo '
+            <script>
+                Swal.fire({
+                    title: "Concluído!",
+                    text: "Produto cadastrado com sucesso.",
+                    icon: "success"
+                });   
+            </script>
+            ';
+        } else {
+            echo '
+            <script>
+                Swal.fire({
+                    title: "Erro!",
+                    text: "Produto já existente.",
+                    icon: "error"
+                });   
+            </script>
+            ';
         }
     }    
 ?>
