@@ -6,7 +6,7 @@
     const CODPRODUTO = "SHOW TABLE STATUS LIKE 'produto'";
     
     $resultado = $conexao -> consultaBanco(CODPRODUTO);
-    $codProduto = $resultado[0]['Auto_increment'];
+    $proximoCod = $resultado[0]['Auto_increment'];
     
     $tamanhos = $conexao -> consultaTamanho();
     
@@ -25,14 +25,36 @@
             $cadTipo = addslashes($_POST['txtTipo']);
             $cadMarca = addslashes($_POST['txtMarca']);
     
-            $conexao -> insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca);
-        }
+            $resultadoCadastro = $conexao -> insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca);
 
+            if ($resultadoCadastro === true) {
+                echo '
+                <script>
+                    Swal.fire({
+                        title: "Concluído!",
+                        text: "Produto cadastrado com sucesso.",
+                        icon: "success"
+                    });   
+                </script>
+                ';
+            } else {
+                echo '
+                <script>
+                    Swal.fire({
+                        title: "Erro!",
+                        text: "Produto já existente.",
+                        icon: "error"
+                    });   
+                </script>
+                ';
+            }
+        }
+        
         if (isset($_POST['envTamanho'])) {
             $cadQuantidade = addslashes($_POST['txtQuantidade']);
-            $codProduto = $_GET['codProduto'];
+            $codProduto = addslashes($_POST['codProduto']);
             $codTamanho = addslashes($_POST['slcTamanho']);
-    
+            
             $conexao -> insereTamanhoProduto($cadQuantidade, $codProduto, $codTamanho);
         }
     }    
