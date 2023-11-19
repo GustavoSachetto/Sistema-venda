@@ -25,9 +25,9 @@
                         </div>
                     </div>
                 </section>
-                <section id="produto">
+                <section id="formProduto">
                     <h3>Produto / cadastro</h3>
-                    <form method="post" action="" id="formProduto">
+                    <form method="post" action="">
                         <h2>Cadastro produto</h2>
                         <fieldset>
                             <p>Informações do produto:</p><br>
@@ -37,31 +37,10 @@
                             <input type="text" placeholder="Genero" name="txtGen" minlength="4" maxlength="10" required>
                             <input type="text" placeholder="Tipo" name="txtTipo" minlength="4" maxlength="30" required>
                             <input type="text" placeholder="Marca" name="txtMarca" minlength="4" maxlength="30" required>
-                        </fieldset>
-                        <hr>
+                        </fieldset><hr>
                         <div class="container-button">
                             <button type="reset"><i class='bx bx-trash'></i> <span>Limpar</span></button>
-                            <button type="submit" id="envProduto" name="envProduto"><i class='bx bx-message-square-add'></i> <span>Cadastrar</span></button>
-                        </div>
-                    </form>
-                </section>
-                <section id="tamanho" class="tamanho">                
-                    <h3>Cliente / tamanho</h3>
-                    <form method="post" action="" id="formTamanho">
-                        <h2>Cadastro tamanho</h2>
-                        <fieldset>
-                            <p>Informaçãos do produto:</p><br>
-                            <input name="codProduto" value="Código produto: <?= $proximoCod ?>" class="readonly" required readonly><br>
-                            <p>Informações do tamanho produto:</p><br>
-                            <select name="slcTamanho">
-                                <?php opcoes($tamanhos)?>
-                            </select>
-                            <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
-                        </fieldset>
-                        <hr>
-                        <div class="container-button">
-                            <button type="reset"><i class='bx bx-trash'></i> <span>Limpar</span></button>
-                            <button type="submit" id="envTamanho" name="envTamanho"><i class='bx bx-message-square-add'></i> <span>Cadastrar</span></button>
+                            <button type="submit"><i class='bx bx-message-square-add'></i> <span>Cadastrar</span></button>
                         </div>
                     </form>
                 </section>
