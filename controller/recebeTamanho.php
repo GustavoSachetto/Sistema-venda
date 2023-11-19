@@ -10,9 +10,19 @@
             echo '
             <script>
                 Swal.fire({
-                    title: "Cadastrado!",
+                    title: "Concluído!",
                     text: "Tamanho cadastrado com sucesso.",
                     icon: "success"
+                });   
+            </script>
+            ';
+        } else {
+            echo '
+            <script>
+                Swal.fire({
+                    title: "Erro!",
+                    text: "Tamanho já existente.",
+                    icon: "error"
                 });   
             </script>
             ';

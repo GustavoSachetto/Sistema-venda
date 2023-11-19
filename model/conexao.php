@@ -100,7 +100,7 @@ class conexao{
 
         $insereTamanho->bindValue(":t", $cadTam);
         $validaTamanho = $this->validaTamanho($cadTam);
-        
+
         if ($validaTamanho === 0) {
             $insereTamanho->execute();
             return true;
@@ -113,7 +113,7 @@ class conexao{
         $consulta = "SELECT COUNT(*) FROM tamanho WHERE tipoTamanho = '$cadTam'";
         $resultado = $this -> consultaBanco($consulta);
         
-        return $resultado;
+        return $resultado[0]["COUNT(*)"];
     }
 
     public function insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca) {
