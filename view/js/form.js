@@ -13,10 +13,12 @@ $(document).ready(function () {
         });
     });
 
-    // Seleciona produto
-    let selecionar = $('#slcProduto');
-    selecionar.change(() => {
-        codigoProduto = selecionar.val();
+    // Select produto
+    let slcProduto = $('#slcProduto');
+    const showProduto = $('.showProduto');
+    
+    slcProduto.change(() => {
+        codigoProduto = slcProduto.val();
         produtos.forEach(item => {
             if (item['codProduto'] == codigoProduto) {
                 $('#nomeP').text(item['nomeProduto']);
@@ -28,6 +30,12 @@ $(document).ready(function () {
                 $('#valorP').text("R$"+item['valor']);
             }
         });
+        
+        showProduto.slideDown();
+
+        if (!codigoProduto) {
+            showProduto.slideUp();
+        } 
     });
     
     // Troca formulario
@@ -35,18 +43,9 @@ $(document).ready(function () {
     const formProduto = $('#formProduto');
     
     envProduto.click(() => {
-        formProduto.submit((e) => {
-            e.preventDefault();
+        formProduto.submit(() => {
             $('#produto').css('display', 'none');
             $('#tamanho').addClass('active');
         });
-    });
-
-    // Select estoque
-    const slcProduto = $ ('#slcProduto');
-    const showProduto = $('.showProduto');
-
-    slcProduto.change(() => {
-        showProduto.slideDown();
     });
 });
