@@ -16,6 +16,28 @@
         $cadComplemento = addslashes($_POST['txtComplemento']);
         $cadObservacao = addslashes($_POST['txtObservacao']);
 
-        $conexao -> insereCliente($cadNome, $cadCpf, $cadCep, $cadUF, $cadCidade, $cadBairro, $cadRua, $cadLogradouro, $cadNumero, $cadComplemento, $cadObservacao);
+        $resultadoCadastro = $conexao -> insereCliente($cadNome, $cadCpf, $cadCep, $cadUF, $cadCidade, $cadBairro, $cadRua, $cadLogradouro, $cadNumero, $cadComplemento, $cadObservacao);
+
+        if ($resultadoCadastro === true) {
+            echo '
+            <script>
+                Swal.fire({
+                    title: "Concluído!",
+                    text: "Cliente cadastrado com sucesso.",
+                    icon: "success"
+                });   
+            </script>
+            ';
+        } else {
+            echo '
+            <script>
+                Swal.fire({
+                    title: "Erro!",
+                    text: "Cliente já existente (verifique o CPF).",
+                    icon: "error"
+                });   
+            </script>
+            ';
+        }
     }
 ?> 
