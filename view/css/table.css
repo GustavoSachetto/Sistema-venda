@@ -1,27 +1,106 @@
+@charset "UTF-8";
+
+main section h3 {
+    font-size: 20px;
+    margin: 18px 0;
+}
+
+main section>form h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 18px 0 24px 0;
+    color: var(--secondary-color);
+}
+
+.container-busca>form, .container-table {
+    padding: 15px 20px;
+    background-color: var(--form-color);
+    box-shadow: var(--form-shadow);
+    border-radius: 10px;
+}
+
+.container-busca>form button {
+    border: none;
+    padding: 4px 2.7%;
+    margin: 0 8px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    border: 1px solid transparent;
+    transition: var(--transition-02);
+    box-shadow: var(--button-shadow);
+    background-color: var(--button-color-search);
+}
+
+.container-busca>form button[type="submit"]:hover {
+    transform: scale(1.04);
+    box-shadow: 1px 5px 10px #0000001f;
+}
+
+.container-busca>form input , .container-busca>form select  {
+    font-size: 18px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    max-width: 180px;
+    padding: 4px 0 4px 12px;
+    color: var(--text-color-dark);
+    border: 1px solid var(--text-color);
+    background: transparent;
+}
+
+.container-busca>form input::placeholder {
+    color: var(--text-color);
+}
+
+main section>form select {
+    cursor: pointer;
+    padding: 4px 12px;
+}
+
+.container-table {
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+}
+
 table, th, td {
-    border: 1px solid black;
+    width: 90px;
 }
 
 table {
-    border-collapse: collapse;
-    margin: auto;
-}
-
-th, td {
-    padding: 10px;
+    width: 100%;
     text-align: center;
-    width: 110px;
-}
-
-th {
-    font-weight: bold;
 }
 
 tr:nth-child(even) {
-    background-color: gainsboro;
+    background-color: var(--tbody-color);
 }
 
-button {
+table>thead {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--primary-color-light);
+    background-color: var(--secondary-color);
+}
+
+table>thead td {
+    padding: 20px 5px;
+}
+
+table>tbody td {
+    color: var(--text-color);
+    font-size: 15px;
+    padding: 8px 5px;
+}
+
+table>tfoot td {
+    padding: 4px 5px;
+    color: var(--primary-color-light);
+    background-color: var(--secondary-color);
+}
+
+table tr>td>button {
     border: none;
     background: transparent;
 }
