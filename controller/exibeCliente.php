@@ -29,10 +29,10 @@
                         <td>Ações</td>
                     </tr>
                 </thead>  
+                <tbody>
         ";
         foreach ($clientes as $cliente) {
             echo "
-                <tbody>
                     <tr>
                         <td>" . stripslashes($cliente['codCliente']) . "</td>
                         <td>" . stripslashes($cliente['nomeCliente']) . "</td>
@@ -50,10 +50,10 @@
                             <button type='submit' name='excluir' value=" . $cliente['codCliente'] . ">Excluir</button>
                         </td>
                     </tr>
-                </tbody>
-            ";
+                ";
         }
         echo "
+                </tbody>
                 <tfoot>
                     <tr>
                         <td colspan='13'>Cadastrar mais clientes</td>
