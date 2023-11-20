@@ -42,7 +42,7 @@ main section>form h2 {
     font-size: 18px;
     border-radius: 5px;
     margin-bottom: 10px;
-    max-width: 180px;
+    width: 180px;
     padding: 4px 0 4px 12px;
     color: var(--text-color-dark);
     border: 1px solid var(--text-color);
@@ -73,10 +73,6 @@ table {
     text-align: center;
 }
 
-tr:nth-child(even) {
-    background-color: var(--tbody-color);
-}
-
 table>thead {
     font-size: 17px;
     font-weight: 500;
@@ -91,13 +87,18 @@ table>thead td {
 table>tbody td {
     color: var(--text-color);
     font-size: 15px;
-    padding: 8px 5px;
+    padding: 3px 5px;
+    height: 60px;
 }
 
 table>tfoot td {
     padding: 4px 5px;
     color: var(--primary-color-light);
     background-color: var(--secondary-color);
+}
+
+tr:nth-child(even) {
+    background-color: var(--tbody-color);
 }
 
 table tr>td>button {
