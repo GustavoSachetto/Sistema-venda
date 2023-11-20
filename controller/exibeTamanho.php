@@ -10,11 +10,15 @@
         $resultado = $conexao -> consultaTamanho();
 
         echo "
+        <h2>Exibe tamanhos</h2>
         <table>
-            <tr>
-                <td>Tipo tamanho</td>
-                <td>Código tamanho</td>
-            </tr>
+            <thead>    
+                <tr>
+                    <td>Tipo tamanho</td>
+                    <td>Código tamanho</td>
+                </tr>
+            </thead>
+            <tbody>
         ";
         foreach ($resultado as $valor) {
             echo "
@@ -24,7 +28,14 @@
                 </tr>
             ";
         }
-        echo "</table>";
+        echo "
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan='13'>Cadastrar mais tamanhos</td>
+                </tr>
+            </tfoot>
+        </table>";
     } else {
         echo "<p>Nenhum tamanho cadastrado!</p>";
     }
