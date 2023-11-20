@@ -53,9 +53,13 @@ main section>form h2 {
     color: var(--text-color);
 }
 
-main section>form select {
+.container-busca>form select {
     cursor: pointer;
     padding: 4px 12px;
+}
+
+.container-busca>form select>option {
+    background-color: var(--form-color);
 }
 
 .container-table {
