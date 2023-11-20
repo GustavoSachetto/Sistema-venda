@@ -8,25 +8,27 @@
 
     if ($verifica[0]['count(*)'] !== 0) {
         
-        echo "<form method='post' action=''>
-        <table>
-            <thead>
-                <tr>
-                    <td>#</td>
-                    <td>Nome</td>
-                    <td>CPF</td>
-                    <td>CEP</td>
-                    <td>Rua</td>
-                    <td>Número</td>
-                    <td>Bairro</td>
-                    <td>Cidade</td>
-                    <td>UF</td>
-                    <td>Tipo Logradouro</td>
-                    <td>Complemento</td>
-                    <td>Observação</td>
-                    <td>Ações</td>
-                </tr>
-            </thead>
+        echo "
+        <form method='post' action=''>
+            <h2>Exibe clientes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Nome</td>
+                        <td>CPF</td>
+                        <td>CEP</td>
+                        <td>Rua</td>
+                        <td>Número</td>
+                        <td>Bairro</td>
+                        <td>Cidade</td>
+                        <td>UF</td>
+                        <td>Log</td>
+                        <td>Comple</td>
+                        <td>Observação</td>
+                        <td>Ações</td>
+                    </tr>
+                </thead>  
         ";
         foreach ($clientes as $cliente) {
             echo "
@@ -51,7 +53,14 @@
                 </tbody>
             ";
         }
-        echo "</table></form>";
+        echo "
+                <tfoot>
+                    <tr>
+                        <td colspan='13'>Cadastrar mais clientes</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </form>";
     } else {
         echo "<p>Nenhum cliente cadastrado!</p>";
     }
