@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Exibir tamanhos</title>
+        <title>Sistema-venda | exibe tamanho</title>
         <?php require ('../layout/head.php') ?>
         <link rel="stylesheet" href="../css/table.css">
     </head>
@@ -12,7 +12,21 @@
     <?php require ('../layout/header.php') ?>
         <main>
             <article>
-                <?php include ('../../controller/exibeTamanho.php') ?>
+                <section id="user">
+                    <div class="container-user">
+                        <i class='bx bxs-user-circle'></i>
+                        <div class="user">
+                            <span>Douglas junior</span>
+                            <span class="type-user">ADMIN</span>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Tamanho / exibe</h3>
+                </section>
+                <section id="table" class="container-table">
+                    <?php include ('../../controller/exibeTamanho.php') ?>
+                </section>
             </article>
         </main>
         <?php require ('../layout/footer.php') ?>
