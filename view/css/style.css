@@ -17,13 +17,15 @@
     --primary-color: #695CFE;
     --secondary-color: #695CFE;
     --primary-color-light: #F6F5FF;
-    --toogle-color: #DDDDDD;
+    --toggle-color: #DDDDDD;
+    --tbody-color: #DDDDDD;
     --title-color: #18191A;
     --text-color: #707070;
     --text-color-dark: #252525;
     --link-color: #775fff;
     --link-color-hover: #2f1cfd;
     --button-color-submit: #2BB94A;
+    --button-color-search: #4aa3df;
     --button-color-reset: #b92b2b;
     --base-color: #F0EEFF;
 
@@ -51,13 +53,15 @@ body.dark {
     --primary-color: #e6e6e6;
     --secondary-color: #e1deff;
     --primary-color-light: #3a3b3c;
-    --toogle-color: #FFFFFF;
+    --toggle-color: #FFFFFF;
+    --tbody-color: #535353;
     --text-color: #CCCCCC;
     --text-color-dark: #f7f7f7;
     --title-color: #f1f1f1;
     --link-color: #b6a9ff;
     --link-color-hover: #ccc8fa;
     --button-color-submit: #2bb94aa8;
+    --button-color-search: #4aa4dfa1;
     --button-color-reset: #b92b2bad;
     --base-color: #616161;
 
@@ -343,7 +347,7 @@ body.dark {
     height: 22px;
     width: 44px;
     border-radius: 25px;
-    background: var(--toogle-color);
+    background: var(--toggle-color);
     cursor: pointer;
 }
 
