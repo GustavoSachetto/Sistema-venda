@@ -48,7 +48,7 @@ main section>form fieldset.showProduto mark {
     color: var(--text-color);
 }
 
-main section>form input {
+main section>form input, main section>form select {
     font-size: 18px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -65,17 +65,6 @@ main section>form input.readonly {
 
 main section>form input::placeholder {
     color: var(--text-color);
-}
-
-main section>form select {
-    font-size: 18px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    padding: 4px 12px;
-    cursor: pointer;
-    color: var(--text-color-dark);
-    border: 1px solid var(--text-color);
-    background: transparent;
 }
 
 main section>form select>option {
