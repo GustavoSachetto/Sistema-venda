@@ -8,7 +8,7 @@
 
     function opcoesP($produtos) {
         foreach ($produtos as $item) {
-            echo "<option value=" . $item['codProduto'] . ">" . $item['nomeProduto'] . "</option>";
+            echo "<option value=" . $item['codProduto'] . ">" . $item['codProduto'] . " - " . $item['nomeProduto'] . "</option>";
         }        
     }
     

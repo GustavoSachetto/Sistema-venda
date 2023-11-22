@@ -34,20 +34,20 @@
                         <h2>Cadastro estoque</h2>
                         <fieldset id="produto">
                             <p>Informações do produto:</p><br>
-                                <select id="slcProduto" name="slcProduto" required>
-                                    <option value="">Selecione pelo nome</option>
-                                    <?php opcoesP($produtos)?>
-                                </select>
-                            </fieldset>
-                            <fieldset class="showProduto">
-                                <p><mark>Nome produto:</mark> <span id="nomeP"></span></p>
-                                <p><mark>Codigo produto:</mark> <span id="codP"></span></p>
-                                <p><mark>Categoria:</mark> <span id="cateP"></span></p>
-                                <p><mark>Genero:</mark> <span id="geneP"></span></p>
-                                <p><mark>Marca:</mark> <span id="marcaP"></span></p>
-                                <p><mark>Tipo:</mark> <span id="tipoP"></span></p>
-                                <p><mark>Valor unitário:</mark> <span id="valorP"></span></p>
-                            </fieldset>
+                            <select id="slcProduto" name="slcProduto" required>
+                                <option value="">Selecione pelo nome</option>
+                                <?php opcoesP($produtos)?>
+                            </select>
+                        </fieldset>
+                        <fieldset class="showProduto">
+                            <p><mark>Nome produto:</mark> <span id="nomeP"></span></p>
+                            <p><mark>Codigo produto:</mark> <span id="codP"></span></p>
+                            <p><mark>Categoria:</mark> <span id="cateP"></span></p>
+                            <p><mark>Genero:</mark> <span id="geneP"></span></p>
+                            <p><mark>Marca:</mark> <span id="marcaP"></span></p>
+                            <p><mark>Tipo:</mark> <span id="tipoP"></span></p>
+                            <p><mark>Valor unitário:</mark> <span id="valorP"></span></p>
+                        </fieldset>
                         <fieldset id="tamanho">
                             <p>Informações do tamanho produto:</p><br>
                             <select name="slcTamanho" required>

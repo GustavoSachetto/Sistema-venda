@@ -36,6 +36,15 @@ class conexao {
         return $resultado;
     }
 
+    public function exibeEstoques() {
+        $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade FROM produto
+        INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
+        INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam ORDER BY produto.codProduto ASC";
+        $resultado = $this -> consultaBanco($consulta);
+
+        return $resultado;
+    }
+
     public function consultaProduto($buscaNome, $buscaCate, $buscaGen, $buscaMarca, $buscaTipo, $buscaCod) {
         $consulta = "SELECT * FROM produto WHERE 
         produto.nomeProduto LIKE '%$buscaNome%'   AND 
