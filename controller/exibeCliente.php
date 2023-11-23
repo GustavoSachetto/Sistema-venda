@@ -31,23 +31,23 @@
                 </thead>  
                 <tbody>
         ";
-        foreach ($clientes as $cliente) {
+        foreach ($clientes as $item) {
             echo "
                     <tr>
-                        <td>" . stripslashes($cliente['codCliente']) . "</td>
-                        <td>" . stripslashes($cliente['nomeCliente']) . "</td>
-                        <td>" . stripslashes($cliente['cpf']) . "</td>
-                        <td>" . stripslashes($cliente['CEP']) . "</td>
-                        <td>" . stripslashes($cliente['rua']) . "</td>
-                        <td>" . stripslashes($cliente['nResidencial']). "</td>
-                        <td>" . stripslashes($cliente['bairro']) . "</td>
-                        <td>" . stripslashes($cliente['cidade']) . "</td>
-                        <td>" . stripslashes($cliente['UF']) . "</td>
-                        <td>" . stripslashes($cliente['tipoLogradouro']) . "</td>
-                        <td>" . stripslashes($cliente['complemento']) . "</td>
-                        <td>" . stripslashes($cliente['observacao']) . "</td>
+                        <td>" . stripslashes($item['codCliente']) . "</td>
+                        <td>" . stripslashes($item['nomeCliente']) . "</td>
+                        <td>" . stripslashes($item['cpf']) . "</td>
+                        <td>" . stripslashes($item['CEP']) . "</td>
+                        <td>" . stripslashes($item['rua']) . "</td>
+                        <td>" . stripslashes($item['nResidencial']). "</td>
+                        <td>" . stripslashes($item['bairro']) . "</td>
+                        <td>" . stripslashes($item['cidade']) . "</td>
+                        <td>" . stripslashes($item['UF']) . "</td>
+                        <td>" . stripslashes($item['tipoLogradouro']) . "</td>
+                        <td>" . stripslashes($item['complemento']) . "</td>
+                        <td>" . stripslashes($item['observacao']) . "</td>
                         <td>
-                            <button type='submit' name='excluir' value=" . $cliente['codCliente'] . ">Excluir</button>
+                            <button type='submit' name='excluir' value=" . $item['codCliente'] . ">Excluir</button>
                         </td>
                     </tr>
                 ";
