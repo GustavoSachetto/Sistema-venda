@@ -32,5 +32,14 @@ produto.tipo        LIKE '%%'   AND
 tamanho.codTam      LIKE '%%'  AND
 produto.codProduto  LIKE '%%'  ORDER BY produto.codProduto ASC;
 
-SELECT venda.*, SUM(vendaItem.valorUnitario) FROM venda 
-INNER JOIN vendaItem ON venda.codVenda = vendaItem.codVenda GROUP BY codVenda;
+SELECT venda.*, cliente.nomeCliente, SUM(vendaItem.valorUnitario) FROM venda 
+INNER JOIN cliente ON venda.codCliente = cliente.codCliente
+INNER JOIN vendaItem ON venda.codVenda = vendaItem.codVenda GROUP BY codVenda ORDER BY venda.codVenda ASC;
+
+SELECT venda.*, cliente.cpf, SUM(vendaItem.valorUnitario) FROM venda 
+INNER JOIN cliente ON cliente.codCliente = venda.codCliente 
+INNER JOIN vendaItem ON vendaItem.codVenda = venda.codVenda WHERE 
+venda.codVenda LIKE '%%' AND
+venda.codCliente LIKE '%%' AND
+cliente.cpf LIKE '%%' AND
+venda.dataHora LIKE '%%' GROUP BY venda.codVenda ORDER BY venda.codVenda ASC;

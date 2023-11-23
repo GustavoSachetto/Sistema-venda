@@ -36,6 +36,17 @@ class conexao {
         return $resultado;
     }
 
+    public function consultaVenda($buscaCodV, $buscaCpf, $buscaCodC, $buscaData) {
+        $consulta = "SELECT venda.*, cliente.cpf, SUM(vendaItem.valorUnitario) FROM venda INNER JOIN cliente ON venda.codCliente = cliente.codCliente INNER JOIN vendaItem ON venda.codVenda = vendaItem.codVenda WHERE 
+        venda.codVenda LIKE '%$buscaCodV%' AND
+        venda.codCliente LIKE '%$buscaCodC%' AND
+        cliente.cpf LIKE '%$buscaCpf%' AND
+        venda.dataHora LIKE '%$buscaData%' GROUP BY codVenda ORDER BY venda.codVenda ASC ";
+        $resultado = $this -> consultaBanco($consulta);
+
+        return $resultado;
+    }
+
     public function exibeEstoques() {
         $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade FROM produto
         INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto

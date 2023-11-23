@@ -7,7 +7,7 @@
     $verifica = $conexao -> consultaBanco($consulta);
 
     if ($verifica[0]['count(*)'] !== 0) {
-        $resultado = $conexao -> consultaTamanho();
+        $tamanhos = $conexao -> consultaTamanho();
 
         echo "
         <h2>Exibe tamanhos</h2>
@@ -20,11 +20,11 @@
             </thead>
             <tbody>
         ";
-        foreach ($resultado as $valor) {
+        foreach ($tamanhos as $item) {
             echo "
                 <tr>
-                    <td>" . stripslashes($valor['tipoTamanho']) . "</td>
-                    <td>" . stripslashes($valor['codTam']) . "</td>
+                    <td>" . stripslashes($item['tipoTamanho']) . "</td>
+                    <td>" . stripslashes($item['codTam']) . "</td>
                 </tr>
             ";
         }

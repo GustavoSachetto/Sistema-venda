@@ -25,19 +25,19 @@
             </thead>
             <tbody>
         ";
-        foreach ($produtos as $produto) {
+        foreach ($produtos as $item) {
 
             echo "
                     <tr>
-                        <td>" . stripslashes($produto['codProduto']) . "</td>
-                        <td>" . stripslashes($produto['nomeProduto']) . "</td>
-                        <td>" . stripslashes($produto['categoria']) . "</td>
-                        <td>" . stripslashes($produto['genero']) . "</td>
-                        <td>" . stripslashes($produto['marca']) . "</td>
-                        <td>" . stripslashes($produto['tipo']) . "</td>
-                        <td>" . "R$ " . number_format($produto['valor'], 2, ",", ".") . "</td>
+                        <td>" . stripslashes($item['codProduto']) . "</td>
+                        <td>" . stripslashes($item['nomeProduto']) . "</td>
+                        <td>" . stripslashes($item['categoria']) . "</td>
+                        <td>" . stripslashes($item['genero']) . "</td>
+                        <td>" . stripslashes($item['marca']) . "</td>
+                        <td>" . stripslashes($item['tipo']) . "</td>
+                        <td>" . "R$ " . number_format($item['valor'], 2, ",", ".") . "</td>
                         <td>
-                            <button type='submit' name='editar' value=" . $produto['codProduto'] . ">Editar</button>
+                            <button type='submit' name='editar' value=" . $item['codProduto'] . ">Editar</button>
                         </td>
                     </tr>
             ";
