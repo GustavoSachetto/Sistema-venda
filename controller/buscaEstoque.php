@@ -25,5 +25,5 @@
         }
     } 
 
-    $produtos = $conexao -> consultaEstoque($buscaNome, $buscaCate, $buscaGen, $buscaMarca, $buscaTipo, $buscaCod, $buscaCodTam);
+    $estoques = $conexao -> consultaEstoque($buscaNome, $buscaCate, $buscaGen, $buscaMarca, $buscaTipo, $buscaCod, $buscaCodTam);
 ?>
