@@ -84,7 +84,7 @@ insert into vendaitem(valorUnitario, quantidadeVenda, codVenda, codProduto) valu
 ( 98.00 , 6, 7, 3),
 ( 8.00 , 9, 2, 1),
 ( 10.00 , 56, 4, 2),
-( 38.00 , 100, 7, 4),
+( 38.00 , 100, 3, 4),
 ( 19.00 , 46, 2, 5),
 ( 50.80 , 89, 5, 3),
 ( 67.00 , 60, 1, 4),
