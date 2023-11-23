@@ -31,3 +31,6 @@ produto.marca       LIKE '%%'  AND
 produto.tipo        LIKE '%%'   AND
 tamanho.codTam      LIKE '%%'  AND
 produto.codProduto  LIKE '%%'  ORDER BY produto.codProduto ASC;
+
+SELECT venda.*, SUM(vendaItem.valorUnitario) FROM venda 
+INNER JOIN vendaItem ON venda.codVenda = vendaItem.codVenda GROUP BY codVenda;
