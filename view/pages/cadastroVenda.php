@@ -7,7 +7,7 @@
         <title>Sistema-venda | cadastro venda</title>
         <?php require ('../layout/head.php') ?>
         <link rel="stylesheet" href="../css/form.css">
-        <script src="../js/form.js"></script>
+        <script src="../js/formVenda.js"></script>
     </head>
     <body>
         <?php 
@@ -15,7 +15,8 @@
             include ('../../controller/recebeVenda.php');
         ?>
         <script>
-            var clientes = <?= json_encode($clientes) ?>
+            var clientes = <?= json_encode($clientes) ?>;
+            var estoques = <?= json_encode($estoques) ?>;
         </script>
         <main>
             <article>
@@ -47,31 +48,19 @@
                             <p><mark>Estado:</mark> <span id="estadoC"></span></p>
                             <p><mark>Cidade:</mark> <span id="cidadeC"></span></p>
                             <p><mark>Bairro:</mark> <span id="bairroC"></span></p>
-                            <p><mark>Logradouro:</mark> <span id="cidadeC"></span></p>
+                            <p><mark>Logradouro:</mark> <span id="logC"></span></p>
+                            <p><mark>Rua:</mark> <span id="ruaC"></span></p>
                             <p><mark>Numero:</mark> <span id="numeroC"></span></p>
                             <p><mark>Complemento:</mark> <span id="compleC"></span></p>
                             <p><mark>Observação:</mark> <span id="obserC"></span></p>
                         </fieldset>
                         <fieldset id="estoque">
                             <p>Informações dos produtos:</p><br>
-                            <select name="slcEstoque" required>
+                            <select id="slcEstoque" name="slcEstoque" required>
                                 <option value="">Selecione um produto</option>
                                 <?php opcoesE($estoques)?>
                             </select>
-                            <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
-                        </fieldset>
-                        <fieldset class="showCliente">
-                            <p><mark>Nome cliente:</mark> <span id="nomeC"></span></p>
-                            <p><mark>Codigo cliente:</mark> <span id="codC"></span></p>
-                            <p><mark>Cpf:</mark> <span id="cpfC"></span></p>
-                            <p><mark>CEP:</mark> <span id="cepC"></span></p>
-                            <p><mark>Estado:</mark> <span id="estadoC"></span></p>
-                            <p><mark>Cidade:</mark> <span id="cidadeC"></span></p>
-                            <p><mark>Bairro:</mark> <span id="bairroC"></span></p>
-                            <p><mark>Logradouro:</mark> <span id="cidadeC"></span></p>
-                            <p><mark>Numero:</mark> <span id="numeroC"></span></p>
-                            <p><mark>Complemento:</mark> <span id="compleC"></span></p>
-                            <p><mark>Observação:</mark> <span id="obserC"></span></p>
+                            <input type="number" placeholder="Quantidade" id="txtQuantidade" name="txtQuantidade" required>
                         </fieldset>
                         <div class="container-button">
                             <button type="reset">

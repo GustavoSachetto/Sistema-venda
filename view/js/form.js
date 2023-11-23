@@ -37,4 +37,9 @@ $(document).ready(function () {
             showProduto.slideUp();
         } 
     });
+
+    // Reset form
+    $('button[type=reset]').click(() => {
+        showProduto.slideUp();
+    });
 });

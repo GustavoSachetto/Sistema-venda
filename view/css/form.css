@@ -34,15 +34,15 @@ main section>form fieldset p {
     color: var(--neutral-color);
 }
 
-main section>form fieldset.showProduto {
+.showProduto, .showCliente {
     display: none;
 }
 
-main section>form fieldset.showProduto p {
+.showProduto p, .showCliente p {
     margin: 8px 0;
 }
 
-main section>form fieldset.showProduto mark {
+.showProduto mark, .showCliente mark {
     background: transparent;
     font-weight: 500;
     color: var(--text-color);
