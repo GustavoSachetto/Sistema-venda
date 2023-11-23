@@ -10,7 +10,7 @@
 
         echo "
         <form method='post' action=''>
-            <h2>Exibe estoques</h2>
+            <h2>Exibe produtos</h2>
             <table>
                 <thead>
                     <td>#</td>
