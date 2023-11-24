@@ -14,8 +14,10 @@
                 Swal.fire({
                     title: "Concluído!",
                     text: "Tamanho cadastrado com sucesso.",
+                    color: "var(--title-color)",
+                    background: "var(--alert-color)",
                     icon: "success"
-                });   
+                  });
             </script>
             ';
         } else {
@@ -24,6 +26,8 @@
                 Swal.fire({
                     title: "Erro!",
                     text: "Tamanho já existente.",
+                    color: "var(--title-color)",
+                    background: "var(--alert-color)",
                     icon: "error"
                 });   
             </script>
