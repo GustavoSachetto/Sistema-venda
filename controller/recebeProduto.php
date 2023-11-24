@@ -19,6 +19,8 @@
                 Swal.fire({
                     title: "Concluído!",
                     text: "Produto cadastrado com sucesso.",
+                    color: "var(--title-color)",
+                    background: "var(--alert-color)",
                     icon: "success"
                 });   
             </script>
@@ -29,6 +31,8 @@
                 Swal.fire({
                     title: "Erro!",
                     text: "Produto já existente.",
+                    color: "var(--title-color)",
+                    background: "var(--alert-color)",
                     icon: "error"
                 });   
             </script>
