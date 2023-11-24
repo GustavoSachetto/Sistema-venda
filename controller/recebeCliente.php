@@ -24,6 +24,8 @@
                 Swal.fire({
                     title: "Concluído!",
                     text: "Cliente cadastrado com sucesso.",
+                    color: "var(--title-color)",
+                    background: "var(--alert-color)",
                     icon: "success"
                 });   
             </script>
@@ -34,6 +36,8 @@
                 Swal.fire({
                     title: "Erro!",
                     text: "Cliente já existente (verifique o CPF).",
+                    color: "var(--title-color)",
+                    background: "var(--alert-color)",
                     icon: "error"
                 });   
             </script>
