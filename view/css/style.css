@@ -14,6 +14,7 @@
     --body-color: #E4E9F7;
     --form-color: #FFFFFF;
     --sidebar-color: #FFFFFF;
+    --alert-color: #FFFFFF;
     --primary-color: #695CFE;
     --secondary-color: #695CFE;
     --primary-color-light: #F6F5FF;
@@ -50,6 +51,7 @@ body.dark {
     --body-color: #333333;
     --form-color: #686868;
     --sidebar-color: #242526;
+    --alert-color: #383838;
     --primary-color: #e6e6e6;
     --secondary-color: #dbd8ff;
     --primary-color-light: #3a3b3c;
