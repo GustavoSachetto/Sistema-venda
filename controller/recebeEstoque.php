@@ -31,6 +31,8 @@
                 Swal.fire({
                     title: "Concluído!",
                     text: "Estoque cadastrado com sucesso.",
+                    color: "var(--title-color)",
+                    background: "var(--alert-color)",
                     icon: "success"
                 });   
             </script>
@@ -41,6 +43,8 @@
                 Swal.fire({
                     title: "Erro!",
                     text: "Estoque já existente.",
+                    color: "var(--title-color)",
+                    background: "var(--alert-color)",
                     icon: "error"
                 });   
             </script>
