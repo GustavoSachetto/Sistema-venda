@@ -1,4 +1,5 @@
 <?php
+    include 'alerta.php';
     require_once '../../model/conexao.php';
     $config = parse_ini_file('../../model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
@@ -33,7 +34,7 @@
                         <td>" . stripslashes($item['dataHora']) . "</td>
                         <td>" . "R$ " . number_format($item['SUM(vendaItem.valorUnitario)'], 2, ",", ".") . "</td>
                         <td>
-                            <button type='submit' name='editar' value=''>Editar</button>
+                            <button type='submit' name='editar' value=''>Ver</button>
                         </td>
                     </tr>
             ";
