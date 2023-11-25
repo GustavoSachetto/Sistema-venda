@@ -1,4 +1,5 @@
 <?php
+    include 'alerta.php';
     require_once '../../model/conexao.php';
     $config = parse_ini_file('../../model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
@@ -26,29 +27,9 @@
         $resultadoCadastro = $conexao -> insereTamanhoProduto($cadQuantidade, $codProduto, $codTamanho);
 
         if ($resultadoCadastro === true) {
-            echo '
-            <script>
-                Swal.fire({
-                    title: "Concluído!",
-                    text: "Estoque cadastrado com sucesso.",
-                    color: "var(--title-color)",
-                    background: "var(--alert-color)",
-                    icon: "success"
-                });   
-            </script>
-            ';
+            alerta("Concluído!", "Estoque cadastrado com sucesso.", "success");
         } else {
-            echo '
-            <script>
-                Swal.fire({
-                    title: "Erro!",
-                    text: "Estoque já existente.",
-                    color: "var(--title-color)",
-                    background: "var(--alert-color)",
-                    icon: "error"
-                });   
-            </script>
-            ';
+            alerta("Erro!", "Estoque já existente.", "error");
         }
     }    
 ?>

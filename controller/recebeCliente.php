@@ -1,4 +1,5 @@
 <?php 
+    include 'alerta.php';
     require_once '../../model/conexao.php';
     $config = parse_ini_file('../../model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
@@ -19,29 +20,9 @@
         $resultadoCadastro = $conexao -> insereCliente($cadNome, $cadCpf, $cadCep, $cadUF, $cadCidade, $cadBairro, $cadRua, $cadLogradouro, $cadNumero, $cadComplemento, $cadObservacao);
 
         if ($resultadoCadastro === true) {
-            echo '
-            <script>
-                Swal.fire({
-                    title: "Concluído!",
-                    text: "Cliente cadastrado com sucesso.",
-                    color: "var(--title-color)",
-                    background: "var(--alert-color)",
-                    icon: "success"
-                });   
-            </script>
-            ';
+            alerta("Concluído!", "Cliente cadastrado com sucesso.", "success");
         } else {
-            echo '
-            <script>
-                Swal.fire({
-                    title: "Erro!",
-                    text: "Cliente já existente (verifique o CPF).",
-                    color: "var(--title-color)",
-                    background: "var(--alert-color)",
-                    icon: "error"
-                });   
-            </script>
-            ';
+            alerta("Erro!", "Cliente já existente (verifique o CPF).", "error");
         }
     }
 ?> 
