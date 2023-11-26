@@ -43,3 +43,8 @@ venda.codVenda LIKE '%%' AND
 venda.codCliente LIKE '%%' AND
 cliente.cpf LIKE '%%' AND
 venda.dataHora LIKE '%%' GROUP BY venda.codVenda ORDER BY venda.codVenda ASC;
+
+SELECT COUNT(*) FROM produto
+INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
+INNER JOIN vendaitem ON vendaitem.codProduto = produto.codProduto
+WHERE produto.codProduto = 1;

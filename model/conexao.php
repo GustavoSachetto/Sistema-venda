@@ -217,6 +217,15 @@ class conexao {
         return $resultado[0]["COUNT(*)"];
     }
     
+    public function integridadeProduto($codProduto) {
+        $consulta = "SELECT COUNT(*) FROM produto
+        INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
+        WHERE produto.codProduto = '$codProduto'";
+        $resultado = $this -> consultaBanco($consulta);
+        
+        return $resultado[0]["COUNT(*)"];
+    }
+    
     public function atualizaProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca, $codProduto) {
         $atualizaProduto = $this-> pdo -> prepare("UPDATE produto SET nomeProduto = :n, valor = :v, tipo = :tipo, marca = :marca, categoria = :cat, genero = :gen WHERE codProduto = :codP;");
         $atualizaProduto->bindValue(":n", $cadNomeP);
@@ -227,7 +236,14 @@ class conexao {
         $atualizaProduto->bindValue(":marca", $cadMarca);
         $atualizaProduto->bindValue(":codP", $codProduto);
         
-        $atualizaProduto->execute();
+        $integridadeProduto = $this->integridadeProduto($codProduto);
+        
+        if ($integridadeProduto === 0) {
+            $atualizaProduto->execute();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function deleteProduto($codProduto) {

@@ -19,9 +19,14 @@
             $cadMarca = addslashes($_POST['txtMarca']);
             $codProduto = $_SESSION['codProduto'];
             
-            $conexao -> atualizaProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca, $codProduto);
+            $resultadoEditar = $conexao -> atualizaProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca, $codProduto);
+
+            if ($resultadoEditar === true) {
+                alerta("Concluído!", "Produto editado com sucesso.", "success");
+            } else {
+                alerta("Erro!", "Produto já foi colocado para estoque.", "error");
+            }
             
-            alerta("Concluído!", "Produto editado com sucesso.", "success");
         }
 
         $produto = $conexao -> exibeProduto($codProduto);
