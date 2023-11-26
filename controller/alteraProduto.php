@@ -24,7 +24,7 @@
             if ($resultadoEditar === true) {
                 alerta("Concluído!", "Produto editado com sucesso.", "success");
             } else {
-                alerta("Erro!", "Produto já foi colocado para estoque.", "error");
+                alerta("Erro!", "Produto já inserido no estoque.", "error");
             }
             
         }

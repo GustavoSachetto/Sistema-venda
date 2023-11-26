@@ -47,9 +47,9 @@
                         <td>" . stripslashes($item['complemento']) . "</td>
                         <td>" . stripslashes($item['observacao']) . "</td>
                         <td>
-                            <button type='submit' name='excluir' value=" . $item['codCliente'] . ">Excluir</button>
+                            <button type='submit' class='excluir' name='excluir' value=" . $item['codCliente'] . ">Excluir</button>
                         </td>
-                    </tr>
+                    </tr> 
                 ";
         }
         echo "

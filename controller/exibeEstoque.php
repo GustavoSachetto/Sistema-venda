@@ -42,7 +42,7 @@
                         <td>" . stripslashes($item['quantidade']) . "</td>
                         <td>" . "R$ " . number_format($item['valor'], 2, ",", ".") . "</td>
                         <td>
-                            <button type='submit' name='editar' value=" . $item['codProduto'] . ">Editar</button>
+                            <button type='submit' class='editar' name='editar' value=" . $item['codProduto'] . ">Editar</button>
                         </td>
                     </tr>
                 ";

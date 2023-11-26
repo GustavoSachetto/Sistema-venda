@@ -68,6 +68,24 @@ main section h2 {
     margin-top: 18px;
 }
 
+.container-table>form button {
+    border: none;
+    padding: 2px 6px;
+    margin: 0 8px;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid transparent;
+    box-shadow: var(--button-shadow);
+}
+
+.container-table>form button.editar {
+    background-color: var(--button-color-edit);
+}
+
+.container-table>form button.excluir {
+    background-color: var(--button-color-reset);
+}
+
 table, th, td {
     width: 90px;
 }

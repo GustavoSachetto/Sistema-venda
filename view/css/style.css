@@ -27,6 +27,7 @@
     --link-color-hover: #2f1cfd;
     --button-color-submit: #2BB94A;
     --button-color-search: #4aa3df;
+    --button-color-edit: #df924a;
     --button-color-reset: #b92b2b;
     --base-color: #F0EEFF;
 
@@ -64,6 +65,7 @@ body.dark {
     --link-color-hover: #ccc8fa;
     --button-color-submit: #2bb94aa8;
     --button-color-search: #4aa4dfa1;
+    --button-color-edit: #df924aab;
     --button-color-reset: #b92b2bad;
     --base-color: #616161;
 
