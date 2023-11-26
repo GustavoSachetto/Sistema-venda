@@ -46,10 +46,7 @@
                     </form>
                 </section>
                 <section id="table" class="container-table">
-                    <?php 
-                        include ('../../controller/exibeEstoque.php'); 
-                        include ('../../controller/alteracaoProduto.php');
-                    ?>
+                    <?php include ('../../controller/exibeEstoque.php') ?>
                 </section>
             </article>
         </main>

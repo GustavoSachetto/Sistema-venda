@@ -9,7 +9,7 @@
     if ($verifica[0]['count(*)'] !== 0) {
 
         echo "
-        <form method='post' action=''>
+        <form method='post' action='editarProduto.php'>
             <h2>Exibe produtos</h2>
             <table>
                 <thead>

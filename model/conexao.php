@@ -86,6 +86,12 @@ class conexao {
 
         return $resultado;
     }
+    public function exibeProduto($codProduto) {
+        $consulta = "SELECT * FROM produto WHERE produto.codProduto = '$codProduto'";
+        $resultado = $this -> consultaBanco($consulta);
+
+        return $resultado;
+    }
 
     public function consultaBanco($consulta) {
         $consultaBanco = $this -> pdo -> query($consulta);
@@ -211,6 +217,19 @@ class conexao {
         return $resultado[0]["COUNT(*)"];
     }
     
+    public function atualizaProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca, $codProduto) {
+        $atualizaProduto = $this-> pdo -> prepare("UPDATE produto SET nomeProduto = :n, valor = :v, tipo = :tipo, marca = :marca, categoria = :cat, genero = :gen WHERE codProduto = :codP;");
+        $atualizaProduto->bindValue(":n", $cadNomeP);
+        $atualizaProduto->bindValue(":v", $cadValor);
+        $atualizaProduto->bindValue(":cat", $cadCat);
+        $atualizaProduto->bindValue(":gen", $cadGen);
+        $atualizaProduto->bindValue(":tipo", $cadTipo);
+        $atualizaProduto->bindValue(":marca", $cadMarca);
+        $atualizaProduto->bindValue(":codP", $codProduto);
+        
+        $atualizaProduto->execute();
+    }
+
     public function deleteProduto($codProduto) {
         $deleteProduto = $this-> pdo -> prepare("DELETE FROM produto where codProduto = :codP");
         $deleteProduto->bindValue(":codP", $codProduto);

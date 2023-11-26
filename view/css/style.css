@@ -212,6 +212,7 @@ body.dark {
 
 .sidebar .container-nav>ul {
     padding: 0;
+    margin: 0;
 }
 
 .sidebar .dropdown {
@@ -235,7 +236,7 @@ body.dark {
     cursor: pointer;
     list-style: none;
     display: flex;
-    padding: 14px 17px;
+    padding: 13px 17px;
     margin: 12px 0;
     color: var(--text-color);
     transition: var(--transition-02);
@@ -285,7 +286,7 @@ body.dark {
 
 .sidebar .container-tema {
     font-size: 18px;
-    padding: 14px 0 14px 12px;
+    padding: 13px 0 13px 12px;
     display: flex;
     color: var(--text-color);
     border-radius: 6px;

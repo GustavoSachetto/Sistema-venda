@@ -43,10 +43,7 @@
                     </form>
                 </section>
                 <section id="table" class="container-table">
-                    <?php 
-                        include ('../../controller/exibeProduto.php'); 
-                        include ('../../controller/alteracaoProduto.php');
-                    ?>
+                    <?php include ('../../controller/exibeProduto.php') ?>
                 </section>
             </article>
         </main>

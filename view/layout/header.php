@@ -24,6 +24,14 @@
                         </div>
                     </a>
                 </li>
+                <li>
+                    <a class="menu-link" href="sobre.php">
+                        <i class='bx bx-message-square-detail' ></i>
+                        <div class="text">
+                            <span class="painel-link">Sobre</span>
+                        </div>
+                    </a>
+                </li>
                 <li class="dropdown">
                     <div type="button" class="menu-link" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class='bx bx-user'></i>
