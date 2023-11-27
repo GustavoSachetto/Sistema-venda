@@ -37,7 +37,10 @@
                         <td>" . stripslashes($item['tipo']) . "</td>
                         <td>" . "R$ " . number_format($item['valor'], 2, ",", ".") . "</td>
                         <td>
-                            <button type='submit' class='editar' name='editar' value=" . $item['codProduto'] . ">Editar</button>
+                            <div class='buttons'>
+                                <button type='submit' class='editar' name='editar' value=" . $item['codProduto'] . ">Editar</button>
+                                <button type='button' class='excluir' name='excluir' value=" . $item['codProduto'] . ">Excluir</button>
+                            </div>
                         </td>
                     </tr>
             ";

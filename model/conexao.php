@@ -249,7 +249,15 @@ class conexao {
     public function deleteProduto($codProduto) {
         $deleteProduto = $this-> pdo -> prepare("DELETE FROM produto where codProduto = :codP");
         $deleteProduto->bindValue(":codP", $codProduto);
-        $deleteProduto->execute();
+
+        $integridadeProduto = $this->integridadeProduto($codProduto);
+        
+        if ($integridadeProduto === 0) {
+            $deleteProduto->execute();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function deleteCliente($codCliente) {

@@ -7,6 +7,7 @@
         <title>Sistema-venda | exibe produto</title>
         <?php require ('../layout/head.php') ?>
         <link rel="stylesheet" href="../css/table.css">
+        <script src="../js/formExcluir.js"></script>
     </head>
     <body>
         <?php 

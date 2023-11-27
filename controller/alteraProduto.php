@@ -28,7 +28,7 @@
             }
             
         }
-
+        
         $produto = $conexao -> exibeProduto($codProduto);
     }
 ?>
