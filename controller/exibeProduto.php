@@ -39,7 +39,7 @@
                         <td>
                             <div class='buttons'>
                                 <button type='submit' class='editar' name='editar' value=" . $item['codProduto'] . ">Editar</button>
-                                <button type='button' class='excluir' name='excluir' value=" . $item['codProduto'] . ">Excluir</button>
+                                <button type='button' class='excluir produto' name='excluir' value=" . $item['codProduto'] . ">Excluir</button>
                             </div>
                         </td>
                     </tr>

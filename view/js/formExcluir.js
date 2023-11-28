@@ -1,11 +1,43 @@
 $(document).ready(function () {
     // Button excluir
         $('.excluir').click((e) => {
-            confirm(e.target.id);
+            if (e.target.classList.contains('produto')) {
+                prop = {
+                    codigo: e.target.value,
+                    text: 'Você realmente deseja excluir este produto?',
+                    url: '../../controller/deleteProduto.php'
+                }
+            }
+
+            if (e.target.classList.contains('cliente')) {
+                prop = {
+                    codigo: e.target.value,
+                    text: 'Você realmente deseja excluir este cliente?',
+                    url: '../../controller/deleteCliente.php'
+                }
+            }
+
+            if (e.target.classList.contains('estoque')) {
+                prop = {
+                    codigo: e.target.value,
+                    text: 'Você realmente deseja excluir este estoque?',
+                    url: '../../controller/deleteEstoque.php'
+                }
+            }
+
+            if (e.target.classList.contains('venda')) {
+                prop = {
+                    codigo: e.target.value,
+                    text: 'Você realmente deseja excluir esta venda?',
+                    url: '../../controller/deleteVenda.php'
+                }
+            }
+
+            confirm(prop);
         });
         
     // Confirmar exclusão
-    function confirm(codigo) {
+    function confirm(prop) {
 
         if ($('body').attr('class') == 'dark') {
             background = '#383838';
@@ -15,7 +47,7 @@ $(document).ready(function () {
         
         Swal.fire({
             title: "Confirmação!",
-            text: "Você realmente deseja excluir este produto?",
+            text: prop['text'],
             icon: "warning",
             background: background,
             color: 'var(--title-color)',
@@ -26,7 +58,7 @@ $(document).ready(function () {
             cancelButtonText: "Cancelar"
         }).then((result) => {
             if (result.isConfirmed) {
-                $.post("../../controller/deleteProduto.php", { excluir: codigo }, (data) => {
+                $.post(prop['url'], { excluir: prop['codigo'] }, (data) => {
                     $('body').append(data);
                 });
             }
