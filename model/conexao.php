@@ -93,6 +93,13 @@ class conexao {
         return $resultado;
     }
 
+    public function exibeCliente($codCliente) {
+        $consulta = "SELECT * FROM cliente WHERE cliente.codCliente = '$codCliente'";
+        $resultado = $this -> consultaBanco($consulta);
+
+        return $resultado;
+    }
+
     public function consultaBanco($consulta) {
         $consultaBanco = $this -> pdo -> query($consulta);
         $consultaBanco -> execute();
@@ -225,6 +232,15 @@ class conexao {
         
         return $resultado[0]["COUNT(*)"];
     }
+
+    public function integridadeCliente($codCliente) {
+        $consulta = "SELECT COUNT(*) FROM cliente
+        INNER JOIN venda ON venda.codCliente = cliente.codCliente
+        WHERE cliente.codCliente = '$codCliente'";
+        $resultado = $this -> consultaBanco($consulta);
+        
+        return $resultado[0]["COUNT(*)"];
+    }
     
     public function atualizaProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca, $codProduto) {
         $atualizaProduto = $this-> pdo -> prepare("UPDATE produto SET nomeProduto = :n, valor = :v, tipo = :tipo, marca = :marca, categoria = :cat, genero = :gen WHERE codProduto = :codP;");
@@ -240,6 +256,31 @@ class conexao {
         
         if ($integridadeProduto === 0) {
             $atualizaProduto->execute();
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    public function atualizaCliente($cadNome, $cadCpf, $cadCep, $cadUF, $cadCidade, $cadBairro, $cadRua, $cadLogradouro, $cadNumero, $cadComplemento, $cadObservacao, $codCliente) {
+        $atualizaCliente = $this-> pdo -> prepare("UPDATE cliente SET nomeCliente = :n, cpf = :cpf, tipoLogradouro = :log, bairro = :bairro, rua = :rua, UF = :uf, nResidencial = :numero, cidade = :cid, CEP = :cep, complemento = :comp, observacao = :obs WHERE codCliente = :codC;");
+        $atualizaCliente->bindValue(":n", $cadNome);
+        $atualizaCliente->bindValue(":cpf", $cadCpf);
+        $atualizaCliente->bindValue(":cep", $cadCep);
+        $atualizaCliente->bindValue(":uf", $cadUF);
+        $atualizaCliente->bindValue(":cid", $cadCidade);
+        $atualizaCliente->bindValue(":bairro", $cadBairro);
+        $atualizaCliente->bindValue(":rua", $cadRua);
+        $atualizaCliente->bindValue(":log", $cadLogradouro);
+        $atualizaCliente->bindValue(":numero", $cadNumero);
+        $atualizaCliente->bindValue(":comp", $cadComplemento);
+        $atualizaCliente->bindValue(":obs", $cadObservacao);
+        $atualizaCliente->bindValue(":codC", $codCliente);
+        
+        $integridadeCliente = $this->integridadeCliente($codCliente);
+        
+        if ($integridadeCliente === 0) {
+            $atualizaCliente->execute();
             return true;
         } else {
             return false;

@@ -26,7 +26,6 @@
             } else {
                 alerta("Erro!", "Produto já inserido no estoque.", "error");
             }
-            
         }
         
         $produto = $conexao -> exibeProduto($codProduto);

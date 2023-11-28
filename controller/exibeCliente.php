@@ -9,7 +9,7 @@
     if ($verifica[0]['count(*)'] !== 0) {
         
         echo "
-        <form method='post' action=''>
+        <form method='post' action='editarCliente.php'>
             <h2>Exibe clientes</h2>
             <table>
                 <thead>
@@ -47,7 +47,10 @@
                         <td>" . stripslashes($item['complemento']) . "</td>
                         <td>" . stripslashes($item['observacao']) . "</td>
                         <td>
-                            <button type='submit' class='excluir' name='excluir' value=" . $item['codCliente'] . ">Excluir</button>
+                            <div class='buttons'>
+                                <button type='submit' class='editar' name='editar' value=" . $item['codCliente'] . ">Editar</button>
+                                <button type='button' class='excluir cliente' name='excluir' value=" . $item['codCliente'] . ">Excluir</button>
+                            </div>
                         </td>
                     </tr> 
                 ";

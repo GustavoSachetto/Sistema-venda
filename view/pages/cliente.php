@@ -7,6 +7,7 @@
         <title>Sistema-venda | exibe cliente</title>
         <?php require ('../layout/head.php') ?>
         <link rel="stylesheet" href="../css/table.css">
+        <script src="../js/formExcluir.js"></script>
     </head>
     <body>
         <?php 
@@ -44,10 +45,7 @@
                     </form>
                 </section>
                 <section id="table" class="container-table">
-                    <?php 
-                        include ('../../controller/exibeCliente.php'); 
-                        include ('../../controller/alteracaoCliente.php');
-                    ?>
+                    <?php include ('../../controller/exibeCliente.php') ?>
                 </section>
             </article>
         </main>

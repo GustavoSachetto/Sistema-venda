@@ -19,3 +19,5 @@ update tamanho set tipoTamanho = "XXG" where codTam = 6;
 delete from vendaitem where codVenda = 17;
 delete from tamanhoP where codTam = 5;
 delete from produto where codProduto = 1;
+
+UPDATE cliente SET nomeCliente = 'Gustavo Sachetto', cpf = 12345678911, tipoLogradouro = 'Rua', bairro = 'Parque paulista', rua = 'Damasco', UF = 'SP', nResidencial = 288, cidade = 'Franco da rocha', CEP = '07855080', complemento = '', observacao = '' WHERE codCliente = 11;
