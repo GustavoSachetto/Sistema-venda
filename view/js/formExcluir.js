@@ -38,7 +38,7 @@ $(document).ready(function () {
         
     // Confirmar exclusão
     function confirm(prop) {
-
+        
         if ($('body').attr('class') == 'dark') {
             background = '#383838';
         } else {

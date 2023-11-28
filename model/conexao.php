@@ -304,7 +304,15 @@ class conexao {
     public function deleteCliente($codCliente) {
         $deleteCliente = $this-> pdo -> prepare("DELETE FROM cliente where codCliente = :codC");
         $deleteCliente->bindValue(":codC", $codCliente);
-        $deleteCliente->execute();
+        
+        $integridadeCliente = $this->integridadeCliente($codCliente);
+        
+        if ($integridadeCliente === 0) {
+            $deleteCliente->execute();
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 ?>
