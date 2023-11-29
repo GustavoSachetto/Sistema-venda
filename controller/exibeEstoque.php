@@ -9,7 +9,7 @@
     if ($verifica[0]['count(*)'] !== 0) {
 
         echo "
-        <form method='post' action=''>
+        <form method='post' action='editarEstoque.php'>
             <h2>Exibe estoques</h2>
             <table>
                 <thead>
@@ -32,7 +32,7 @@
 
             echo "
                     <tr>
-                        <td>" . stripslashes($item['codProduto']) . "</td>
+                        <td>" . stripslashes($item['codEstoque']) . "</td>
                         <td>" . stripslashes($item['nomeProduto']) . "</td>
                         <td>" . stripslashes($item['categoria']) . "</td>
                         <td>" . stripslashes($item['genero']) . "</td>
@@ -41,8 +41,11 @@
                         <td>" . stripslashes($item['tipoTamanho']) . "</td>
                         <td>" . stripslashes($item['quantidade']) . "</td>
                         <td>" . "R$ " . number_format($item['valor'], 2, ",", ".") . "</td>
-                        <td>
-                            <button type='submit' class='editar' name='editar' value=" . $item['codProduto'] . ">Editar</button>
+                        <td>    
+                            <div class='buttons'>
+                                <button type='submit' class='editar' name='editar' value=" . $item['codEstoque'] . ">Editar</button>
+                                <button type='button' class='excluir produto' name='excluir' value=" . $item['codEstoque'] . ">Excluir</button>
+                            </div>
                         </td>
                     </tr>
                 ";

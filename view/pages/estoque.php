@@ -33,7 +33,7 @@
                             <input type="text" placeholder="Genero" name="txtGen" maxlength="10">
                             <input type="text" placeholder="Marca" name="txtMarca" maxlength="30">
                             <input type="text" placeholder="Tipo" name="txtTipo" maxlength="30">    
-                            <input type="text" placeholder="Codigo produto" name="txtCod">
+                            <input type="text" placeholder="Codigo" name="txtCod">
                             <select name="slcTamanho">
                                 <option value="">Todos</option>
                                 <?php opcoes($tamanhos)?>

@@ -5,7 +5,7 @@
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
     
     $clientes = $conexao -> consultaBanco("SELECT * FROM cliente");
-    $estoques = $conexao -> exibeEstoques();
+    $estoques = $conexao -> estoqueVenda();
 
     function opcoesC($clientes) {
         foreach ($clientes as $item) {

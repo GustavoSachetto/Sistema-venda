@@ -62,7 +62,7 @@ class conexao {
     }
 
     public function consultaEstoque($buscaNome, $buscaCate, $buscaGen, $buscaMarca, $buscaTipo, $buscaCod, $buscaCodTam) {
-        $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade FROM produto
+        $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade, tamanhop.codEstoque FROM produto
         INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
         INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam WHERE 
         produto.nomeProduto LIKE '%$buscaNome%'   AND 
@@ -70,31 +70,9 @@ class conexao {
         produto.genero      LIKE '%$buscaGen%'    AND 
         produto.marca       LIKE '%$buscaMarca%'  AND
         produto.tipo        LIKE '%$buscaTipo%'   AND
-        tamanho.codTam      LIKE '%$buscaCodTam%' AND
+        tamanhop.codEstoque  LIKE '%$buscaCodTam%' AND
         produto.codProduto  LIKE '%$buscaCod%' ORDER BY produto.codProduto ASC";
 
-        $resultado = $this -> consultaBanco($consulta);
-
-        return $resultado;
-    }
-
-    public function exibeEstoques() {
-        $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade FROM produto
-        INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
-        INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam ORDER BY produto.codProduto ASC";
-        $resultado = $this -> consultaBanco($consulta);
-
-        return $resultado;
-    }
-    public function exibeProduto($codProduto) {
-        $consulta = "SELECT * FROM produto WHERE produto.codProduto = '$codProduto'";
-        $resultado = $this -> consultaBanco($consulta);
-
-        return $resultado;
-    }
-
-    public function exibeCliente($codCliente) {
-        $consulta = "SELECT * FROM cliente WHERE cliente.codCliente = '$codCliente'";
         $resultado = $this -> consultaBanco($consulta);
 
         return $resultado;
@@ -107,6 +85,38 @@ class conexao {
         while ($resultado = $consultaBanco -> fetchAll(PDO::FETCH_ASSOC)) {
             return $resultado;
         }
+    }
+
+    public function estoqueVenda() {
+        $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade FROM produto
+        INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
+        INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam ORDER BY produto.codProduto ASC";
+        $resultado = $this -> consultaBanco($consulta);
+
+        return $resultado;
+    }
+    
+    public function exibeEstoque($codEstoque) {
+        $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero,  tamanho.codTam, tamanho.tipoTamanho, tamanhop.quantidade FROM produto
+        INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
+        INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam WHERE tamanhop.codEstoque = '$codEstoque'";
+        $resultado = $this -> consultaBanco($consulta);
+
+        return $resultado;
+    }
+
+    public function exibeProduto($codProduto) {
+        $consulta = "SELECT * FROM produto WHERE produto.codProduto = '$codProduto'";
+        $resultado = $this -> consultaBanco($consulta);
+
+        return $resultado;
+    }
+
+    public function exibeCliente($codCliente) {
+        $consulta = "SELECT * FROM cliente WHERE cliente.codCliente = '$codCliente'";
+        $resultado = $this -> consultaBanco($consulta);
+
+        return $resultado;
     }
 
     public function insereCliente($cadNome, $cadCpf, $cadCep, $cadUF, $cadCidade, $cadBairro, $cadRua, $cadLogradouro, $cadNumero, $cadComplemento, $cadObservacao) {

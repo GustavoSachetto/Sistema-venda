@@ -34,6 +34,7 @@ create table tamanho(
 
 create table tamanhoP(
 	quantidade int not null,
+    codEstoque int auto_increment not null primary key,
 
 	codProduto int not null,
 	constraint fkcodProduto foreign key (codProduto) references produto(codProduto),

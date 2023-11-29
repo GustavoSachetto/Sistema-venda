@@ -21,7 +21,7 @@ SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, pro
 INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
 INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam;
 
-SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade FROM produto
+SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade, tamanhop.codTam FROM produto
 INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
 INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam WHERE 
 produto.nomeProduto LIKE '%%'   AND 
