@@ -56,6 +56,6 @@ create table vendaItem(
     codVenda int not null,
     constraint fkvenda_vendaitem foreign key (codVenda) references venda(codVenda),
     
-    codProduto int not null,
-    constraint fkproduto_vendaitem foreign key (codProduto) references produto(codProduto)
+    codEstoque int not null,
+    constraint fktamanhoP_vendaitem foreign key (codEstoque) references tamanhoP(codEstoque)
 );

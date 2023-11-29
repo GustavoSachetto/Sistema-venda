@@ -44,7 +44,6 @@
                         <td>    
                             <div class='buttons'>
                                 <button type='submit' class='editar' name='editar' value=" . $item['codEstoque'] . ">Editar</button>
-                                <button type='button' class='excluir produto' name='excluir' value=" . $item['codEstoque'] . ">Excluir</button>
                             </div>
                         </td>
                     </tr>

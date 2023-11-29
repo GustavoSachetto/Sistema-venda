@@ -70,8 +70,8 @@ class conexao {
         produto.genero      LIKE '%$buscaGen%'    AND 
         produto.marca       LIKE '%$buscaMarca%'  AND
         produto.tipo        LIKE '%$buscaTipo%'   AND
-        tamanhop.codEstoque  LIKE '%$buscaCodTam%' AND
-        produto.codProduto  LIKE '%$buscaCod%' ORDER BY produto.codProduto ASC";
+        tamanho.codTam      LIKE '%$buscaCodTam%' AND
+        tamanhop.codEstoque LIKE '%$buscaCod%' ORDER BY tamanhop.codEstoque ASC";
 
         $resultado = $this -> consultaBanco($consulta);
 
@@ -243,6 +243,15 @@ class conexao {
         return $resultado[0]["COUNT(*)"];
     }
 
+    public function integridadeEstoque($codEstoque) {
+        $consulta = "SELECT COUNT(*) FROM tamanhop 
+        INNER JOIN vendaitem ON vendaitem.codEstoque = tamanhop.codEstoque
+        WHERE tamanhop.codEstoque = '$codEstoque'";
+        $resultado = $this -> consultaBanco($consulta);
+        
+        return $resultado[0]["COUNT(*)"];
+    }
+
     public function integridadeCliente($codCliente) {
         $consulta = "SELECT COUNT(*) FROM cliente
         INNER JOIN venda ON venda.codCliente = cliente.codCliente
@@ -266,6 +275,22 @@ class conexao {
         
         if ($integridadeProduto === 0) {
             $atualizaProduto->execute();
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    public function atualizaEstoque($cadQuantidade, $cadTam, $codEstoque) {
+        $atualizaEstoque = $this-> pdo -> prepare("UPDATE tamanhop SET quantidade = :quant, codTam = :codTam WHERE codEstoque = :codE");
+        $atualizaEstoque->bindValue(":quant", $cadQuantidade);
+        $atualizaEstoque->bindValue(":codTam", $cadTam);
+        $atualizaEstoque->bindValue(":codE", $codEstoque);
+        
+        $integridadeEstoque = $this->integridadeEstoque($codEstoque);
+        
+        if ($integridadeEstoque === 0) {
+            $atualizaEstoque->execute();
             return true;
         } else {
             return false;

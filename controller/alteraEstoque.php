@@ -19,20 +19,16 @@
         }
         
         if (isset($_POST['atualizar'])) {
-            $cadNomeP = addslashes($_POST['txtNomeP']);
-            $cadValor = addslashes($_POST['txtValor']);
-            $cadCat = addslashes($_POST['txtCat']);
-            $cadGen = addslashes($_POST['txtGen']);
-            $cadTipo = addslashes($_POST['txtTipo']);
-            $cadMarca = addslashes($_POST['txtMarca']);
+            $cadTam= addslashes($_POST['slcTamanho']);
+            $cadQuantidade= addslashes($_POST['txtQuantidade']);
             $codEstoque = $_SESSION['codEstoque'];
             
-            $resultadoEditar = $conexao -> atualizaProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca, $codEstoque);
+            $resultadoEditar = $conexao -> atualizaEstoque($cadQuantidade, $cadTam, $codEstoque);
 
             if ($resultadoEditar === true) {
-                alerta("Concluído!", "Produto editado com sucesso.", "success");
+                alerta("Concluído!", "Estoque editado com sucesso.", "success");
             } else {
-                alerta("Erro!", "Produto já inserido no estoque.", "error");
+                alerta("Erro!", "Estoque já incluido em uma venda.", "error");
             }
         }
         

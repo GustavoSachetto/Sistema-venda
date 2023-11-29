@@ -51,3 +51,7 @@ WHERE produto.codProduto = 11;
 SELECT COUNT(*) FROM cliente
 INNER JOIN venda ON venda.codCliente = cliente.codCliente
 WHERE cliente.codCliente = 2;
+
+SELECT COUNT(*) FROM tamanhop 
+INNER JOIN vendaitem ON vendaitem.codEstoque = tamanhop.codEstoque
+WHERE tamanhop.codEstoque = 2;

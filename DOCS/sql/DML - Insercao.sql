@@ -66,7 +66,7 @@ insert into venda(codCliente, dataHora) values
 (  5 , "2023-01-20 23:50:25" ),
 (  6 , "2023-02-08 22:30:25" );
 
-insert into vendaitem(valorUnitario, quantidadeVenda, codVenda, codProduto) values
+insert into vendaitem(valorUnitario, quantidadeVenda, codVenda, codEstoque) values
 ( 20.00 , 16, 1, 1),
 ( 50.00 , 01, 10, 5),
 ( 100.00 , 5, 3, 2),
