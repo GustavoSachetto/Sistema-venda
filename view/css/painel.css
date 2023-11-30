@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+:root {
+    --gradient-venda: linear-gradient(to right, #FF6F7B, #FF8E97);
+    --gradient-estoque: linear-gradient(to right, #449AFF, #67B0FF);
+    --gradient-cliente: linear-gradient(to right, #2CC7BC, #4AD0C7);
+    --gradient-produto: linear-gradient(to right, #f8a838, #fcc97d);
+    --text-color-info: #f5f5f5;
+}
+
+body.dark {
+    --gradient-venda: linear-gradient(to right, #ff6f7bce, #ff8e97d0);
+    --gradient-estoque: linear-gradient(to right, #449AFF, #67B0FF);
+    --gradient-cliente: linear-gradient(to right, #2CC7BC, #4AD0C7);
+    --gradient-produto: linear-gradient(to right, #ffbb54, #ffc374);
+    --text-color-info: #ffffff;
+}
+
+main section h2{
+    font-size: 40px;
+    font-weight: 600;
+    margin: 14px 0;
+    color: var(--secondary-color);
+}
+
+main section h3 {
+    font-size: 20px;
+    margin: 18px 0;
+}
+
+main > article >  section.information {
+    padding: 15px 20px;
+    background-color: var(--form-color);
+    box-shadow: var(--form-shadow);
+    border-radius: 10px;
+}
+
+main > article .container-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 22px;
+    max-width: 100%;
+    padding: 8px 0;
+}
+
+main > article .container-information > div {
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px 25px;
+    box-shadow: var(--sidebar-shadow);
+}
+
+main > article .container-information > div > legend {
+    font-size: 19px;
+    color: var(--text-color-info);
+    text-shadow: 1px 1px 1px #00000015;
+}
+
+main > article .container-information > div > h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 24px;
+    text-shadow: 1px 1px 3px #00000054;
+    color: var(--text-color-info);
+}
+
+.container-information > div.container-venda {
+    background: var(--gradient-venda);
+}
+
+.container-information > div.container-estoque {
+    background: var(--gradient-estoque);
+}
+
+.container-information > div.container-cliente {
+    background: var(--gradient-cliente);
+}
+
+.container-information > div.container-produto {
+    background: var(--gradient-produto);
+}
