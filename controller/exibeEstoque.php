@@ -40,7 +40,7 @@
                         <td>" . stripslashes($item['tipo']) . "</td>
                         <td>" . stripslashes($item['tipoTamanho']) . "</td>
                         <td>" . stripslashes($item['quantidade']) . "</td>
-                        <td>" . "R$ " . number_format($item['valor'], 2, ",", ".") . "</td>
+                        <td>" . $conexao -> conversorMoeda($item['valor']) . "</td>
                         <td>    
                             <div class='buttons'>
                                 <button type='submit' class='editar' name='editar' value=" . $item['codEstoque'] . ">Editar</button>

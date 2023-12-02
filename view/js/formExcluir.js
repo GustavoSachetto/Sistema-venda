@@ -17,14 +17,6 @@ $(document).ready(function () {
                 }
             }
 
-            if (e.target.classList.contains('estoque')) {
-                prop = {
-                    codigo: e.target.value,
-                    text: 'Você realmente deseja excluir este estoque?',
-                    url: '../../controller/deleteEstoque.php'
-                }
-            }
-
             if (e.target.classList.contains('venda')) {
                 prop = {
                     codigo: e.target.value,

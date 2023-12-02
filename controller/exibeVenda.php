@@ -34,7 +34,7 @@
                         <td>" . stripslashes($item['codCliente']) . "</td>
                         <td>" . stripslashes($item['data']) . "</td>
                         <td>" . stripslashes($item['hora']) . "</td>
-                        <td>" . "R$ " . number_format($item['total'], 2, ",", ".") . "</td>
+                        <td>" .  $conexao -> conversorMoeda($item['total'])  . "</td>
                         <td>
                             <button type='submit' name='editar' value=''>Ver</button>
                         </td>

@@ -60,5 +60,7 @@ SELECT COUNT(*) FROM tamanhop
 INNER JOIN vendaitem ON vendaitem.codEstoque = tamanhop.codEstoque
 WHERE tamanhop.codEstoque = 2;
 
-SELECT SUM((tamanhop.quantidade * produto.valor)) AS vendaTotal FROM tamanhop
-INNER JOIN produto ON produto.codProduto = tamanhop.codProduto
+SELECT SUM(tamanhop.quantidade * produto.valor) AS valorProduto FROM tamanhop
+INNER JOIN produto ON produto.codProduto = tamanhop.codProduto;
+
+SELECT SUM(vendaItem.quantidadeVenda * vendaItem.valorUnitario) AS valorVenda FROM vendaItem;

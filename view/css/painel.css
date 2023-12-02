@@ -84,7 +84,7 @@ main > article .container-information > div > h2 {
 main > article.consult {
     margin-top: 18px;
     display: flex;
-    max-height: 450px;
+    max-height: 540px;
     column-gap: 18px;
 }
 

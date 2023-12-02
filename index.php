@@ -17,9 +17,11 @@
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="view/js/script.js"></script>
+        <script src="view/js/grafico.js"></script>
     </head>
     <body>
         <?php require 'controller/exibePainel.php'?>
+        <script> var vendaMes = <?= json_encode(grafico($vendas))?>;</script> 
         <nav class="sidebar close">
             <header>
                 <div class="container-header">
@@ -165,39 +167,16 @@
                             <h2><?= $nClientes?></h2>
                         </div>
                         <div id="produto" class="container-produto">
-                            <legend>N° Produtos</legend>
-                            <h2><?= $nProdutos?></h2>
+                            <legend>N° Estoques</legend>
+                            <h2><?= $nEstoques?></h2>
                         </div>
                     </section>
                     </div>
             </article>
             <article id="consult" class="consult">
                 <section class="container-grafico">
+                    <h2>Gráfico de vendas 2023</h2>
                     <canvas id="myChart"></canvas>
-                    <script>
-                        const ctx = document.getElementById('myChart');
-
-                        var data = [12, 19, 3, 5, 12, 19, 3, 12, 19, 3, 5];
-
-                        new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Outubro', 'Novembro', 'Dezembro'],
-                            datasets: [{
-                            label: 'N° Vendas',
-                            data: data,
-                            borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                            }
-                        }
-                        });
-                    </script>
                 </section>
                 <aside class="container-notificacao">
                     <h2>

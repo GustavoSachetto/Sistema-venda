@@ -14,6 +14,12 @@ class conexao {
         }
     }
 
+    public function conversorMoeda($converter) {
+        $resultado = "R$ " . number_format($converter, 2, ",", ".");
+        
+        return $resultado;
+    }
+
     public function consultaCliente($buscaNome, $buscaCpf, $buscaCep, $buscaUF, $buscaCidade, $buscaBairro, $buscaCod) {
         $consulta = "SELECT * FROM cliente WHERE 
         nomeCliente LIKE '%$buscaNome%'   AND 
