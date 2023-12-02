@@ -17,7 +17,8 @@
                     <td>#</td>
                     <td>Cpf cliente</td>
                     <td>Código cliente</td>
-                    <td>Data e hora</td>
+                    <td>Data</td>
+                    <td>Hora</td>
                     <td>Valor total</td>
                     <td>Ações</td>
                 </tr>
@@ -31,8 +32,9 @@
                         <td>" . stripslashes($item['codVenda']) . "</td>
                         <td>" . stripslashes($item['cpf']) . "</td>
                         <td>" . stripslashes($item['codCliente']) . "</td>
-                        <td>" . stripslashes($item['dataHora']) . "</td>
-                        <td>" . "R$ " . number_format($item['SUM(vendaItem.valorUnitario)'], 2, ",", ".") . "</td>
+                        <td>" . stripslashes($item['data']) . "</td>
+                        <td>" . stripslashes($item['hora']) . "</td>
+                        <td>" . "R$ " . number_format($item['total'], 2, ",", ".") . "</td>
                         <td>
                             <button type='submit' name='editar' value=''>Ver</button>
                         </td>

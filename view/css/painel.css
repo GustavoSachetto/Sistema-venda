@@ -1,16 +1,16 @@
 @charset "UTF-8";
 
 :root {
-    --gradient-venda: linear-gradient(to right, #FF6F7B, #FF8E97);
-    --gradient-estoque: linear-gradient(to right, #449AFF, #67B0FF);
+    --gradient-estoque: linear-gradient(to right, #FF6F7B, #FF8E97);
+    --gradient-venda: linear-gradient(to right, #449AFF, #67B0FF);
     --gradient-cliente: linear-gradient(to right, #2CC7BC, #4AD0C7);
     --gradient-produto: linear-gradient(to right, #f8a838, #fcc97d);
     --text-color-info: #f5f5f5;
 }
 
 body.dark {
-    --gradient-venda: linear-gradient(to right, #ff6f7bce, #ff8e97d0);
-    --gradient-estoque: linear-gradient(to right, #449AFF, #67B0FF);
+    --gradient-estoque: linear-gradient(to right, #ff6f7bce, #ff8e97d0);
+    --gradient-venda: linear-gradient(to right, #449AFF, #67B0FF);
     --gradient-cliente: linear-gradient(to right, #2CC7BC, #4AD0C7);
     --gradient-produto: linear-gradient(to right, #ffbb54, #ffc374);
     --text-color-info: #ffffff;
@@ -24,12 +24,12 @@ main section h2{
 }
 
 main section h3 {
-    font-size: 20px;
+    font-size: 18px;
     margin: 18px 0;
 }
 
 main > article >  section.information {
-    padding: 15px 20px;
+    padding: 13px 20px;
     background-color: var(--form-color);
     box-shadow: var(--form-shadow);
     border-radius: 10px;
@@ -65,12 +65,12 @@ main > article .container-information > div > h2 {
     color: var(--text-color-info);
 }
 
-.container-information > div.container-venda {
-    background: var(--gradient-venda);
-}
-
 .container-information > div.container-estoque {
     background: var(--gradient-estoque);
+}
+
+.container-information > div.container-venda {
+    background: var(--gradient-venda);
 }
 
 .container-information > div.container-cliente {
@@ -79,4 +79,79 @@ main > article .container-information > div > h2 {
 
 .container-information > div.container-produto {
     background: var(--gradient-produto);
+}
+
+main > article.consult {
+    margin-top: 18px;
+    display: flex;
+    max-height: 450px;
+    column-gap: 18px;
+}
+
+main article.consult > section, main article.consult > aside {
+    padding: 22px 20px;
+    background-color: var(--form-color);
+    box-shadow: var(--form-shadow);
+    border-radius: 10px;
+}
+
+main > article .container-grafico {
+    width: 58%;
+}
+
+main > article .container-notificacao {
+    display: flex;
+    flex-direction: column;
+    width: 42%;
+    overflow-y: auto;
+}
+
+main > article .container-notificacao > h2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 14px 0 28px 0;
+}
+
+main > article .container-notificacao > h2 > span {
+    color: var(--secondary-color);
+}
+
+main > article .container-notificacao > h2 > i {
+    color: var(--title-color);
+    position: absolute;
+    right: 0;
+    top: -10px;
+}
+
+.container-notificacao .notificacao {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin: 6px 0;
+}
+
+.container-notificacao .notificacao > p, .container-notificacao .notificacao > legend {
+    font-size: 16px;
+}
+
+.container-notificacao .notificacao > p {
+    white-space: nowrap;
+}
+
+.container-notificacao .notificacao > p > i{
+    background-color: gray;
+    padding: 8px;
+    color: var(--text-color-info);
+    margin-right: 9px;
+    border-radius: 50%;
+}
+
+.container-notificacao .notificacao > legend {
+    text-align: right;
 }

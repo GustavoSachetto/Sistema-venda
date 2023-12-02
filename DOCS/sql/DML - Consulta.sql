@@ -8,6 +8,10 @@ select * from tamanho;
 
 select * from tamanhoP;
 
+select * from alerta;
+
+select * from notificacao;
+
 select * from venda;
 
 select * from vendaitem;
@@ -32,17 +36,17 @@ produto.tipo        LIKE '%%'   AND
 tamanho.codTam      LIKE '%%'  AND
 produto.codProduto  LIKE '%%'  ORDER BY produto.codProduto ASC;
 
-SELECT venda.*, cliente.nomeCliente, SUM(vendaItem.valorUnitario) FROM venda 
+SELECT venda.*, cliente.nomeCliente, SUM(vendaItem.valorUnitario) AS total FROM venda 
 INNER JOIN cliente ON venda.codCliente = cliente.codCliente
 INNER JOIN vendaItem ON venda.codVenda = vendaItem.codVenda GROUP BY codVenda ORDER BY venda.codVenda ASC;
 
-SELECT venda.*, cliente.cpf, SUM(vendaItem.valorUnitario) FROM venda 
+SELECT venda.*, cliente.cpf, SUM(vendaItem.valorUnitario) AS total FROM venda 
 INNER JOIN cliente ON cliente.codCliente = venda.codCliente 
 INNER JOIN vendaItem ON vendaItem.codVenda = venda.codVenda WHERE 
 venda.codVenda LIKE '%%' AND
 venda.codCliente LIKE '%%' AND
 cliente.cpf LIKE '%%' AND
-venda.dataHora LIKE '%%' GROUP BY venda.codVenda ORDER BY venda.codVenda ASC;
+venda.data LIKE '%%' GROUP BY venda.codVenda ORDER BY venda.codVenda ASC;
 
 SELECT * FROM produto
 INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
@@ -55,3 +59,6 @@ WHERE cliente.codCliente = 2;
 SELECT COUNT(*) FROM tamanhop 
 INNER JOIN vendaitem ON vendaitem.codEstoque = tamanhop.codEstoque
 WHERE tamanhop.codEstoque = 2;
+
+SELECT SUM((tamanhop.quantidade * produto.valor)) AS vendaTotal FROM tamanhop
+INNER JOIN produto ON produto.codProduto = tamanhop.codProduto

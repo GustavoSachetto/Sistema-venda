@@ -20,7 +20,7 @@ insert into produto(valor, nomeProduto, marca, tipo, genero, categoria) values
 ( "50.00" , "Calça Cargo Bege", "Nike", "Calça", "Masculino", "Calça"),
 ( "11.90" , "Cueca Box Vermelha", "Puma", "Cueca", "Masculino", "Roupa intima"),
 ( "20.00" , "Baby Look Cinza", "Adidas", "Blusa", "Feminino", "Camiseta"),
-( "2000.00" , " Baby Look Preta", "Prada", "Blusa", "Feminino", "Camiseta"),
+( "2000.00", "Baby Look Preta", "Prada", "Blusa", "Feminino", "Camiseta"),
 ( "15.00" , "Escapulatorio Corinthians", "Correntes e cia", "Colar", "Unisex", "Acessorio"),
 ( "65.00" , "Camisa Branca Corinthians", "Nike", "Camiseta", "Unisex", "Roupa premium");
 
@@ -44,27 +44,27 @@ insert into tamanho(tipoTamanho) values
 ( 9, 5 , 28 ),
 ( 10, 5 , 69 );
 
-insert into venda(codCliente, dataHora) values
-(  1 , "2022-04-19 12:04:25" ),
-(  2 , "2022-06-08 15:04:25" ),
-(  3 , "2023-10-25 20:10:30" ),
-(  4 , "2022-12-01 14:25:25" ),
-(  5 , "2022-10-29 15:45:38" ),
-(  6 , "2023-06-15 05:04:45" ),
-(  7 , "2022-08-08 13:06:25" ),
-(  8 , "2022-08-08 21:04:25" ),
-(  9 , "2023-01-20 23:50:25" ),
-(  10 , "2022-02-08 22:30:25" ),
-(  9 , "2023-04-19 12:04:25" ),
-(  8 , "2022-06-08 15:04:25" ),
-(  5 , "2022-10-25 20:10:30" ),
-(  1 , "2023-12-01 14:25:25" ),
-(  4 , "2022-10-29 15:45:38" ),
-(  7 , "2022-06-15 05:04:45" ), 
-(  2 , "2022-08-08 13:06:25" ),
-(  3 , "2022-08-08 21:04:25" ),
-(  5 , "2023-01-20 23:50:25" ),
-(  6 , "2023-02-08 22:30:25" );
+insert into venda(codCliente, data, hora) values
+(  1 , "2023-01-19", "12:04:25"),
+(  2 , "2023-04-10", "20:54:25"),
+(  3 , "2023-03-29", "12:24:25"),
+(  4 , "2023-03-29", "22:14:25"),
+(  5 , "2023-04-29", "19:04:25"),
+(  6 , "2023-01-29", "08:14:25"),
+(  7 , "2023-03-29", "02:02:25"),
+(  8 , "2023-07-29", "22:22:25"),
+(  9 , "2023-10-29", "21:09:25"),
+(  10 , "2023-02-24", "12:04:25"),
+(  1 , "2023-11-19", "12:04:25"),
+(  2 , "2023-11-10", "20:54:25"),
+(  3 , "2023-12-01", "12:24:25"),
+(  4 , "2023-09-29", "22:14:25"),
+(  5 , "2023-08-29", "19:04:25"),
+(  6 , "2023-07-29", "08:14:25"),
+(  7 , "2023-05-29", "02:02:25"),
+(  8 , "2023-02-12", "22:22:25"),
+(  9 , "2023-01-29", "21:09:25"),
+(  10 , "2023-02-22", "12:04:25");
 
 insert into vendaitem(valorUnitario, quantidadeVenda, codVenda, codEstoque) values
 ( 20.00 , 16, 1, 1),
@@ -107,3 +107,10 @@ insert into vendaitem(valorUnitario, quantidadeVenda, codVenda, codEstoque) valu
 ( 88.00 , 46, 14, 9),
 ( 11.98 , 79, 16, 3),
 ( 98.00 , 79, 7, 8);
+
+insert into notificacao(codNotificacao, titulo, conteudo, hora, data) values
+(1, "Novos clientes cadastrados", "Veja na tabela os novos clientes cadastrados no banco", "11:20:25", "2023-08-28"),
+(2, "Nova venda realizada", "Veja na tabela as ultimas duas vendas realizados no periodo de 2 dias", "12:30:25", "2023-02-12"),
+(3, "Alteração no produto", "Produto de código", "22:30:25", "2023-02-08"),
+(4, "Exclusão de cliente", "Cliente José Mar de codigo 11 foi excluido completamente do banco", "22:30:25", "2023-02-18"),
+(5, "Sem alterações no banco", "Não ouve nenhuma alteração no banco na ultima semana", "02:30:45", "2023-06-08");

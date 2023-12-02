@@ -32,7 +32,7 @@
                             <input type="text" placeholder="Codigo venda" name="txtCodV">
                             <input type="text" placeholder="Cpf cliente" name="txtCpf" minlength="11" maxlength="11">
                             <input type="text" placeholder="Codigo cliente" name="txtCodC">
-                            <input type="text" placeholder="Data e hora" name="txtDate" maxlength="30">    
+                            <input type="text" placeholder="Data" name="txtDate" maxlength="30">    
                             <button type="submit" name="envBusca">
                                 <i class='bx bx-search'></i>
                                 <span>Buscar</span>

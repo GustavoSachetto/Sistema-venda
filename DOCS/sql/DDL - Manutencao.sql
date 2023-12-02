@@ -23,7 +23,8 @@ unique (nomeProduto, tipo, marca, categoria, genero);
 
 alter table produto drop column quantidade;
 
-alter table venda add dataHora datetime not null;
+alter table venda add data date not null;
+alter table venda add hora time not null;
 alter table venda drop constraint fkprodutoVenda;
 alter table venda drop column codProduto;
 
@@ -58,4 +59,12 @@ create table vendaItem(
     
     codEstoque int not null,
     constraint fktamanhoP_vendaitem foreign key (codEstoque) references tamanhoP(codEstoque)
+);
+
+create table notificacao(
+	codNotificacao int auto_increment primary key not null,
+    titulo varchar(30) not null,
+    conteudo varchar(80) not null,
+    hora time not null,
+    data date not null
 );

@@ -15,9 +15,11 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="view/js/script.js"></script>
     </head>
     <body>
+        <?php require 'controller/exibePainel.php'?>
         <nav class="sidebar close">
             <header>
                 <div class="container-header">
@@ -134,8 +136,8 @@
             </div>
         </nav>
       	<main>
-            <article>
-            <section id="user">
+            <article id="">
+                <section id="user">
                     <div class="container-user">
                         <i class='bx bxs-user-circle'></i>
                         <div class="user">
@@ -150,24 +152,87 @@
                 <section id="information" class="information">
                     <h2>Informações gerais</h2>
                     <div class="container-information">
-                        <div id="venda" class="container-venda">
-                            <legend>Venda total</legend>
-                            <h2>R$ 1469,73</h2>
-                        </div>
                         <div id="estoque" class="container-estoque">
                             <legend>Estoque total</legend>
-                            <h2>R$ 2458,20</h2>
+                            <h2><?= $valorProduto?></h2>
+                        </div>
+                        <div id="venda" class="container-venda">
+                            <legend>Venda total</legend>
+                            <h2><?= $valorVenda?></h2>
                         </div>
                         <div id="cliente" class="container-cliente">
                             <legend>N° Clientes</legend>
-                            <h2>10</h2>
+                            <h2><?= $nClientes?></h2>
                         </div>
                         <div id="produto" class="container-produto">
                             <legend>N° Produtos</legend>
-                            <h2>33</h2>
+                            <h2><?= $nProdutos?></h2>
                         </div>
                     </section>
                     </div>
+            </article>
+            <article id="consult" class="consult">
+                <section class="container-grafico">
+                    <canvas id="myChart"></canvas>
+                    <script>
+                        const ctx = document.getElementById('myChart');
+
+                        var data = [12, 19, 3, 5, 12, 19, 3, 12, 19, 3, 5];
+
+                        new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Outubro', 'Novembro', 'Dezembro'],
+                            datasets: [{
+                            label: 'N° Vendas',
+                            data: data,
+                            borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                            }
+                        }
+                        });
+                    </script>
+                </section>
+                <aside class="container-notificacao">
+                    <h2>
+                        <span>Notificações</span>
+                        <i>...</i>
+                    </h2>
+                    <div class="notificacao">
+                        <p>
+                            <i class='bx bx-bell'></i>
+                            <span>Novos clientes cadastrados</span>
+                        </p>
+                        <legend>4 horas atrás</legend>
+                    </div>
+                    <div class="notificacao">
+                        <p>
+                            <i class='bx bx-bell'></i>
+                            <span>Novos clientes cadastrados</span>
+                        </p>
+                        <legend>12 horas atrás</legend>
+                    </div>
+                    <div class="notificacao">
+                        <p>
+                            <i class='bx bx-bell'></i>
+                            <span>Novos clientes cadastrados</span>
+                        </p>
+                        <legend>1 semana atrás</legend>
+                    </div>
+                    <div class="notificacao">
+                        <p>
+                            <i class='bx bx-bell'></i>
+                            <span>Novos clientes cadastrados</span>
+                        </p>
+                        <legend>2 semanas atrás</legend>
+                    </div>
+                </aside>
             </article>
         </main>
         <footer>

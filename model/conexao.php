@@ -37,11 +37,11 @@ class conexao {
     }
 
     public function consultaVenda($buscaCodV, $buscaCpf, $buscaCodC, $buscaData) {
-        $consulta = "SELECT venda.*, cliente.cpf, SUM(vendaItem.valorUnitario) FROM venda INNER JOIN cliente ON venda.codCliente = cliente.codCliente INNER JOIN vendaItem ON venda.codVenda = vendaItem.codVenda WHERE 
+        $consulta = "SELECT venda.*, cliente.cpf, SUM(vendaItem.valorUnitario) AS total FROM venda INNER JOIN cliente ON venda.codCliente = cliente.codCliente INNER JOIN vendaItem ON venda.codVenda = vendaItem.codVenda WHERE 
         venda.codVenda LIKE '%$buscaCodV%' AND
         venda.codCliente LIKE '%$buscaCodC%' AND
         cliente.cpf LIKE '%$buscaCpf%' AND
-        venda.dataHora LIKE '%$buscaData%' GROUP BY codVenda ORDER BY venda.codVenda ASC ";
+        venda.data LIKE '%$buscaData%' GROUP BY codVenda ORDER BY venda.codVenda ASC ";
         $resultado = $this -> consultaBanco($consulta);
 
         return $resultado;
