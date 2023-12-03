@@ -7,6 +7,7 @@
         <title>Sistema-venda | cadastro venda</title>
         <?php require ('../layout/head.php') ?>
         <link rel="stylesheet" href="../css/form.css">
+        <link rel="stylesheet" href="../css/venda.css">
         <script src="../js/formVenda.js"></script>
     </head>
     <body>
@@ -56,21 +57,34 @@
                         </fieldset>
                         <fieldset id="estoque">
                             <p>Informações dos produtos:</p><br>
-                            <select id="slcEstoque" name="slcEstoque" required>
-                                <option value="">Selecione um produto</option>
-                                <?php opcoesE($estoques)?>
-                            </select>
-                            <input type="number" placeholder="Quantidade" id="txtQuantidade" name="txtQuantidade" required>
-                        </fieldset>
-                        <div class="container-button">
-                            <button type="reset">
-                                <i class='bx bx-trash'></i>
-                                <span>Limpar</span>
-                            </button>
-                            <button type="submit">
-                                <i class='bx bx-message-square-add'></i>
-                                <span>Cadastrar</span>
-                            </button>
+                            <div id="produto">
+                                <p>Produto: 1</p><br>
+                                <select id="slcEstoque1" class="slcEstoque" name="estoque[]" required>
+                                    <option value="">Selecione um produto</option>
+                                    <?php opcoesE($estoques)?>
+                                </select>
+                                <input type="number" placeholder="Quantidade" class="txtQuantidade" name="quant[]" required>
+                            </div>
+                        </fieldset><hr>
+                        <div class="container-button space">
+                            <div>
+                                <button type="button" id="remove" class="remove">
+                                    <span>Remover produto</span>
+                                </button>
+                                <button type="button" id="add" class="add">
+                                    <span>Adicionar produto</span>
+                                </button>
+                            </div>
+                            <div>
+                                <button type="reset">
+                                    <i class='bx bx-trash'></i>
+                                    <span>Limpar</span>
+                                </button>
+                                <button type="submit">
+                                    <i class='bx bx-message-square-add'></i>
+                                    <span>Cadastrar</span>
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </section>

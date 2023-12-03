@@ -96,13 +96,13 @@ main article.consult > section, main article.consult > aside {
 }
 
 main > article .container-grafico {
-    width: 58%;
+    width: 50%;
 }
 
 main > article .container-notificacao {
     display: flex;
     flex-direction: column;
-    width: 42%;
+    width: 50%;
     overflow-y: auto;
 }
 
@@ -121,11 +121,15 @@ main > article .container-notificacao > h2 > span {
     color: var(--secondary-color);
 }
 
-main > article .container-notificacao > h2 > i {
-    color: var(--title-color);
+main > article .container-notificacao > h2 > button {
     position: absolute;
     right: 0;
     top: -10px;
+    width: 40px;
+    font-size: 46px;
+    color: var(--title-color);
+    background: transparent;
+    border: none;
 }
 
 .container-notificacao .notificacao {

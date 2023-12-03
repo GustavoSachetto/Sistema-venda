@@ -77,9 +77,9 @@ main section>form .container-button {
     justify-content: right;
 }
 
-main section>form .container-button>button {
+main section>form .container-button button {
     border: none;
-    padding: 12px 2.7%;
+    padding: 9px 2.7%;
     margin: 0 8px;
     border-radius: 10px;
     font-size: 20px;
@@ -90,25 +90,25 @@ main section>form .container-button>button {
     transition: var(--transition-04);
 }
 
-main section>form .container-button>button[type="submit"] {
+main section>form .container-button button[type="submit"] {
     background-color: var(--button-color-submit);
 }
 
-main section>form .container-button>button[type="submit"]:hover {
+main section>form .container-button button[type="submit"]:hover {
     transform: scale(1.03);
     box-shadow: 1px 5px 10px #0000001f;
 }
 
-main section>form .container-button>button[type="submit"]:active {
+main section>form .container-button button[type="submit"]:active {
     background-color: #6fd0f7;
     transition: none;
 }
 
-main section>form .container-button>button[type="reset"] {
+main section>form .container-button button[type="reset"] {
     background-color: var(--button-color-reset);
 }
 
-main section>form .container-button>button[type="reset"]:hover {
+main section>form .container-button button[type="reset"]:hover {
     color: var(--text-color-dark);
     background: transparent;
     border: 1px solid var(--text-color-dark);

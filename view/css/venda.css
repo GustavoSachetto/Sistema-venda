@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+:root {
+    --button-add-color: #73c2f7;
+    --button-remove-color: #f7a873;
+}
+
+body.dark {
+    --button-add-color: #73c2f7be;
+    --button-remove-color: #f7a873c4;
+}
+
+main form fieldset#estoque {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+main form fieldset div {
+    display: grid;
+    grid-template-columns: 50% auto;
+    gap: 10px;
+    margin-bottom: 13px;
+}
+
+main section .container-button.space {
+    justify-content: space-between;
+}
+
+main section .container-button.space div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+main section .container-button.space button {
+    padding: 9px 20px;
+}
+
+main section .container-button.space button.add {
+    background-color: var(--button-add-color);
+}
+
+main section .container-button.space button.remove {
+    background-color: var(--button-remove-color);
+}

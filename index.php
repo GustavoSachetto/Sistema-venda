@@ -17,6 +17,7 @@
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="view/js/script.js"></script>
+        <script src="view/js/painel.js"></script>
         <script src="view/js/grafico.js"></script>
     </head>
     <body>
@@ -181,7 +182,7 @@
                 <aside class="container-notificacao">
                     <h2>
                         <span>Notificações</span>
-                        <i>...</i>
+                        <button>...</button>
                     </h2>
                     <div class="notificacao">
                         <p>

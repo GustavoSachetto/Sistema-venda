@@ -25,10 +25,10 @@
     --text-color-dark: #252525;
     --link-color: #775fff;
     --link-color-hover: #2f1cfd;
-    --button-color-submit: #2BB94A;
+    --button-color-submit: #3ed65f;
     --button-color-search: #4aa3df;
     --button-color-edit: #df924a;
-    --button-color-reset: #b92b2b;
+    --button-color-reset: #ca3131;
     --base-color: #F0EEFF;
 
     --sidebar-shadow: 0px 0px 10px #00000015;
@@ -63,8 +63,8 @@ body.dark {
     --title-color: #f1f1f1;
     --link-color: #b6a9ff;
     --link-color-hover: #ccc8fa;
-    --button-color-submit: #2bb94aa8;
-    --button-color-search: #4aa4dfa1;
+    --button-color-submit: #3ed65fb7;
+    --button-color-search: #4aa4dfb7;
     --button-color-edit: #df924aab;
     --button-color-reset: #b92b2bad;
     --base-color: #616161;

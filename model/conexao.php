@@ -203,6 +203,10 @@ class conexao {
         }
     }
 
+    public function insereVenda() {
+        
+    }
+
     public function validaCliente($cadCpf) {
         $consulta = "SELECT COUNT(*) FROM cliente WHERE cpf = '$cadCpf'";
         $resultado = $this -> consultaBanco($consulta);

@@ -29,26 +29,61 @@ $(document).ready(function () {
         } 
     });   
 
-    // Select estoque
-    let slcEstoque = $('#slcEstoque');
-
-    slcEstoque.change(() => {
-        codigoProduto = slcEstoque.val();
-        estoques.forEach(item => {
-            if (item['codProduto'] == codigoProduto) {
-                $('#txtQuantidade').attr('max', item['quantidade']);
-                $('#txtQuantidade').attr('placeholder', "Quantidade disponivel: " + item['quantidade']);
-            }
-        });
-        
-        if (!codigoProduto) {
-            $('#txtQuantidade').attr('placeholder', "Quantidade");
-        } 
-    });
-    
     // Reset form
     $('button[type=reset]').click(() => {
         showCliente.slideUp();
-        $('#txtQuantidade').attr('placeholder', "Quantidade");
+        $('.txtQuantidade').attr('placeholder', "Quantidade");
+    });  
+    
+    // option select
+    function opcoesE(estoques) {
+        let option = "";
+        for (var element in estoques) {
+            option += "<option value=" + estoques[element]['codProduto'] + ">" + estoques[element]['codProduto'] + " - " + estoques[element]['nomeProduto'] + " - " + estoques[element]['tipoTamanho'] + " - " + estoques[element]['genero'] + " - " + estoques[element]['marca'] + "</option>";
+        }
+        return option;
+    }
+
+    var controleCampo = 1;
+    
+    // Add select estoque
+    $('#add').click(() => {
+        controleCampo++;
+        $('#estoque').append(
+        "<div id='produto"+controleCampo+"'>"+
+            "<p>Produto: "+controleCampo+"</p><br>"+
+            "<select id='slcEstoque"+controleCampo+"' class='slcEstoque' name='estoque[]' required>"+
+                "<option value=''>Selecione um produto</option>"+
+                opcoesE(estoques)+
+            "</select>"+
+            "<input type='number' placeholder='Quantidade' class='txtQuantidade' name='quant[]' required>"+
+        "</div>");
+    });
+
+    // Remove select estoque
+    $('#remove').click(() => {
+        $("#produto"+controleCampo).remove();
+        if (controleCampo > 1) {
+            controleCampo--;
+        }
+    });
+
+    // Select estoque
+    $(document).click(() => {
+        $('.slcEstoque').change((e) => {
+            slcEstoque = e.target.id;
+            codigoProduto = e.target.value;
+    
+            estoques.forEach(item => {
+                if (item['codProduto'] == codigoProduto) {
+                    $("#"+slcEstoque).next().attr('max', item['quantidade']);
+                    $("#"+slcEstoque).next().attr('placeholder', "Quantidade disponivel: " + item['quantidade']);
+                }
+            });
+    
+            if (!codigoProduto) {
+                $("#"+slcEstoque).attr('placeholder', "Quantidade");
+            } 
+        });
     });
 });
