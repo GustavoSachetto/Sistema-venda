@@ -12,7 +12,7 @@
         </div>
         <div class="container-search">
             <i class='bx bx-search'></i>
-            <input type="text" placeholder="Buscar...">
+            <input type="text" id="search" placeholder="Buscar...">
         </div>
         <nav class="container-nav">
             <ul>
