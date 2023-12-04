@@ -49,7 +49,6 @@ unique(quantidade, codProduto, codTam);
 
 create table vendaItem(
 	valorUnitario decimal(7,2) not null,
-    
     quantidadeVenda int not null,
     
     codVendaitem int auto_increment primary key not null,

@@ -43,7 +43,7 @@ class conexao {
     }
 
     public function consultaVenda($buscaCodV, $buscaCpf, $buscaCodC, $buscaData) {
-        $consulta = "SELECT venda.*, cliente.cpf, SUM(vendaItem.valorUnitario) AS total FROM venda INNER JOIN cliente ON venda.codCliente = cliente.codCliente INNER JOIN vendaItem ON venda.codVenda = vendaItem.codVenda WHERE 
+        $consulta = "SELECT venda.*, cliente.cpf, SUM(vendaItem.valorUnitario * vendaItem.quantidadeVenda) AS total FROM venda INNER JOIN cliente ON venda.codCliente = cliente.codCliente INNER JOIN vendaItem ON venda.codVenda = vendaItem.codVenda WHERE 
         venda.codVenda LIKE '%$buscaCodV%' AND
         venda.codCliente LIKE '%$buscaCodC%' AND
         cliente.cpf LIKE '%$buscaCpf%' AND
@@ -94,7 +94,7 @@ class conexao {
     }
 
     public function estoqueVenda() {
-        $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade FROM produto
+        $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade, tamanhop.codEstoque FROM produto
         INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
         INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam ORDER BY produto.codProduto ASC";
         $resultado = $this -> consultaBanco($consulta);
@@ -193,7 +193,7 @@ class conexao {
         $insereTamanhoProduto->bindValue(":codP", $codProduto);
         $insereTamanhoProduto->bindValue(":codT", $codTamanho);
 
-        $validaTamanhoProduto = $this->validaTamanhoProduto($cadQuantidade, $codProduto, $codTamanho);
+        $validaTamanhoProduto = $this->validaTamanhoProduto($codProduto, $codTamanho);
 
         if ($validaTamanhoProduto === 0) {
             $insereTamanhoProduto->execute();
@@ -203,8 +203,34 @@ class conexao {
         }
     }
 
-    public function insereVenda() {
+    public function insereVenda($codCliente, $cadDate, $cadTime) {
+        $insereVenda = $this -> pdo -> prepare("INSERT INTO venda(codCliente, data, hora) VALUE (:codC, :date, :time)");
+        $insereVenda->bindValue(":codC", $codCliente);
+        $insereVenda->bindValue(":date", $cadDate);
+        $insereVenda->bindValue(":time", $cadTime);
+        $consulta = "SHOW TABLE STATUS LIKE 'venda'";
+        $resultado = $this -> consultaBanco($consulta);
         
+        $insereVenda->execute();
+
+        return $resultado[0]['Auto_increment'];
+    }
+
+    public function insereVendaItem($codEstoque, $codVenda, $cadQuant, $cadValor) {
+        $insereVendaItem = $this -> pdo -> prepare("INSERT vendaitem(codEstoque, codVenda, quantidadeVenda, valorUnitario) VALUE (:codE , :codV, :quant, :valor)");
+        $insereVendaItem->bindValue(":codE", $codEstoque);
+        $insereVendaItem->bindValue(":codV", $codVenda);
+        $insereVendaItem->bindValue(":quant", $cadQuant);
+        $insereVendaItem->bindValue(":valor", $cadValor);
+
+        $integridadeVendaItem = $this -> integridadeVendaItem($codEstoque, $cadQuant, $codVenda);
+
+        if ($integridadeVendaItem === true) {
+            $insereVendaItem->execute();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function validaCliente($cadCpf) {
@@ -234,15 +260,23 @@ class conexao {
         return $resultado[0]["COUNT(*)"];
     }
 
-    public function validaTamanhoProduto($cadQuantidade, $codProduto, $codTamanho) {
+    public function validaTamanhoProduto($codProduto, $codTamanho) {
         $consulta = "SELECT COUNT(*) FROM tamanhop WHERE 
-        quantidade = '$cadQuantidade' AND
         codProduto = '$codProduto   ' AND
         codTam     = '$codTamanho   ' ";
         $resultado = $this -> consultaBanco($consulta);
         
         return $resultado[0]["COUNT(*)"];
     }
+
+    public function validaVendaItem($codEstoque) {
+        $consulta = "SELECT tamanhop.quantidade FROM tamanhop WHERE tamanhop.codEstoque = '$codEstoque'";
+        $resultado = $this -> consultaBanco($consulta);
+
+        return $resultado[0]['quantidade'];
+    }
+
+    
     
     public function integridadeProduto($codProduto) {
         $consulta = "SELECT COUNT(*) FROM produto
@@ -260,6 +294,23 @@ class conexao {
         $resultado = $this -> consultaBanco($consulta);
         
         return $resultado[0]["COUNT(*)"];
+    }
+    
+    public function integridadeVendaItem($codEstoque, $cadQuant, $codVenda) {
+        $quantidadeExistente = $this -> validaVendaItem($codEstoque);
+        $quantidadeTotal = intval($quantidadeExistente) - intval($cadQuant);
+    
+        $integridadeVendaItem = $this -> pdo -> prepare("UPDATE tamanhop SET quantidade = :quantT WHERE codEstoque = :codE");
+        $integridadeVendaItem->bindValue(":quantT", $quantidadeTotal);
+        $integridadeVendaItem->bindValue(":codE", $codEstoque);
+        
+        if ($quantidadeTotal >= 0) {
+            $integridadeVendaItem->execute();
+            return true;
+        } else {
+            $this -> deleteVenda($codVenda);
+            return false;
+        }
     }
 
     public function integridadeCliente($codCliente) {
@@ -344,6 +395,11 @@ class conexao {
         } else {
             return false;
         }
+    }
+
+    public function deleteVenda($codVenda) {
+        $deleteVenda = $this-> pdo -> prepare("DELETE FROM venda where codVenda = :codV");
+        $deleteVenda->bindValue(":codV", $codVenda);
     }
 
     public function deleteCliente($codCliente) {

@@ -8,8 +8,6 @@ select * from tamanho;
 
 select * from tamanhoP;
 
-select * from alerta;
-
 select * from notificacao;
 
 select * from venda;
@@ -30,7 +28,7 @@ INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
 INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam WHERE 
 produto.nomeProduto LIKE '%%'   AND 
 produto.categoria   LIKE '%%'   AND 
-produto.genero      LIKE '%%'    AND 
+produto.genero      LIKE '%%'  AND 
 produto.marca       LIKE '%%'  AND
 produto.tipo        LIKE '%%'   AND
 tamanho.codTam      LIKE '%%'  AND

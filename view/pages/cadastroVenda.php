@@ -59,11 +59,11 @@
                             <p>Informações dos produtos:</p><br>
                             <div id="produto">
                                 <p>Produto: 1</p><br>
-                                <select id="slcEstoque1" class="slcEstoque" name="estoque[]" required>
+                                <select id="slcEstoque1" class="slcEstoque" name="cadEstoque[]" required>
                                     <option value="">Selecione um produto</option>
                                     <?php opcoesE($estoques)?>
                                 </select>
-                                <input type="number" placeholder="Quantidade" class="txtQuantidade" name="quant[]" required>
+                                <input type="number" placeholder="Quantidade" class="txtQuantidade" min="1" name="cadQuant[]" required>
                             </div>
                         </fieldset><hr>
                         <div class="container-button space">

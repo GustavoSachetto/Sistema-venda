@@ -54,7 +54,7 @@
                                 <option value="">Selecione um tamanho</option>
                                 <?php opcoesT($tamanhos)?>
                             </select>
-                            <input type="number" placeholder="Quantidade" name="txtQuantidade" required>
+                            <input type="number" placeholder="Quantidade" min="1" name="txtQuantidade" required>
                         </fieldset><hr>
                         <div class="container-button">
                             <button type="reset">
