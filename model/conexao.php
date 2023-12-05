@@ -16,7 +16,6 @@ class conexao {
 
     public function conversorMoeda($converter) {
         $resultado = "R$ " . number_format($converter, 2, ",", ".");
-        
         return $resultado;
     }
 
@@ -27,29 +26,33 @@ class conexao {
         CEP         LIKE '%$buscaCep%'    AND 
         UF          LIKE '%$buscaUF%'     AND
         cidade      LIKE '%$buscaCidade%' AND
-        bairro      LIKE '%$buscaBairro%' AND
-        codCliente  LIKE '%$buscaCod%'    ORDER BY cliente.codCliente ASC";
+        bairro      LIKE '%$buscaBairro%' ORDER BY cliente.codCliente ASC";
+
+        if (!empty($buscaCod)) {
+            $consulta = "SELECT * FROM cliente WHERE cliente.codCliente = '$buscaCod'";
+        }
 
         $resultado = $this -> consultaBanco($consulta);
-
         return $resultado;
     }
 
     public function consultaTamanho() {
         $consulta = "SELECT * FROM tamanho ORDER BY codTam ASC";
         $resultado = $this -> consultaBanco($consulta);
-
         return $resultado;
     }
 
     public function consultaVenda($buscaCodV, $buscaCpf, $buscaCodC, $buscaData) {
         $consulta = "SELECT venda.*, cliente.cpf, SUM(vendaItem.valorUnitario * vendaItem.quantidadeVenda) AS total FROM venda INNER JOIN cliente ON venda.codCliente = cliente.codCliente INNER JOIN vendaItem ON venda.codVenda = vendaItem.codVenda WHERE 
-        venda.codVenda LIKE '%$buscaCodV%' AND
         venda.codCliente LIKE '%$buscaCodC%' AND
         cliente.cpf LIKE '%$buscaCpf%' AND
         venda.data LIKE '%$buscaData%' GROUP BY codVenda ORDER BY venda.codVenda ASC ";
-        $resultado = $this -> consultaBanco($consulta);
 
+        if (!empty($buscaCodV)) {
+            $consulta = "SELECT venda.*, cliente.cpf, SUM(vendaItem.valorUnitario * vendaItem.quantidadeVenda) AS total FROM venda INNER JOIN cliente ON venda.codCliente = cliente.codCliente INNER JOIN vendaItem ON venda.codVenda = vendaItem.codVenda WHERE venda.codVenda = '$buscaCodV'";
+        }
+
+        $resultado = $this -> consultaBanco($consulta);
         return $resultado;
     }
 
@@ -59,11 +62,13 @@ class conexao {
         produto.categoria   LIKE '%$buscaCate%'   AND 
         produto.genero      LIKE '%$buscaGen%'    AND 
         produto.marca       LIKE '%$buscaMarca%'  AND
-        produto.tipo        LIKE '%$buscaTipo%'   AND
-        produto.codProduto  LIKE '%$buscaCod%' ORDER BY produto.codProduto ASC";
+        produto.tipo        LIKE '%$buscaTipo%' ORDER BY produto.codProduto ASC";
+
+        if (!empty($buscaCod)) {
+            $consulta = "SELECT * FROM produto WHERE produto.codProduto  = '$buscaCod'";
+        }
 
         $resultado = $this -> consultaBanco($consulta);
-
         return $resultado;
     }
 
@@ -76,11 +81,13 @@ class conexao {
         produto.genero      LIKE '%$buscaGen%'    AND 
         produto.marca       LIKE '%$buscaMarca%'  AND
         produto.tipo        LIKE '%$buscaTipo%'   AND
-        tamanho.codTam      LIKE '%$buscaCodTam%' AND
-        tamanhop.codEstoque LIKE '%$buscaCod%' ORDER BY tamanhop.codEstoque ASC";
+        tamanho.codTam      LIKE '%$buscaCodTam%' ORDER BY tamanhop.codEstoque ASC";
+        
+        if (!empty($buscaCod)) {
+            $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade, tamanhop.codEstoque FROM produto INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam WHERE tamanhop.codEstoque  = '$buscaCod'";
+        }
 
         $resultado = $this -> consultaBanco($consulta);
-
         return $resultado;
     }
 
@@ -97,8 +104,8 @@ class conexao {
         $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade, tamanhop.codEstoque FROM produto
         INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
         INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam ORDER BY produto.codProduto ASC";
-        $resultado = $this -> consultaBanco($consulta);
 
+        $resultado = $this -> consultaBanco($consulta);
         return $resultado;
     }
     
@@ -106,27 +113,24 @@ class conexao {
         $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero,  tamanho.codTam, tamanho.tipoTamanho, tamanhop.quantidade FROM produto
         INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
         INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam WHERE tamanhop.codEstoque = '$codEstoque'";
-        $resultado = $this -> consultaBanco($consulta);
 
+        $resultado = $this -> consultaBanco($consulta);
         return $resultado;
     }
 
     public function exibeProduto($codProduto) {
         $consulta = "SELECT * FROM produto WHERE produto.codProduto = '$codProduto'";
         $resultado = $this -> consultaBanco($consulta);
-
         return $resultado;
     }
 
     public function exibeCliente($codCliente) {
         $consulta = "SELECT * FROM cliente WHERE cliente.codCliente = '$codCliente'";
         $resultado = $this -> consultaBanco($consulta);
-
         return $resultado;
     }
 
     public function insereCliente($cadNome, $cadCpf, $cadCep, $cadUF, $cadCidade, $cadBairro, $cadRua, $cadLogradouro, $cadNumero, $cadComplemento, $cadObservacao) {
-
         $insereCliente = $this -> pdo -> prepare ("INSERT INTO cliente(nomeCliente, cpf, CEP, UF, nResidencial, cidade, bairro, rua, tipoLogradouro, complemento, observacao) VALUES (:n, :cpf, :cep, :uf, :numero, :cid, :bairro, :rua, :log, :comp, :obs)");
 
         $insereCliente->bindValue(":n", $cadNome);
@@ -153,9 +157,7 @@ class conexao {
 
     public function insereTamanho($cadTam){
         $insereTamanho = $this -> pdo -> prepare ("INSERT INTO tamanho(tipoTamanho) VALUE (:t)");
-
         $insereTamanho->bindValue(":t", $cadTam);
-
         $validaTamanho = $this->validaTamanho($cadTam);
 
         if ($validaTamanho === 0) {
@@ -287,13 +289,22 @@ class conexao {
         return $resultado[0]["COUNT(*)"];
     }
 
-    public function integridadeEstoque($codEstoque) {
-        $consulta = "SELECT COUNT(*) FROM tamanhop 
-        INNER JOIN vendaitem ON vendaitem.codEstoque = tamanhop.codEstoque
-        WHERE tamanhop.codEstoque = '$codEstoque'";
-        $resultado = $this -> consultaBanco($consulta);
+    public function integridadeEstoque($codEstoque, $codProduto, $cadTam) {
+        $consulta = "SELECT COUNT(*) FROM tamanhop INNER JOIN vendaitem ON vendaitem.codEstoque = tamanhop.codEstoque WHERE tamanhop.codEstoque = '$codEstoque'";
+        $verifica1 = $this -> consultaBanco($consulta);
         
-        return $resultado[0]["COUNT(*)"];
+        $consulta = "SELECT COUNT(*) FROM tamanhop WHERE tamanhop.codProduto = '$codProduto' AND tamanhop.codTam = '$cadTam'";
+        $verifica2 = $this -> consultaBanco($consulta);
+        
+        if ($verifica1[0]["COUNT(*)"] > 0) {
+            $integridade = 2;
+        } elseif ($verifica2[0]["COUNT(*)"] > 0){
+            $integridade = 1;
+        } else {
+            $integridade = 0;
+        }
+        
+        return $integridade;
     }
     
     public function integridadeVendaItem($codEstoque, $cadQuant, $codVenda) {
@@ -342,19 +353,19 @@ class conexao {
         }
     }
     
-    public function atualizaEstoque($cadQuantidade, $cadTam, $codEstoque) {
+    public function atualizaEstoque($cadQuantidade, $cadTam, $codEstoque, $codProduto) {
         $atualizaEstoque = $this-> pdo -> prepare("UPDATE tamanhop SET quantidade = :quant, codTam = :codTam WHERE codEstoque = :codE");
         $atualizaEstoque->bindValue(":quant", $cadQuantidade);
         $atualizaEstoque->bindValue(":codTam", $cadTam);
         $atualizaEstoque->bindValue(":codE", $codEstoque);
         
-        $integridadeEstoque = $this->integridadeEstoque($codEstoque);
+        $integridadeEstoque = $this->integridadeEstoque($codEstoque, $codProduto, $cadTam);
         
         if ($integridadeEstoque === 0) {
             $atualizaEstoque->execute();
-            return true;
+            return $integridadeEstoque;
         } else {
-            return false;
+            return $integridadeEstoque;
         }
     }
     
