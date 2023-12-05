@@ -4,11 +4,7 @@
     $config = parse_ini_file('../../model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
 
-    $consulta = "SELECT count(*) FROM venda";
-    $verifica = $conexao -> consultaBanco($consulta);
-    
-    if ($verifica[0]['count(*)'] > 0) {
-
+    if (isset($vendas)) {
         echo "
         <form method='post' action=''>
             <h2>Exibe vendas</h2>
