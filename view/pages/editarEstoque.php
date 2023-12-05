@@ -45,7 +45,7 @@
                                 <option value="<?= $estoque[0]['codTam']?>"><?= $estoque[0]['tipoTamanho']?></option>
                                 <?php opcoesT($tamanhos)?>
                             </select>
-                            <input type="number" placeholder="Quantidade" value="<?= $estoque[0]['quantidade']?>" name="txtQuantidade" required>
+                            <input type="number" placeholder="Quantidade" value="<?= $estoque[0]['quantidade']?>" min="0" name="txtQuantidade" required>
                         </fieldset><hr>
                         <div class="container-button">
                             <button type="reset">
