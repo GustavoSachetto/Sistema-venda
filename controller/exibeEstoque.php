@@ -55,6 +55,6 @@
             </table>
         </form>";
     } else {
-        echo "<p>Nenhum estoque cadastrado!</p>";
+        echo "<p>Nenhum estoque cadastrado! <a href='cadastroEstoque.php'>Cadastrar</a></p>";
     }
 ?>
