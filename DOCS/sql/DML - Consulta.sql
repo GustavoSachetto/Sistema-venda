@@ -50,9 +50,9 @@ SELECT * FROM produto
 INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
 WHERE produto.codProduto = 11;
 
-SELECT COUNT(*) FROM cliente
+SELECT * FROM cliente
 INNER JOIN venda ON venda.codCliente = cliente.codCliente
-WHERE cliente.codCliente = 2;
+WHERE cliente.codCliente LIKE 1;
 
 SELECT COUNT(*) FROM tamanhop 
 INNER JOIN vendaitem ON vendaitem.codEstoque = tamanhop.codEstoque
