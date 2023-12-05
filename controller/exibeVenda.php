@@ -4,9 +4,9 @@
     $config = parse_ini_file('../../model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
 
-    if (isset($vendas)) {
+    if (isset($vendas) && empty(!$vendas[0]['codVenda'])) {
         echo "
-        <form method='post' action=''>
+        <form method='post' action='detalhesVenda.php'>
             <h2>Exibe vendas</h2>
             <table>
                 <thead>
@@ -32,7 +32,7 @@
                         <td>" . stripslashes($item['hora']) . "</td>
                         <td>" .  $conexao -> conversorMoeda($item['total'])  . "</td>
                         <td>
-                            <button type='submit' name='editar' value=''>Ver</button>
+                            <button type='submit' class='detalhes' name='detalhes' value='". stripslashes($item['codVenda']) ."'>Detalhes</button>
                         </td>
                     </tr>
             ";
@@ -47,6 +47,6 @@
             </table>
         </form>";
     } else {
-        echo "<p>Nenhum venda cadastrada!</p>";
+        echo "<p>Nenhum venda cadastrada! <a href='cadastroVenda.php'>Cadastrar</a></p>";
     }
 ?>
