@@ -3,11 +3,7 @@
     $config = parse_ini_file('../../model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
 
-    $consulta = "SELECT count(*) FROM cliente";
-    $verifica = $conexao -> consultaBanco($consulta);
-
-    if ($verifica[0]['count(*)'] !== 0) {
-        
+    if (isset($clientes)) {
         echo "
         <form method='post' action='editarCliente.php'>
             <h2>Exibe clientes</h2>
@@ -59,6 +55,6 @@
             </table>
         </form>";
     } else {
-        echo "<p>Nenhum cliente cadastrado!</p>";
+        echo "<p>Nenhum cliente encontrado! <a href='cadastroCliente.php'>Cadastrar</a></p>";
     }
 ?>
