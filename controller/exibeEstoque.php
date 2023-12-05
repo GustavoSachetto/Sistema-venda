@@ -6,7 +6,7 @@
     $consulta = "SELECT count(*) FROM tamanhop";
     $verifica = $conexao -> consultaBanco($consulta);
     
-    if ($verifica[0]['count(*)'] !== 0) {
+    if ($verifica[0]['count(*)'] > 0) {
 
         echo "
         <form method='post' action='editarEstoque.php'>
@@ -43,7 +43,7 @@
                         <td>" . $conexao -> conversorMoeda($item['valor']) . "</td>
                         <td>    
                             <div class='buttons'>
-                                <button type='submit' class='editar' name='editar' value=" . $item['codEstoque'] . ">Editar</button>
+                                <button type='submit' class='editar' name='editar' value=" . $item['codEstoque'] . "-" . $item['codProduto'] . ">Editar</button>
                             </div>
                         </td>
                     </tr>
