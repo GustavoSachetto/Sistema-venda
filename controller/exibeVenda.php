@@ -45,7 +45,7 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan='13'>Cadastrar mais vendas</td>
+                        <td colspan='13'><a href='cadastroVenda.php'>Cadastrar mais vendas</a></td>
                     </tr>
                 </tfoot>
             </table>

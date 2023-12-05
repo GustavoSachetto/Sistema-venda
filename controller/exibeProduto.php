@@ -49,7 +49,7 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan='13'>Cadastrar mais produtos</td>
+                        <td colspan='13'><a href='cadastroProduto.php'>Cadastrar mais produtos</a></td>
                     </tr>
                 </tfoot>
             </table>

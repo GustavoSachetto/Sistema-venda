@@ -32,7 +32,7 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan='13'>Cadastrar mais tamanhos</td>
+                    <td colspan='13'><a href='cadastroTamanho.php'>Cadastrar mais tamanhos</a></td>
                 </tr>
             </tfoot>
         </table>";

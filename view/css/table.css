@@ -123,8 +123,16 @@ table>tbody td {
 
 table>tfoot td {
     padding: 4px 5px;
-    color: var(--primary-color-light);
     background-color: var(--secondary-color);
+}
+
+table>tfoot td > a {
+    color: var(--primary-color-light);
+    text-decoration: none;
+}
+
+table>tfoot td > a:hover {
+    text-decoration: underline;
 }
 
 tr:nth-child(even) {

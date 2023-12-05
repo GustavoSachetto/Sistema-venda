@@ -53,7 +53,7 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan='13'>Cadastrar mais estoques</td>
+                        <td colspan='13'><a href='cadastroEstoque.php'>Cadastrar mais estoques</a></td>
                     </tr>
                 </tfoot>
             </table>
