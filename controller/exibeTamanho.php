@@ -6,7 +6,7 @@
     $consulta = "SELECT count(*) FROM tamanho";
     $verifica = $conexao -> consultaBanco($consulta);
 
-    if ($verifica[0]['count(*)'] !== 0) {
+    if ($verifica[0]['count(*)'] > 0) {
         $tamanhos = $conexao -> consultaTamanho();
 
         echo "
