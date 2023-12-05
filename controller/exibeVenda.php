@@ -7,7 +7,7 @@
     $consulta = "SELECT count(*) FROM venda";
     $verifica = $conexao -> consultaBanco($consulta);
     
-    if ($verifica[0]['count(*)'] !== 0) {
+    if ($verifica[0]['count(*)'] > 0) {
 
         echo "
         <form method='post' action=''>
