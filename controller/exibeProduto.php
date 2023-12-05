@@ -2,12 +2,8 @@
     require_once '../../model/conexao.php';
     $config = parse_ini_file('../../model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
-
-    $consulta = "SELECT count(*) FROM produto";
-    $verifica = $conexao -> consultaBanco($consulta);
     
-    if ($verifica[0]['count(*)'] > 0) {
-
+    if (isset($produtos)) {
         echo "
         <form method='post' action='editarProduto.php'>
             <h2>Exibe produtos</h2>
