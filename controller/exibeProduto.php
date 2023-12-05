@@ -51,6 +51,6 @@
             </table>
         </form>";
     } else {
-        echo "<p>Nenhum produto cadastrado!</p>";
+        echo "<p>Nenhum produto cadastrado! <a href='cadastroProduto.php'>Cadastrar</a></p>";
     }
 ?>
