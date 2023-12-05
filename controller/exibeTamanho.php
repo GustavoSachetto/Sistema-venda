@@ -33,6 +33,6 @@
             </tfoot>
         </table>";
     } else {
-        echo "<p>Nenhum tamanho cadastrado!</p>";
+        echo "<p>Nenhum tamanho cadastrado! <a href='cadastroTamanho.php'>Cadastrar</a></p>";
     }
 ?>
