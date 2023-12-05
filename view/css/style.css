@@ -28,6 +28,7 @@
     --button-color-submit: #3ed65f;
     --button-color-search: #4aa3df;
     --button-color-edit: #df924a;
+    --button-color-see: #ab70ee;
     --button-color-reset: #ca3131;
     --base-color: #F0EEFF;
 
@@ -66,6 +67,7 @@ body.dark {
     --button-color-submit: #3ed65fb7;
     --button-color-search: #4aa4dfb7;
     --button-color-edit: #df924aab;
+    --button-color-see: #ab70eea2;
     --button-color-reset: #b92b2bad;
     --base-color: #616161;
 
