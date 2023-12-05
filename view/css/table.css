@@ -90,6 +90,10 @@ main section h2 {
     background-color: var(--button-color-edit);
 }
 
+.container-table>form button.detalhes {
+    background-color: var(--button-color-see);
+}
+
 .container-table>form button.excluir {
     background-color: var(--button-color-reset);
 }
