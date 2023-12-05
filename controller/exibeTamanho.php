@@ -2,13 +2,9 @@
     require_once '../../model/conexao.php';
     $config = parse_ini_file('../../model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
+    $tamanhos = $conexao -> consultaTamanho();
 
-    $consulta = "SELECT count(*) FROM tamanho";
-    $verifica = $conexao -> consultaBanco($consulta);
-
-    if ($verifica[0]['count(*)'] > 0) {
-        $tamanhos = $conexao -> consultaTamanho();
-
+    if (isset($tamanhos)) {
         echo "
         <h2>Exibe tamanhos</h2>
         <table>
