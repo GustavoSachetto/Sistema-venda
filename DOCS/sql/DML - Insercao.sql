@@ -67,8 +67,8 @@ insert into venda(codCliente, data, hora) values
 (  10 , "2023-02-22", "12:04:25");
 
 insert into vendaitem(valorUnitario, quantidadeVenda, codVenda, codEstoque) values
-( 20.00 , 16, 1, 1),
-( 50.00 , 01, 10, 5),
+( 50.00 , 16, 1, 1),
+( 50.00 , 01, 10, 1),
 ( 100.00 , 5, 3, 2),
 ( 20.00 , 50, 4, 7),
 ( 11.90 , 30, 10, 6 ),
@@ -108,9 +108,9 @@ insert into vendaitem(valorUnitario, quantidadeVenda, codVenda, codEstoque) valu
 ( 11.98 , 79, 16, 3),
 ( 98.00 , 79, 7, 8);
 
-insert into notificacao(codNotificacao, titulo, conteudo, hora, data) values
-(1, "Novos clientes cadastrados", "Veja na tabela os novos clientes cadastrados no banco", "11:20:25", "2023-08-28"),
-(2, "Nova venda realizada", "Veja na tabela as ultimas duas vendas realizados no periodo de 2 dias", "12:30:25", "2023-02-12"),
-(3, "Alteração no produto", "Produto de código", "22:30:25", "2023-02-08"),
-(4, "Exclusão de cliente", "Cliente José Mar de codigo 11 foi excluido completamente do banco", "22:30:25", "2023-02-18"),
-(5, "Sem alterações no banco", "Não ouve nenhuma alteração no banco na ultima semana", "02:30:45", "2023-06-08");
+insert into registro(codRegistro, texto, hora, data) values
+(1, "Novo cliente cadastrado", "11:20:25", "2023-08-28"),
+(2, "Nova venda cadastrada", "12:30:25", "2023-02-12"),
+(3, "Alteração de produto", "12:30:25", "2023-02-08"),
+(4, "Exclusão de cliente", "22:30:25", "2023-02-18"),
+(5, "Sem alterações no banco", "02:30:45", "2022-01-08");
