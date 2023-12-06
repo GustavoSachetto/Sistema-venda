@@ -6,7 +6,7 @@
 
     if (isset($vendas) && empty(!$vendas[0]['codVenda'])) {
         echo "
-        <form method='post' action='detalhesVenda.php'>
+        <form method='post' action=''>
             <table>
                 <thead>
                     <td>#</td>
