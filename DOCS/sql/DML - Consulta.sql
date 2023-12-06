@@ -62,3 +62,5 @@ SELECT SUM(tamanhop.quantidade * produto.valor) AS valorProduto FROM tamanhop
 INNER JOIN produto ON produto.codProduto = tamanhop.codProduto;
 
 SELECT SUM(vendaItem.quantidadeVenda * vendaItem.valorUnitario) AS valorVenda FROM vendaItem;
+
+SELECT venda.*, cliente.cpf, SUM(vendaItem.valorUnitario * vendaItem.quantidadeVenda) AS total FROM venda INNER JOIN cliente ON venda.codCliente = cliente.codCliente INNER JOIN vendaItem ON venda.codVenda = vendaItem.codVenda WHERE venda.codVenda = 62
