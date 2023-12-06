@@ -17,7 +17,6 @@
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="view/js/script.js"></script>
-        <script src="view/js/painel.js"></script>
         <script src="view/js/grafico.js"></script>
     </head>
     <body>
@@ -85,19 +84,6 @@
                         </li>
                         <li class="dropdown">
                             <div type="button" class="menu-link" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class='bx bx-package'></i>
-                                <div class="text">
-                                    <span>Estoque</span>
-                                    <i class='bx bx-chevron-down arrow'></i>
-                                </div>
-                            </div>
-                            <ul class="dropdown-menu">
-                                <li><a href="view/pages/estoque.php">Exibir</a></li>
-                                <li><a href="view/pages/cadastroEstoque.php">Cadastrar</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <div type="button" class="menu-link" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class='bx bx-collapse-alt'></i>
                                 <div class="text">
                                     <span>Tamanho</span>
@@ -107,6 +93,19 @@
                             <ul class="dropdown-menu">
                                 <li><a href="view/pages/tamanho.php">Exibir</a></li>
                                 <li><a href="view/pages/cadastroTamanho.php">Cadastrar</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <div type="button" class="menu-link" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bx-package'></i>
+                                <div class="text">
+                                    <span>Estoque</span>
+                                    <i class='bx bx-chevron-down arrow'></i>
+                                </div>
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li><a href="view/pages/estoque.php">Exibir</a></li>
+                                <li><a href="view/pages/cadastroEstoque.php">Cadastrar</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -181,37 +180,10 @@
                 </section>
                 <aside class="container-notificacao">
                     <h2>
-                        <span>Notificações</span>
+                        <span>Registro alterações</span>
                         <button>...</button>
                     </h2>
-                    <div class="notificacao">
-                        <p>
-                            <i class='bx bx-bell'></i>
-                            <span>Novos clientes cadastrados</span>
-                        </p>
-                        <legend>4 horas atrás</legend>
-                    </div>
-                    <div class="notificacao">
-                        <p>
-                            <i class='bx bx-bell'></i>
-                            <span>Novos clientes cadastrados</span>
-                        </p>
-                        <legend>12 horas atrás</legend>
-                    </div>
-                    <div class="notificacao">
-                        <p>
-                            <i class='bx bx-bell'></i>
-                            <span>Novos clientes cadastrados</span>
-                        </p>
-                        <legend>1 semana atrás</legend>
-                    </div>
-                    <div class="notificacao">
-                        <p>
-                            <i class='bx bx-bell'></i>
-                            <span>Novos clientes cadastrados</span>
-                        </p>
-                        <legend>2 semanas atrás</legend>
-                    </div>
+                    <?php registro($registros); ?>
                 </aside>
             </article>
         </main>
