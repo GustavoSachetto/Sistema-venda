@@ -22,7 +22,7 @@
     </head>
     <body>
         <?php require 'controller/exibePainel.php'?>
-        <script> var vendaMes = <?= json_encode(grafico($vendas))?>;</script> 
+        <script> var vendaMes = <?= json_encode(grafico($vendas))?>; </script> 
         <nav class="sidebar close">
             <header>
                 <div class="container-header">

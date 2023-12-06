@@ -46,6 +46,6 @@
             </table>
         </form>";
     } else {
-        echo "<p>Nenhum venda cadastrada! <a href='cadastroVenda.php'>Cadastrar</a></p>";
+        echo "<p>Nenhum venda encontrada! <a href='cadastroVenda.php'>Cadastrar</a></p>";
     }
 ?>
