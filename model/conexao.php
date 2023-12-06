@@ -19,6 +19,12 @@ class conexao {
         return $resultado;
     }
 
+    public function consultaRegistro() {
+        $consulta = "SELECT * FROM registro ORDER BY codRegistro DESC";
+        $resultado = $this -> consultaBanco($consulta);
+        return $resultado;
+    }
+
     public function consultaCliente($buscaNome, $buscaCpf, $buscaCep, $buscaUF, $buscaCidade, $buscaBairro, $buscaCod) {
         $consulta = "SELECT * FROM cliente WHERE 
         nomeCliente LIKE '%$buscaNome%'   AND 
@@ -103,7 +109,7 @@ class conexao {
     public function estoqueVenda() {
         $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valorVenda, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade, tamanhop.codEstoque FROM produto
         INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
-        INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam ORDER BY produto.codProduto ASC";
+        INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam ORDER BY tamanhop.codEstoque ASC";
 
         $resultado = $this -> consultaBanco($consulta);
         return $resultado;
@@ -166,6 +172,15 @@ class conexao {
         } else {
             return false;
         }
+    }
+
+    public function insereRegistro($cadTexto, $cadTime, $cadDate){
+        $insereRegistro = $this -> pdo -> prepare ("INSERT INTO registro(texto, hora, data) VALUE (:t, :h, :d)");
+        $insereRegistro->bindValue(":t", $cadTexto);
+        $insereRegistro->bindValue(":h", $cadTime);
+        $insereRegistro->bindValue(":d", $cadDate);
+
+        $insereRegistro->execute();
     }
 
     public function insereProduto($cadNomeP, $cadValorC, $cadValorV, $cadCat, $cadGen, $cadTipo, $cadMarca) {
