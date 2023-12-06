@@ -33,7 +33,8 @@
                         <fieldset id="produto">
                             <p>Informações do produto:</p><br>
                             <input type="text" placeholder="Nome produto" value="<?= $produto[0]['nomeProduto']?>" name="txtNomeP" minlength="4" maxlength="70" required>
-                            <input type="number" placeholder="Valor" value="<?= $produto[0]['valor']?>" name="txtValor" min="1" max="99999.99" step="0.01" required>
+                            <input type="number" placeholder="Valor" value="<?= $produto[0]['valorCusto']?>" name="txtValorC" min="1" max="99999.99" step="0.01" required>
+                            <input type="number" placeholder="Valor" value="<?= $produto[0]['valorVenda']?>" name="txtValorV" max="99999.99" step="0.01" required>
                             <input type="text" placeholder="Categoria" value="<?= $produto[0]['categoria']?>" name="txtCat" minlength="4" maxlength="30" required>
                             <input type="text" placeholder="Genero" value="<?= $produto[0]['genero']?>" name="txtGen" minlength="4" maxlength="10" required>
                             <input type="text" placeholder="Tipo" value="<?= $produto[0]['tipo']?>" name="txtTipo" minlength="4" maxlength="30" required>
