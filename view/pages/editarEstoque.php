@@ -33,7 +33,7 @@
                         <fieldset id="estoque">
                             <p>Informações do produto:</p><br>
                             <input type="text" placeholder="Nome estoque" value="<?= $estoque[0]['nomeProduto']?>" class="readonly" name="txtNomeP" minlength="4" maxlength="70" required readonly>
-                            <input type="number" placeholder="Valor" value="<?= $estoque[0]['valor']?>" class="readonly" name="txtValor" min="1" max="99999.99" step="0.01" required readonly>
+                            <input type="number" placeholder="Valor" value="<?= $estoque[0]['valorVenda']?>" class="readonly" name="txtValor" min="1" max="99999.99" step="0.01" required readonly>
                             <input type="text" placeholder="Categoria" value="<?= $estoque[0]['categoria']?>" class="readonly" name="txtCat" minlength="4" maxlength="30" required readonly>
                             <input type="text" placeholder="Genero" value="<?= $estoque[0]['genero']?>" class="readonly" name="txtGen" minlength="4" maxlength="10" required readonly>
                             <input type="text" placeholder="Tipo" value="<?= $estoque[0]['tipo']?>" class="readonly" name="txtTipo" minlength="4" maxlength="30" required readonly>
