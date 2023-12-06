@@ -29,7 +29,7 @@
 
             if ($resultadoEditar === 2) {
                 alerta("Erro!", "Estoque já incluido em uma venda.", "error");
-            } else if ($resultadoEditar === 1) {
+            } elseif ($resultadoEditar === 1) {
                 alerta("Erro!", "Estoque já existente no tamanho desejado.", "error");
             } else {
                 alerta("Concluído!", "Estoque editado com sucesso.", "success");
