@@ -13,7 +13,7 @@
         $resultado = $conexao -> consultaBanco('SELECT SUM(tamanhop.quantidade * produto.valorCusto) AS valorProduto FROM tamanhop INNER JOIN produto ON produto.codProduto = tamanhop.codProduto');
         $valorProduto = $conexao -> conversorMoeda($resultado[0]['valorProduto']);
         
-        $resultado = $conexao -> consultaBanco('SELECT SUM(vendaItem.quantidadeVenda * vendaItem.valorUnitario) AS valorVenda FROM vendaItem');
+        $resultado = $conexao -> consultaBanco('SELECT SUM(vendaitem.quantidadeVenda * vendaitem.valorUnitario) AS valorVenda FROM vendaitem');
         $valorVenda = $conexao -> conversorMoeda($resultado[0]['valorVenda']);
         
         $resultado = $conexao -> consultaBanco('SELECT count(*) FROM cliente');
