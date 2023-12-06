@@ -3,7 +3,8 @@
     require_once '../../model/conexao.php';
     $config = parse_ini_file('../../model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
-    
+    date_default_timezone_set('America/Sao_Paulo');
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if (isset($_POST['editar'])) {
@@ -23,13 +24,17 @@
             $cadComplemento = addslashes($_POST['txtComplemento']);
             $cadObservacao = addslashes($_POST['txtObservacao']);
             $codCliente = $_SESSION['codCliente'];
+            $cadDate = date('Y-m-d');
+            $cadTime = date('H:i:s');
     
             $resultadoEditar = $conexao -> atualizaCliente($cadNome, $cadCpf, $cadCep, $cadUF, $cadCidade, $cadBairro, $cadRua, $cadLogradouro, $cadNumero, $cadComplemento, $cadObservacao, $codCliente);
     
             if ($resultadoEditar === true) {
                 alerta("Concluído!", "Cliente editado com sucesso.", "success");
+                $conexao -> insereRegistro("Alteração de cliente.", $cadTime, $cadDate);
             } else {
                 alerta("Erro!", "Cliente já finalizou uma venda.", "error");
+                $conexao -> insereRegistro("Tentativa da alteração de cliente.", $cadTime, $cadDate);
             }
         }
         
