@@ -3,6 +3,7 @@
     require_once '../../model/conexao.php';
     $config = parse_ini_file('../../model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
+    date_default_timezone_set('America/Sao_Paulo');
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -19,13 +20,17 @@
             $cadTipo = addslashes($_POST['txtTipo']);
             $cadMarca = addslashes($_POST['txtMarca']);
             $codProduto = $_SESSION['codProduto'];
+            $cadDate = date('Y-m-d');
+            $cadTime = date('H:i:s');
             
             $resultadoEditar = $conexao -> atualizaProduto($cadNomeP, $cadValorC, $cadValorV, $cadCat, $cadGen, $cadTipo, $cadMarca, $codProduto);
 
             if ($resultadoEditar === true) {
                 alerta("Concluído!", "Produto editado com sucesso.", "success");
+                $conexao -> insereRegistro("Alteração de produto.", $cadTime, $cadDate);
             } else {
                 alerta("Erro!", "Produto já inserido no estoque.", "error");
+                $conexao -> insereRegistro("Tentativa da alteração de produto.", $cadTime, $cadDate);
             }
         }
         
