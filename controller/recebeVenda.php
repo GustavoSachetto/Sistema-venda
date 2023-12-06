@@ -18,7 +18,7 @@
     
     function opcoesE($estoques) {
         foreach ($estoques as $item) {
-            echo "<option value=" . $item['codEstoque'] . "-" . $item['valor'] . ">" . $item['codProduto'] . " - " . $item['nomeProduto'] . " - " . $item['tipoTamanho'] . " - " . $item['genero'] . " - " . $item['marca'] . "</option>";
+            echo "<option value=" . $item['codEstoque'] . "-" . $item['valorVenda'] . ">" . $item['codProduto'] . " - " . $item['nomeProduto'] . " - " . $item['tipoTamanho'] . " - " . $item['genero'] . " - " . $item['marca'] . "</option>";
         }        
     }
 
