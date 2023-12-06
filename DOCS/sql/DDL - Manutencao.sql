@@ -60,10 +60,9 @@ create table vendaItem(
     constraint fktamanhoP_vendaitem foreign key (codEstoque) references tamanhoP(codEstoque)
 );
 
-create table notificacao(
-	codNotificacao int auto_increment primary key not null,
-    titulo varchar(30) not null,
-    conteudo varchar(80) not null,
+create table registro(
+	codRegistro int auto_increment primary key not null,
+    texto varchar(80) not null,
     hora time not null,
     data date not null
 );
