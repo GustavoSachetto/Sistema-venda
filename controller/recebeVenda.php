@@ -5,8 +5,9 @@
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
     date_default_timezone_set('America/Sao_Paulo');
     
-    $clientes = $conexao -> consultaBanco("SELECT * FROM cliente");
     $estoques = $conexao -> estoqueVenda();
+    $clientes = $conexao -> consultaBanco("SELECT * FROM cliente");
+    $maximoProdutos = $conexao -> consultaBanco("SELECT COUNT(*) FROM tamanhop");
     $cadEstoque = array();
     $cadQuant = array();
 
@@ -18,7 +19,7 @@
     
     function opcoesE($estoques) {
         foreach ($estoques as $item) {
-            echo "<option value=" . $item['codEstoque'] . "-" . $item['valorVenda'] . ">" . $item['codProduto'] . " - " . $item['nomeProduto'] . " - " . $item['tipoTamanho'] . " - " . $item['genero'] . " - " . $item['marca'] . "</option>";
+            echo "<option value=" . $item['codEstoque'] . "-" . $item['valorVenda'] . ">" . $item['codEstoque'] . " - " . $item['nomeProduto'] . " - " . $item['tipoTamanho'] . " - " . $item['genero'] . " - " . $item['marca'] . "</option>";
         }        
     }
 
@@ -40,8 +41,10 @@
 
         if ($resultadoCadastro === true) {
             alerta("Concluído!", "Venda cadastrada com sucesso.", "success");
+            $conexao -> insereRegistro("Nova venda cadastrada.", $cadTime, $cadDate);
         } else {
             alerta("Erro!", "Venda já cadastrada.", "error");
+            $conexao -> insereRegistro("Tentativa do cadastro de venda.", $cadTime, $cadDate);
         }
     }    
 ?>
