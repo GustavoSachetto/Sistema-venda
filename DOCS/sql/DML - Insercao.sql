@@ -32,7 +32,7 @@ insert into tamanho(tipoTamanho) values
 ( "GG" ),
 ( "XGG" );    
 
- insert into tamanhoP(codProduto, codTam, quantidade) values
+ insert into tamanhop(codProduto, codTam, quantidade) values
 ( 1, 1 , 70 ),
 ( 2, 2 , 78 ),
 ( 3, 3 , 45 ),
