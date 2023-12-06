@@ -27,7 +27,7 @@ $(document).ready(function () {
                 $('#geneP').text(item['genero']);
                 $('#marcaP').text(item['marca']);
                 $('#tipoP').text(item['tipo']);
-                $('#valorP').text("R$"+item['valor']);
+                $('#valorP').text("R$"+item['valorVenda']);
             }
         });
         
@@ -36,6 +36,12 @@ $(document).ready(function () {
         if (!codigoProduto) {
             showProduto.slideUp();
         } 
+    });
+
+    // Valor custo e valor venda
+    $('#valorCusto').blur(() => {
+        let valorMinimo = parseInt($('#valorCusto').val()) +1;
+        $('#valorVenda').attr('min', valorMinimo);
     });
 
     // Reset form
