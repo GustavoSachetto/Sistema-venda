@@ -6,7 +6,6 @@
 
     if (isset($tamanhos)) {
         echo "
-        <h2>Exibe tamanhos</h2>
         <table>
             <thead>    
                 <tr>

@@ -46,6 +46,7 @@
                     </form>
                 </section>
                 <section id="table" class="container-table">
+                    <h2>Exibe estoques</h2>
                     <?php include ('../../controller/exibeEstoque.php') ?>
                 </section>
             </article>

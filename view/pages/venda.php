@@ -41,6 +41,7 @@
                     </form>
                 </section>
                 <section id="table" class="container-table">
+                    <h2>Exibe vendas</h2>
                     <?php include ('../../controller/exibeVenda.php') ?>
                 </section>
             </article>

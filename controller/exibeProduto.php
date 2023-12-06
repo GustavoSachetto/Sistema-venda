@@ -6,7 +6,6 @@
     if (isset($produtos)) {
         echo "
         <form method='post' action='editarProduto.php'>
-            <h2>Exibe produtos</h2>
             <table>
                 <thead>
                     <td>#</td>

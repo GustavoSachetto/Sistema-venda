@@ -6,7 +6,6 @@
     if (isset($clientes)) {
         echo "
         <form method='post' action='editarCliente.php'>
-            <h2>Exibe clientes</h2>
             <table>
                 <thead>
                     <tr>

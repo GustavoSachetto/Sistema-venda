@@ -6,7 +6,6 @@
     if (isset($estoques)) {
         echo "
         <form method='post' action='editarEstoque.php'>
-            <h2>Exibe estoques</h2>
             <table>
                 <thead>
                     <tr>

@@ -25,6 +25,7 @@
                     <h3>Tamanho / exibe</h3>
                 </section>
                 <section id="table" class="container-table">
+                    <h2>Exibe tamanhos</h2>
                     <?php include ('../../controller/exibeTamanho.php') ?>
                 </section>
             </article>
