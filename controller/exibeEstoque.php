@@ -36,7 +36,7 @@
                         <td>" . stripslashes($item['tipo']) . "</td>
                         <td>" . stripslashes($item['tipoTamanho']) . "</td>
                         <td>" . stripslashes($item['quantidade']) . "</td>
-                        <td>" . $conexao -> conversorMoeda($item['valor']) . "</td>
+                        <td>" . $conexao -> conversorMoeda($item['valorVenda']) . "</td>
                         <td>    
                             <div class='buttons'>
                                 <button type='submit' class='editar' name='editar' value=" . $item['codEstoque'] . "-" . $item['codProduto'] . ">Editar</button>
