@@ -18,6 +18,7 @@
         <script>
             var clientes = <?= json_encode($clientes) ?>;
             var estoques = <?= json_encode($estoques) ?>;
+            var maxP = <?= $maximoProdutos[0]['COUNT(*)'] ?>;
         </script>
         <main>
             <article>
