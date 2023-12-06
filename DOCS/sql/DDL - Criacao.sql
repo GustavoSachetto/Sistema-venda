@@ -6,7 +6,8 @@ create table produto(
 	codProduto int auto_increment not null primary key,
 	nomeProduto varchar (70) not null,
 	quantidade int not null,
-	valor decimal(7,2) not null
+    valorCusto decimal(7,2) not null,
+	valorVenda decimal(7,2) not null
 );
 
 create table cliente(
