@@ -60,19 +60,6 @@
                 </li>
                 <li class="dropdown">
                     <div type="button" class="menu-link" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class='bx bx-package'></i>
-                        <div class="text">
-                            <span>Estoque</span>
-                            <i class='bx bx-chevron-down arrow'></i>
-                        </div>
-                    </div>
-                    <ul class="dropdown-menu">
-                        <li><a href="estoque.php">Exibir</a></li>
-                        <li><a href="cadastroEstoque.php">Cadastrar</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <div type="button" class="menu-link" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class='bx bx-collapse-alt'></i>
                         <div class="text">
                             <span>Tamanho</span>
@@ -82,6 +69,19 @@
                     <ul class="dropdown-menu">
                         <li><a href="tamanho.php">Exibir</a></li>
                         <li><a href="cadastroTamanho.php">Cadastrar</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <div type="button" class="menu-link" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class='bx bx-package'></i>
+                        <div class="text">
+                            <span>Estoque</span>
+                            <i class='bx bx-chevron-down arrow'></i>
+                        </div>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a href="estoque.php">Exibir</a></li>
+                        <li><a href="cadastroEstoque.php">Cadastrar</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
