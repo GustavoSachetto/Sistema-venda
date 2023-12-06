@@ -39,7 +39,7 @@ $(document).ready(function () {
     function opcoesE(estoques) {
         let option = "";
         for (var element in estoques) {
-            option += "<option value=" + estoques[element]['codEstoque'] + "-" + estoques[element]['valor'] + ">" + estoques[element]['codProduto'] + " - " + estoques[element]['nomeProduto'] + " - " + estoques[element]['tipoTamanho'] + " - " + estoques[element]['genero'] + " - " + estoques[element]['marca'] + "</option>";
+            option += "<option value=" + estoques[element]['codEstoque'] + "-" + estoques[element]['valor'] + ">" + estoques[element]['codEstoque'] + " - " + estoques[element]['nomeProduto'] + " - " + estoques[element]['tipoTamanho'] + " - " + estoques[element]['genero'] + " - " + estoques[element]['marca'] + "</option>";
         }
         return option;
     }
@@ -48,16 +48,34 @@ $(document).ready(function () {
     
     // Add select estoque
     $('#add').click(() => {
-        controleCampo++;
-        $('#estoque').append(
-        "<div id='produto"+controleCampo+"'>"+
-            "<p>Produto: "+controleCampo+"</p><br>"+
-            "<select id='slcEstoque"+controleCampo+"' class='slcEstoque' name='cadEstoque[]' required>"+
-                "<option value=''>Selecione um produto</option>"+
-                opcoesE(estoques)+
-            "</select>"+
-            "<input type='number' placeholder='Quantidade' class='txtQuantidade' min='1' name='cadQuant[]' required>"+
-        "</div>");
+        if (controleCampo < maxP) {
+            controleCampo++;
+            $('#estoque').append(
+            "<div id='produto"+controleCampo+"'>"+
+                "<p>Produto: "+controleCampo+"</p><br>"+
+                "<select id='slcEstoque"+controleCampo+"' class='slcEstoque' name='cadEstoque[]' required>"+
+                    "<option value=''>Selecione um produto</option>"+
+                    opcoesE(estoques)+
+                "</select>"+
+                "<input type='number' placeholder='Quantidade' class='txtQuantidade' min='1' name='cadQuant[]' required>"+
+            "</div>");
+        } else {
+            $(document).ready(function () {
+                if ($('body').attr('class') == 'dark') {
+                    background = '#383838';
+                } else {
+                    background = '#FFFFFF';
+                }
+        
+                Swal.fire({
+                    title: 'Só há '+maxP+' produtos no estoque!',
+                    text: 'Cadastre mais para poder selecionar na venda.',
+                    background: background,
+                    color: 'var(--title-color)',
+                    icon: 'warning'
+                });   
+            });
+        }
     });
 
     // Remove select estoque
@@ -80,10 +98,6 @@ $(document).ready(function () {
                     $("#"+slcEstoque).next().attr('placeholder', "Quantidade disponivel: " + item['quantidade']);
                 }
             });
-    
-            if (!codEstoque) {
-                $("#"+slcEstoque).attr('placeholder', "Quantidade");
-            } 
         });
     });
 });
