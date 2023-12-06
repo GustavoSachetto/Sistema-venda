@@ -34,8 +34,8 @@
 
         function registro($registros) {
             $max = count($registros);
-            if (count($registros) > 6) {
-                $max = 6;
+            if (count($registros) > 5) {
+                $max = 5;
             }
             for ($i=0; $i < $max; $i++) { 
                 echo 
