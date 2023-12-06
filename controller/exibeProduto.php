@@ -15,7 +15,8 @@
                     <td>Genero</td>
                     <td>Marca</td>
                     <td>Tipo</td>
-                    <td>Valor UN</td>
+                    <td>Valor custo</td>
+                    <td>Valor venda</td>
                     <td>Ações</td>
                 </tr>
             </thead>
@@ -31,7 +32,8 @@
                         <td>" . stripslashes($item['genero']) . "</td>
                         <td>" . stripslashes($item['marca']) . "</td>
                         <td>" . stripslashes($item['tipo']) . "</td>
-                        <td>" . $conexao -> conversorMoeda($item['valor']) . "</td>
+                        <td>" . $conexao -> conversorMoeda($item['valorCusto']) . "</td>
+                        <td>" . $conexao -> conversorMoeda($item['valorVenda']) . "</td>
                         <td>
                             <div class='buttons'>
                                 <button type='submit' class='editar' name='editar' value=" . $item['codProduto'] . ">Editar</button>
