@@ -49,13 +49,13 @@ class conexao {
     }
 
     public function consultaVenda($buscaCodV, $buscaCpf, $buscaCodC, $buscaData) {
-        $consulta = "SELECT venda.*, cliente.cpf, SUM(vendaItem.valorUnitario * vendaItem.quantidadeVenda) AS total FROM venda INNER JOIN cliente ON venda.codCliente = cliente.codCliente INNER JOIN vendaItem ON venda.codVenda = vendaItem.codVenda WHERE 
+        $consulta = "SELECT venda.*, cliente.cpf, SUM(vendaitem.valorUnitario * vendaitem.quantidadeVenda) AS total FROM venda INNER JOIN cliente ON venda.codCliente = cliente.codCliente INNER JOIN vendaitem ON venda.codVenda = vendaitem.codVenda WHERE 
         venda.codCliente LIKE '%$buscaCodC%' AND
         cliente.cpf LIKE '%$buscaCpf%' AND
         venda.data LIKE '%$buscaData%' GROUP BY codVenda ORDER BY venda.codVenda ASC ";
 
         if (!empty($buscaCodV)) {
-            $consulta = "SELECT venda.*, cliente.cpf, SUM(vendaItem.valorUnitario * vendaItem.quantidadeVenda) AS total FROM venda INNER JOIN cliente ON venda.codCliente = cliente.codCliente INNER JOIN vendaItem ON venda.codVenda = vendaItem.codVenda WHERE venda.codVenda = '$buscaCodV'";
+            $consulta = "SELECT venda.*, cliente.cpf, SUM(vendaitem.valorUnitario * vendaitem.quantidadeVenda) AS total FROM venda INNER JOIN cliente ON venda.codCliente = cliente.codCliente INNER JOIN vendaitem ON venda.codVenda = vendaitem.codVenda WHERE venda.codVenda = '$buscaCodV'";
         }
 
         $resultado = $this -> consultaBanco($consulta);
