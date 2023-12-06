@@ -73,7 +73,7 @@ class conexao {
     }
 
     public function consultaEstoque($buscaNome, $buscaCate, $buscaGen, $buscaMarca, $buscaTipo, $buscaCod, $buscaCodTam) {
-        $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade, tamanhop.codEstoque FROM produto
+        $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valorVenda, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade, tamanhop.codEstoque FROM produto
         INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
         INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam WHERE 
         produto.nomeProduto LIKE '%$buscaNome%'   AND 
@@ -84,7 +84,7 @@ class conexao {
         tamanho.codTam      LIKE '%$buscaCodTam%' ORDER BY tamanhop.codEstoque ASC";
         
         if (!empty($buscaCod)) {
-            $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade, tamanhop.codEstoque FROM produto INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam WHERE tamanhop.codEstoque  = '$buscaCod'";
+            $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valorVenda, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade, tamanhop.codEstoque FROM produto INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam WHERE tamanhop.codEstoque  = '$buscaCod'";
         }
 
         $resultado = $this -> consultaBanco($consulta);
@@ -101,7 +101,7 @@ class conexao {
     }
 
     public function estoqueVenda() {
-        $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade, tamanhop.codEstoque FROM produto
+        $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valorVenda, produto.tipo, produto.marca, produto.categoria, produto.genero, tamanho.tipoTamanho, tamanhop.quantidade, tamanhop.codEstoque FROM produto
         INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
         INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam ORDER BY produto.codProduto ASC";
 
@@ -110,7 +110,7 @@ class conexao {
     }
     
     public function exibeEstoque($codEstoque) {
-        $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valor, produto.tipo, produto.marca, produto.categoria, produto.genero,  tamanho.codTam, tamanho.tipoTamanho, tamanhop.quantidade FROM produto
+        $consulta = "SELECT produto.codProduto, produto.nomeProduto, produto.valorVenda, produto.tipo, produto.marca, produto.categoria, produto.genero,  tamanho.codTam, tamanho.tipoTamanho, tamanhop.quantidade FROM produto
         INNER JOIN tamanhop ON tamanhop.codProduto = produto.codProduto
         INNER JOIN tamanho ON tamanho.codTam = tamanhop.codTam WHERE tamanhop.codEstoque = '$codEstoque'";
 
@@ -168,18 +168,19 @@ class conexao {
         }
     }
 
-    public function insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca) {
-        $insereProduto = $this -> pdo -> prepare ("INSERT INTO produto(nomeProduto, valor, categoria, genero, tipo, marca) 
-        VALUES (:n, :v, :cat, :gen, :tipo, :marca)");
+    public function insereProduto($cadNomeP, $cadValorC, $cadValorV, $cadCat, $cadGen, $cadTipo, $cadMarca) {
+        $insereProduto = $this -> pdo -> prepare ("INSERT INTO produto(nomeProduto, valorCusto, valorVenda, categoria, genero, tipo, marca) 
+        VALUES (:n, :vc, :vv, :cat, :gen, :tipo, :marca)");
 
         $insereProduto->bindValue(":n", $cadNomeP);
-        $insereProduto->bindValue(":v", $cadValor);
+        $insereProduto->bindValue(":vc", $cadValorC);
+        $insereProduto->bindValue(":vv", $cadValorV);
         $insereProduto->bindValue(":cat", $cadCat);
         $insereProduto->bindValue(":gen", $cadGen);
         $insereProduto->bindValue(":tipo", $cadTipo);
         $insereProduto->bindValue(":marca", $cadMarca);
 
-        $validaProduto = $this->validaProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca);
+        $validaProduto = $this->validaProduto($cadNomeP, $cadValorC, $cadValorV, $cadCat, $cadGen, $cadTipo, $cadMarca);
 
         if ($validaProduto === 0) {
             $insereProduto->execute();
@@ -249,10 +250,11 @@ class conexao {
         return $resultado[0]["COUNT(*)"];
     }
     
-    public function validaProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca) {
+    public function validaProduto($cadNomeP, $cadValorC, $cadValorV, $cadCat, $cadGen, $cadTipo, $cadMarca) {
         $consulta = "SELECT COUNT(*) FROM produto WHERE 
         nomeProduto = '$cadNomeP' AND
-        valor       = '$cadValor' AND
+        valorCusto  = '$cadValorC'AND
+        valorVenda  = '$cadValorV'AND
         categoria   = '$cadCat  ' AND
         genero      = '$cadGen  ' AND
         tipo        = '$cadTipo ' AND
@@ -290,15 +292,19 @@ class conexao {
     }
 
     public function integridadeEstoque($codEstoque, $codProduto, $cadTam) {
+
         $consulta = "SELECT COUNT(*) FROM tamanhop INNER JOIN vendaitem ON vendaitem.codEstoque = tamanhop.codEstoque WHERE tamanhop.codEstoque = '$codEstoque'";
         $verifica1 = $this -> consultaBanco($consulta);
-        
+
         $consulta = "SELECT COUNT(*) FROM tamanhop WHERE tamanhop.codProduto = '$codProduto' AND tamanhop.codTam = '$cadTam'";
         $verifica2 = $this -> consultaBanco($consulta);
-        
-        if ($verifica1[0]["COUNT(*)"] > 0) {
+
+        $consulta = "SELECT COUNT(*) FROM tamanhop WHERE tamanhop.codEstoque = '$codEstoque' AND tamanhop.codTam = '$cadTam'";
+        $verifica3 = $this -> consultaBanco($consulta);
+
+        if ($verifica1[0]["COUNT(*)"] > 0 && $verifica3[0]["COUNT(*)"] == 0) {
             $integridade = 2;
-        } elseif ($verifica2[0]["COUNT(*)"] > 0){
+        } else if ($verifica2[0]["COUNT(*)"] > 0 && $verifica3[0]["COUNT(*)"] == 0) {
             $integridade = 1;
         } else {
             $integridade = 0;
@@ -333,10 +339,11 @@ class conexao {
         return $resultado[0]["COUNT(*)"];
     }
     
-    public function atualizaProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca, $codProduto) {
-        $atualizaProduto = $this-> pdo -> prepare("UPDATE produto SET nomeProduto = :n, valor = :v, tipo = :tipo, marca = :marca, categoria = :cat, genero = :gen WHERE codProduto = :codP;");
+    public function atualizaProduto($cadNomeP, $cadValorC, $cadValorV, $cadCat, $cadGen, $cadTipo, $cadMarca, $codProduto) {
+        $atualizaProduto = $this-> pdo -> prepare("UPDATE produto SET nomeProduto = :n, valorCusto = :vc, valorVenda = :vv, tipo = :tipo, marca = :marca, categoria = :cat, genero = :gen WHERE codProduto = :codP;");
         $atualizaProduto->bindValue(":n", $cadNomeP);
-        $atualizaProduto->bindValue(":v", $cadValor);
+        $atualizaProduto->bindValue(":vc", $cadValorC);
+        $atualizaProduto->bindValue(":vv", $cadValorV);
         $atualizaProduto->bindValue(":cat", $cadCat);
         $atualizaProduto->bindValue(":gen", $cadGen);
         $atualizaProduto->bindValue(":tipo", $cadTipo);
