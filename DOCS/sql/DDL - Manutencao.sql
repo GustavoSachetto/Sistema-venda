@@ -33,7 +33,7 @@ create table tamanho(
     tipoTamanho char(5) unique
 );
 
-create table tamanhoP(
+create table tamanhop(
 	quantidade int not null,
     codEstoque int auto_increment not null primary key,
 
@@ -44,10 +44,10 @@ create table tamanhoP(
 	constraint fkcodTam foreign key(codTam) references tamanho(codTam)
 );
 
-alter table tamanhoP add constraint uqTam
+alter table tamanhop add constraint uqTam
 unique(quantidade, codProduto, codTam);
 
-create table vendaItem(
+create table vendaitem(
 	valorUnitario decimal(7,2) not null,
     quantidadeVenda int not null,
     
@@ -57,7 +57,7 @@ create table vendaItem(
     constraint fkvenda_vendaitem foreign key (codVenda) references venda(codVenda),
     
     codEstoque int not null,
-    constraint fktamanhoP_vendaitem foreign key (codEstoque) references tamanhoP(codEstoque)
+    constraint fktamanhoP_vendaitem foreign key (codEstoque) references tamanhop(codEstoque)
 );
 
 create table registro(
