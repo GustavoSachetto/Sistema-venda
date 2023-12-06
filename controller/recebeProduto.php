@@ -6,13 +6,14 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $cadNomeP = addslashes($_POST['txtNomeP']);
-        $cadValor = addslashes($_POST['txtValor']);
+        $cadValorC = addslashes($_POST['txtValorC']);
+        $cadValorV = addslashes($_POST['txtValorV']);
         $cadCat = addslashes($_POST['txtCat']);
         $cadGen = addslashes($_POST['txtGen']);
         $cadTipo = addslashes($_POST['txtTipo']);
         $cadMarca = addslashes($_POST['txtMarca']);
 
-        $resultadoCadastro = $conexao -> insereProduto($cadNomeP, $cadValor, $cadCat, $cadGen, $cadTipo, $cadMarca);
+        $resultadoCadastro = $conexao -> insereProduto($cadNomeP, $cadValorC, $cadValorV, $cadCat, $cadGen, $cadTipo, $cadMarca);
         
         if ($resultadoCadastro === true) {
             alerta("Concluído!", "Produto cadastrado com sucesso.", "success");
