@@ -8,7 +8,7 @@ select * from tamanho;
 
 select * from tamanhoP;
 
-select * from notificacao;
+select * from registro;
 
 select * from venda;
 
