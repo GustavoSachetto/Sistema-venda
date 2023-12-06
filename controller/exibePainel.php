@@ -5,7 +5,7 @@
 
         $resultado;
         
-        const VALORPRODUTO = 'SELECT SUM(tamanhop.quantidade * produto.valor) AS valorProduto FROM tamanhop INNER JOIN produto ON produto.codProduto = tamanhop.codProduto';
+        const VALORPRODUTO = 'SELECT SUM(tamanhop.quantidade * produto.valorCusto) AS valorProduto FROM tamanhop INNER JOIN produto ON produto.codProduto = tamanhop.codProduto';
         const VALORVENDA = 'SELECT SUM(vendaItem.quantidadeVenda * vendaItem.valorUnitario) AS valorVenda FROM vendaItem';
         const NCLIENTES = 'SELECT count(*) FROM cliente';
         const NESTOQUES = 'SELECT count(*) FROM tamanhop';
