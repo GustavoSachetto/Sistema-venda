@@ -12,17 +12,17 @@ insert into cliente(nomeCliente, cpf, CEP, UF, nResidencial, cidade, bairro, rua
 ("Gustavo Sachetto","12216337807","12363378","MG",23 ,"Praia Grande","Legre confrade","Damião Guerreiro","Casa","Casa C",""),
 ("Higor Lima","55268368802","12365008","SP", 5,"Mairiporam","Manganes dos jardins","Poupa tempo","Casa","","");
 
-insert into produto(valor, nomeProduto, marca, tipo, genero, categoria) values
-( "20.00", "Camisa rosa", "Nike", "Camiseta", "Unisex" ,"Roupas basicas"),
-( "100.00","Camiseta Corinthians", "Nike", "Camiseta", "Masculino", "Roupas luxo"), 
-( "15.00" , "Bandana Vermelha", "Lenços Plus", "Lenço", "Unisex", "Acessorio"),
-( "20.00" , "Camisa Vermelha", "Nicoboco", "Camiseta", "Feminina", "Roupa"),
-( "50.00" , "Calça Cargo Bege", "Nike", "Calça", "Masculino", "Calça"),
-( "11.90" , "Cueca Box Vermelha", "Puma", "Cueca", "Masculino", "Roupa intima"),
-( "20.00" , "Baby Look Cinza", "Adidas", "Blusa", "Feminino", "Camiseta"),
-( "2000.00", "Baby Look Preta", "Prada", "Blusa", "Feminino", "Camiseta"),
-( "15.00" , "Escapulatorio Corinthians", "Correntes e cia", "Colar", "Unisex", "Acessorio"),
-( "65.00" , "Camisa Branca Corinthians", "Nike", "Camiseta", "Unisex", "Roupa premium");
+insert into produto(valorCusto, valorVenda, nomeProduto, marca, tipo, genero, categoria) values
+( "20.00", "50.00", "Camisa rosa", "Nike", "Camiseta", "Unisex" ,"Roupas basicas"),
+( "100.00", "150.00","Camiseta Corinthians", "Nike", "Camiseta", "Masculino", "Roupas luxo"), 
+( "15.00" , "30.00", "Bandana Vermelha", "Lenços Plus", "Lenço", "Unisex", "Acessorio"),
+( "20.00" , "40.00", "Camisa Vermelha", "Nicoboco", "Camiseta", "Feminina", "Roupa"),
+( "50.00" , "90.00", "Calça Cargo Bege", "Nike", "Calça", "Masculino", "Calça"),
+( "11.90" , "26.00", "Cueca Box Vermelha", "Puma", "Cueca", "Masculino", "Roupa intima"),
+( "20.00" , "60.00", "Baby Look Cinza", "Adidas", "Blusa", "Feminino", "Camiseta"),
+( "500.00", "1600.00", "Baby Look Preta", "Prada", "Blusa", "Feminino", "Camiseta"),
+( "15.00" , "35.00", "Escapulatorio Corinthians", "Correntes e cia", "Colar", "Unisex", "Acessorio"),
+( "65.00" , "80.00", "Camisa Branca Corinthians", "Nike", "Camiseta", "Unisex", "Roupa premium");
 
 insert into tamanho(tipoTamanho) values
 ( "PP" ),
