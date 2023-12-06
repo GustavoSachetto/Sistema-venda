@@ -32,7 +32,8 @@
                         <fieldset id="produto">
                             <p>Informações do produto:</p><br>
                             <input type="text" placeholder="Nome produto" name="txtNomeP" minlength="4" maxlength="70" required>
-                            <input type="number" placeholder="Valor" name="txtValor" min="1" max="99999.99" step="0.01" required>
+                            <input type="number" placeholder="Valor custo" id="valorCusto" name="txtValorC" min="1" max="99999.99" step="0.01" required>
+                            <input type="number" placeholder="Valor venda" id="valorVenda" name="txtValorV" max="99999.99" step="0.01" required>
                             <input type="text" placeholder="Categoria" name="txtCat" minlength="4" maxlength="30" required>
                             <input type="text" placeholder="Genero" name="txtGen" minlength="4" maxlength="10" required>
                             <input type="text" placeholder="Tipo" name="txtTipo" minlength="4" maxlength="30" required>
