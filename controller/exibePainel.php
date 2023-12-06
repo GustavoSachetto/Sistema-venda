@@ -29,5 +29,24 @@
             }
             return $resultado;
         }
+
+        $registros = $conexao -> consultaRegistro();
+
+        function registro($registros) {
+            $max = count($registros);
+            if (count($registros) > 6) {
+                $max = 6;
+            }
+            for ($i=0; $i < $max; $i++) { 
+                echo 
+                "<div class='notificacao'>
+                    <p>
+                        <i class='bx bx-bell'></i>
+                        <span>" . $registros[$i]['texto'] . "</span>
+                    </p>
+                    <legend>" . $registros[$i]['data'] . "</legend>
+                </div>";
+            }
+        }
     }
 ?>
