@@ -39,7 +39,7 @@ $(document).ready(function () {
     function opcoesE(estoques) {
         let option = "";
         for (var element in estoques) {
-            option += "<option value=" + estoques[element]['codEstoque'] + "-" + estoques[element]['valor'] + ">" + estoques[element]['codEstoque'] + " - " + estoques[element]['nomeProduto'] + " - " + estoques[element]['tipoTamanho'] + " - " + estoques[element]['genero'] + " - " + estoques[element]['marca'] + "</option>";
+            option += "<option value=" + estoques[element]['codEstoque'] + "-" + estoques[element]['valorVenda'] + ">" + estoques[element]['codEstoque'] + " - " + estoques[element]['nomeProduto'] + " - " + estoques[element]['tipoTamanho'] + " - " + estoques[element]['genero'] + " - " + estoques[element]['marca'] + "</option>";
         }
         return option;
     }
