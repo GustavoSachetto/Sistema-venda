@@ -109,8 +109,8 @@ insert into vendaitem(valorUnitario, quantidadeVenda, codVenda, codEstoque) valu
 ( 98.00 , 79, 7, 8);
 
 insert into registro(codRegistro, texto, hora, data) values
-(1, "Novo cliente cadastrado", "11:20:25", "2023-08-28"),
-(2, "Nova venda cadastrada", "12:30:25", "2023-02-12"),
-(3, "Alteração de produto", "12:30:25", "2023-02-08"),
+(1, "Sem alterações no banco", "02:30:45", "2022-01-08"),
+(2, "Alteração de produto", "12:30:25", "2023-02-08"),
+(3, "Nova venda cadastrada", "12:30:25", "2023-02-12"),
 (4, "Exclusão de cliente", "22:30:25", "2023-02-18"),
-(5, "Sem alterações no banco", "02:30:45", "2022-01-08");
+(5, "Novo cliente cadastrado", "11:20:25", "2023-08-28");
