@@ -12,6 +12,18 @@ main section h2 {
     color: var(--secondary-color);
 }
 
+main section p {
+    color: var(--text-color-dark);
+}
+
+main section p > a {
+    color: var(--link-color-default);
+}
+
+main section p > a:active {
+    color: var(--link-color-hover);
+}
+
 .container-busca>form, .container-table {
     padding: 15px 20px;
     background-color: var(--form-color);

@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+:root {
+    --text-color-p: #4d4d4d;
+}
+
+body.dark {
+    --text-color-p: #d3d3d3;
+}
+
+main article h2 {
+    font-size: 20px;
+    margin: 18px 0;
+    color: var(--text-color);
+}
+
+main section h3 {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 14px 0;
+    color: var(--secondary-color);
+}
+
+main section a {
+    color: var(--link-color-default);
+}
+
+main section a:active {
+    color: var(--link-color-hover);
+}
+
+main section h4 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 14px 0;
+    color: var(--neutral-color);
+}
+
+main section p {
+    font-size: 16px;
+    color: var(--text-color-p);
+}
+
+main section li {
+    margin-bottom: 5px;
+    color: var(--text-color-p);
+}
+
+main section li > mark {
+    background: transparent;
+    text-decoration: underline;
+    color: var(--neutral-color);
+}
+
+main>article>section {
+    padding: 13px 20px;
+    background-color: var(--form-color);
+    box-shadow: var(--form-shadow);
+    border-radius: 10px;
+    margin-bottom: 22px;
+}
+main>article section.container-lista {
+    display: flex;
+    flex-direction: row;
+}
+
+main>article>section aside{
+    width: 50%;
+}

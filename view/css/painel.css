@@ -24,7 +24,7 @@ main section h2{
 }
 
 main section h3 {
-    font-size: 18px;
+    font-size: 20px;
     margin: 18px 0;
 }
 
@@ -130,6 +130,10 @@ main > article .container-notificacao > h2 > button {
     color: var(--title-color);
     background: transparent;
     border: none;
+}
+
+main article aside p, main article aside legend {
+    color: var(--text-color-dark);
 }
 
 .container-notificacao .notificacao {

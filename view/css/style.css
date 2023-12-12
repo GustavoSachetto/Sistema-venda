@@ -25,6 +25,7 @@
     --text-color-dark: #252525;
     --link-color: #775fff;
     --link-color-hover: #2f1cfd;
+    --link-color-default: #1a92e2;
     --button-color-submit: #3ed65f;
     --button-color-search: #4aa3df;
     --button-color-edit: #df924a;
@@ -64,6 +65,7 @@ body.dark {
     --title-color: #f1f1f1;
     --link-color: #b6a9ff;
     --link-color-hover: #ccc8fa;
+    --link-color-default: #8cc8f0;
     --button-color-submit: #3ed65fb7;
     --button-color-search: #4aa4dfb7;
     --button-color-edit: #df924aab;
