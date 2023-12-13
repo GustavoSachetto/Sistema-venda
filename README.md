@@ -14,7 +14,7 @@ __A pontuar:__
 * Não será possivel realizar alterações no _tamanho_ (estoque) que já foi cadastrado em uma _venda_.
 
 ## Descrição Técnica
-Esse projeto foi desenvolvido no intuito de gerar um sistema CRUD baseado em PHP, que no geral é um sistema no qual é possivel: Cadastrar, Exibir, Atualizar e Deletar itens em um banco de dados.
+Esse projeto foi desenvolvido no intuito de gerar um sistema CRUD baseado em PHP, que no geral é um sistema no qual é possivel: __Cadastrar, Exibir, Atualizar e Deletar__ itens em um banco de dados.
 
 __As tecnologias utilizadas nesse projeto são:__
 * HTML
