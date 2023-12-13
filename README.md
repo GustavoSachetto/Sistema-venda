@@ -8,10 +8,10 @@ __Proteções básicas__
 Para manter a integridade dos dados é necessário algumas verificações, que consiste em analizar alguns fatores antes de cadastrar ou alterar qualquer tipo de dado. Então verifique a lista abaixo alguns fatores que devem ser pontuados antes de qualquer alteração no site.
 
 __A pontuar:__
-* Para cadastrar um _estoque_ será necessario antes cadastrar um _produto_ e um _tamanho_.
-* Para cadastrar uma _venda_ será necessario antes cadastrar um cliente e um estoque.
-* Não será possivel realizar alterações em _clientes_ ou _produtos_ que já foram cadastrados em uma _venda_.
-* Não será possivel realizar alterações no _tamanho_ (estoque) que já foi cadastrado em uma _venda_.
+* Para cadastrar um __estoque__ será necessario antes cadastrar um __produto__ e um __tamanho__.
+* Para cadastrar uma __venda__ será necessario antes cadastrar um __cliente__ e um __estoque__.
+* Não será possivel realizar alterações em __clientes__ ou __produtos__ que já foram cadastrados em uma __venda__.
+* Não será possivel realizar alterações no __tamanho__ (estoque) que já foi cadastrado em uma __venda__.
 
 ## Descrição Técnica
 Esse projeto foi desenvolvido no intuito de gerar um sistema CRUD baseado em PHP, que no geral é um sistema no qual é possivel: __Cadastrar, Exibir, Atualizar e Deletar__ itens em um banco de dados.
