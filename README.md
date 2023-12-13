@@ -5,7 +5,6 @@ O site foi projetado para as necessidades de uma empresa revendedora de roupa, o
 __Link:__ https://sv-gustavo-sachetto.000webhostapp.com/index.php
 
 __Proteções básicas:__
-
 Para manter a integridade dos dados é necessário algumas verificações, que consiste em analizar alguns fatores antes de cadastrar ou alterar qualquer tipo de dado. Então verifique a lista abaixo alguns fatores que devem ser pontuados antes de qualquer alteração no site.
 
 __A pontuar:__
