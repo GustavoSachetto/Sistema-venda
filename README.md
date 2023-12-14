@@ -1,6 +1,6 @@
 # Sistema-venda
 
-O site foi projetado para as necessidades de uma empresa revendedora de roupa, onde consiste num sistema interno gerenciador de: clientes, produtos, estoques e vendas. Apartir disto teremos um roteiro breve obrigatorio na finalização de uma venda.
+O site foi projetado para as necessidades de uma empresa revendedora de roupa, onde consiste num sistema interno gerenciador de: clientes, produtos, estoques e vendas. Apartir disto teremos um roteiro breve obrigatório na finalização de uma venda.
 
 __Link:__ https://sv-gustavo-sachetto.000webhostapp.com/index.php
 
