@@ -29,11 +29,11 @@ __As tecnologias utilizadas nesse projeto são:__
 * CHARTJS
 
 __Tópicos interessantes elaborados nesse projeto:__
-* __(POO)__ Programação orientada a objetos
-* __(PDO)__ Ligação com banco de dados atráves do php
-* __(UI/UX)__ Interface responsiva e acessível
-* __(Organização)__ facilidade na compreenção do codigo
-* __(Flexibilidade)__ facilidade na alteração e implementação do codigo
-* __(Consumo de API)__ Auto-preenchimento usando site de terceiros
+* (POO) Programação orientada a objetos
+* (PDO) Ligação com banco de dados atráves do php
+* (UI/UX) Interface responsiva e acessível
+* (Organização) facilidade na compreenção do codigo
+* (Flexibilidade) facilidade na alteração e implementação do codigo
+* (Consumo de API) Auto-preenchimento usando site de terceiros
 
 **************************
