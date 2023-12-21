@@ -25,7 +25,7 @@
             
             $resultadoEditar = $conexao -> atualizaProduto($cadNomeP, $cadValorC, $cadValorV, $cadCat, $cadGen, $cadTipo, $cadMarca, $codProduto);
 
-            if ($resultadoEditar === true) {
+            if ($resultadoEditar) {
                 alerta("Concluído!", "Produto editado com sucesso.", "success");
                 $conexao -> insereRegistro("Alteração de produto.", $cadTime, $cadDate);
             } else {
