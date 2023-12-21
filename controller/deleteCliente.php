@@ -12,7 +12,7 @@
             $cadTime = date('H:i:s');
             $resultadoDeletar = $conexao -> deleteCliente($codigo);
             
-            if ($resultadoDeletar === true) {
+            if ($resultadoDeletar) {
                 return alerta("Concluído!", "Cliente deletado com sucesso.", "success");
                 $conexao -> insereRegistro("Cliente deletado.", $cadTime, $cadDate);
             } else {
