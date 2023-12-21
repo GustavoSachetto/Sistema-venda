@@ -29,7 +29,7 @@
     
             $resultadoEditar = $conexao -> atualizaCliente($cadNome, $cadCpf, $cadCep, $cadUF, $cadCidade, $cadBairro, $cadRua, $cadLogradouro, $cadNumero, $cadComplemento, $cadObservacao, $codCliente);
     
-            if ($resultadoEditar === true) {
+            if ($resultadoEditar) {
                 alerta("Concluído!", "Cliente editado com sucesso.", "success");
                 $conexao -> insereRegistro("Alteração de cliente.", $cadTime, $cadDate);
             } else {
