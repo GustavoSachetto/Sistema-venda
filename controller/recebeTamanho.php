@@ -12,7 +12,7 @@
         
         $resultadoCadastro = $conexao -> insereTamanho($cadTam);
         
-        if ($resultadoCadastro === true) {
+        if ($resultadoCadastro) {
             alerta("Concluído!", "Tamanho cadastrado com sucesso.", "success");
             $conexao -> insereRegistro("Novo tamanho cadastrado.", $cadTime, $cadDate);
         } else {

@@ -18,7 +18,7 @@
 
         $resultadoCadastro = $conexao -> insereProduto($cadNomeP, $cadValorC, $cadValorV, $cadCat, $cadGen, $cadTipo, $cadMarca);
         
-        if ($resultadoCadastro === true) {
+        if ($resultadoCadastro) {
             alerta("Concluído!", "Produto cadastrado com sucesso.", "success");
             $conexao -> insereRegistro("Novo produto cadastrado.", $cadTime, $cadDate);
         } else {

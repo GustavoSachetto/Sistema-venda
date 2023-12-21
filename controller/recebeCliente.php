@@ -22,7 +22,7 @@
 
         $resultadoCadastro = $conexao -> insereCliente($cadNome, $cadCpf, $cadCep, $cadUF, $cadCidade, $cadBairro, $cadRua, $cadLogradouro, $cadNumero, $cadComplemento, $cadObservacao);
 
-        if ($resultadoCadastro === true) {
+        if ($resultadoCadastro) {
             alerta("Concluído!", "Cliente cadastrado com sucesso.", "success");
             $conexao -> insereRegistro("Novo cliente cadastrado.", $cadTime, $cadDate);
         } else {

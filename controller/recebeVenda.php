@@ -39,7 +39,7 @@
             $resultadoCadastro = $conexao -> insereVendaItem($codEstoque[$i], $codVenda, $cadQuant[$i], $cadValor[$i]);
         }
 
-        if ($resultadoCadastro === true) {
+        if ($resultadoCadastro) {
             alerta("Concluído!", "Venda cadastrada com sucesso.", "success");
             $conexao -> insereRegistro("Nova venda cadastrada.", $cadTime, $cadDate);
         } else {

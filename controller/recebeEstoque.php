@@ -29,7 +29,7 @@
 
         $resultadoCadastro = $conexao -> insereTamanhoProduto($cadQuantidade, $codProduto, $codTamanho);
 
-        if ($resultadoCadastro === true) {
+        if ($resultadoCadastro) {
             alerta("Concluído!", "Estoque cadastrado com sucesso.", "success");
             $conexao -> insereRegistro("Novo estoque cadastrado.", $cadTime, $cadDate);
         } else {
