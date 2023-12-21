@@ -12,7 +12,7 @@
             $cadTime = date('H:i:s');
             $resultadoDeletar = $conexao -> deleteProduto($codigo);
 
-            if ($resultadoDeletar === true) {
+            if ($resultadoDeletar) {
                 return alerta("Concluído!", "Produto deletado com sucesso.", "success");
                 $conexao -> insereRegistro("Produto deletado.", $cadTime, $cadDate);
             } else {
