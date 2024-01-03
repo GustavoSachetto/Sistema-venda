@@ -175,7 +175,7 @@
             </article>
             <article id="consult" class="consult">
                 <section class="container-grafico">
-                    <h2>Gráfico de vendas 2023</h2>
+                    <h2>Gráfico de vendas <?= $anoAtual?></h2>
                     <canvas id="myChart"></canvas>
                 </section>
                 <aside class="container-notificacao">

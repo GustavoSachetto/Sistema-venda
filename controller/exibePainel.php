@@ -2,13 +2,15 @@
     require_once 'model/conexao.php';
     $config = parse_ini_file('model/config.ini');
     $conexao = new conexao ($config['dbname'], $config['host'], $config['user'], $config['password']);
-    
+    date_default_timezone_set('America/Sao_Paulo');
+
+    $anoAtual = date('Y');
     $resultado = "";
     $consulta = "SELECT count(*) FROM venda";
     $verifica = $conexao -> consultaBanco($consulta);
     
     if ($verifica[0]['count(*)'] > 0) {
-        $vendas = $conexao -> consultaBanco('SELECT venda.data FROM venda');
+        $vendas = $conexao -> consultaBanco("SELECT venda.data FROM venda WHERE venda.data LIKE '$anoAtual%'");
         
         $resultado = $conexao -> consultaBanco('SELECT SUM(tamanhop.quantidade * produto.valorCusto) AS valorProduto FROM tamanhop INNER JOIN produto ON produto.codProduto = tamanhop.codProduto');
         $valorProduto = $conexao -> conversorMoeda($resultado[0]['valorProduto']);
