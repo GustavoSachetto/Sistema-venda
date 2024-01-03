@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    let background = "";
+
     // Button excluir
         $('.excluir').click((e) => {
             prop = {codigo: e.target.value, text: '', url: ''}
@@ -41,9 +43,23 @@ $(document).ready(function () {
         }).then((result) => {
             if (result.isConfirmed) {
                 $.post(prop['url'], { excluir: prop['codigo'] }, (data) => {
-                    $('body').append(data);
+                    let itens = JSON.parse(data);
+                    alert(itens['title'], itens['text'], itens['icon']);
                 });
             }
         });
+
+        // Alerta do retorno na função
+        function alert(title, text, icon) {
+            Swal.fire({
+                title: title,
+                text: text,
+                background: background,
+                color: 'var(--title-color)',
+                icon: icon
+            }).then(() => {
+                location.reload();   
+            });
+        }
     }
 });

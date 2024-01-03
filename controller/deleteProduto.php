@@ -10,14 +10,12 @@
             $codigo = addslashes($_POST['excluir']);
             $cadDate = date('Y-m-d');
             $cadTime = date('H:i:s');
-            $resultadoDeletar = $conexao -> deleteProduto($codigo);
+            $resultadoDeletar = $conexao -> deleteProduto($codigo, $cadDate, $cadTime);
 
             if ($resultadoDeletar) {
-                return alerta("Concluído!", "Produto deletado com sucesso.", "success");
-                $conexao -> insereRegistro("Produto deletado.", $cadTime, $cadDate);
+                echo '{ "title": "Concluído!", "text": "Produto deletado com sucesso.", "icon": "success"}';
             } else {
-                return alerta("Erro!", "Produto já inserido no estoque.", "error");
-                $conexao -> insereRegistro("Tentativa de deletar produto.", $cadTime, $cadDate);
+                echo '{ "title": "Erro!", "text": "Produto já inserido no estoque.", "icon": "error"}';
             }
         }
     }

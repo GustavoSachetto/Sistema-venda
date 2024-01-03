@@ -416,7 +416,7 @@ class conexao {
         }
     }
 
-    public function deleteProduto($codProduto) {
+    public function deleteProduto($codProduto, $cadDate, $cadTime) {
         $deleteProduto = $this-> pdo -> prepare("DELETE FROM produto where codProduto = :codP");
         $deleteProduto->bindValue(":codP", $codProduto);
 
@@ -424,18 +424,15 @@ class conexao {
         
         if ($integridadeProduto === 0) {
             $deleteProduto->execute();
+            $this -> insereRegistro("Produto deletado.", $cadTime, $cadDate);
             return true;
         } else {
+            $this -> insereRegistro("Tentativa de deletar produto.", $cadTime, $cadDate);
             return false;
         }
     }
 
-    public function deleteVenda($codVenda) {
-        $deleteVenda = $this-> pdo -> prepare("DELETE FROM venda where codVenda = :codV");
-        $deleteVenda->bindValue(":codV", $codVenda);
-    }
-
-    public function deleteCliente($codCliente) {
+    public function deleteCliente($codCliente, $cadDate, $cadTime) {
         $deleteCliente = $this-> pdo -> prepare("DELETE FROM cliente where codCliente = :codC");
         $deleteCliente->bindValue(":codC", $codCliente);
         
@@ -443,10 +440,17 @@ class conexao {
         
         if ($integridadeCliente === 0) {
             $deleteCliente->execute();
+            $this -> insereRegistro("Cliente deletado.", $cadTime, $cadDate);
             return true;
         } else {
+            $this -> insereRegistro("Tentativa de deletar cliente.", $cadTime, $cadDate);
             return false;
         }
+    }
+
+    public function deleteVenda($codVenda) {
+        $deleteVenda = $this-> pdo -> prepare("DELETE FROM venda where codVenda = :codV");
+        $deleteVenda->bindValue(":codV", $codVenda);
     }
 }
 ?>

@@ -10,14 +10,12 @@
             $codigo = addslashes($_POST['excluir']);
             $cadDate = date('Y-m-d');
             $cadTime = date('H:i:s');
-            $resultadoDeletar = $conexao -> deleteCliente($codigo);
+            $resultadoDeletar = $conexao -> deleteCliente($codigo, $cadDate, $cadTime);
             
             if ($resultadoDeletar) {
-                return alerta("Concluído!", "Cliente deletado com sucesso.", "success");
-                $conexao -> insereRegistro("Cliente deletado.", $cadTime, $cadDate);
+                echo '{ "title": "Concluído!", "text": "Cliente deletado com sucesso.", "icon": "success"}';
             } else {
-                return alerta("Erro!", "Cliente já finalizou uma venda.", "error");
-                $conexao -> insereRegistro("Tentativa de deletar cliente.", $cadTime, $cadDate);
+                echo '{ "title": "Erro!", "text": "Cliente já finalizou uma venda.", "icon": "error"}';
             }
         }
     }
