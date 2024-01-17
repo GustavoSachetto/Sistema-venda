@@ -1,7 +1,7 @@
 # Sistema-venda
 ![SV-inicio](https://github.com/GustavoSachetto/Sistema-venda/assets/136517074/e79f5dc0-b521-4581-8612-ab09617e41bd)
 
-__Sobre:__ O site foi projetado para as necessidades de uma empresa revendedora de roupa, onde consiste num sistema interno gerenciador de: clientes, produtos, estoques e vendas. Apartir disto teremos um roteiro breve obrigatório na finalização de uma venda.
+__Sobre:__ Analisando uma loja de roupa, notei uma grande dificuldade no controle físico de seus clientes e produtos. Com base nisso realizei um projeto pensando em trazer este controle de maneira virtual. Ao final deste projeto trouxe um site com todo o controle de clientes e produtos da loja sem afetar sua regra de negócio, tornando-o mais eficiente e com menor probabilidade de erros.
 
 __Link:__ https://sv-gustavo-sachetto.000webhostapp.com/index.php
 
