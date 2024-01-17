@@ -1,5 +1,5 @@
 # Sistema-venda
-![SV-inicio](https://github.com/GustavoSachetto/Sistema-venda/assets/136517074/e79f5dc0-b521-4581-8612-ab09617e41bd)
+![SV-exibe](https://github.com/GustavoSachetto/Sistema-venda/assets/136517074/ea2b0e9d-8ee3-4887-aba4-340d770532f4)
 
 __Sobre:__ Analisando uma loja de roupa, notei uma grande dificuldade no controle físico de seus clientes e produtos. Com base nisso realizei um projeto pensando em trazer este controle de maneira virtual. Ao final deste projeto trouxe um site com todo o controle de clientes e produtos da loja sem afetar sua regra de negócio, tornando-o mais eficiente e com menor probabilidade de erros.
 
