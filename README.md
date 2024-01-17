@@ -14,7 +14,7 @@ __A pontuar:__
 * Não será possivel realizar alterações em __clientes__ ou __produtos__ que já foram cadastrados em uma __venda__.
 * Não será possivel realizar alterações no __tamanho__ (estoque) que já foi cadastrado em uma __venda__.
 
-## Descrição Tecnica
+## Descrição Técnica
 Esse projeto foi desenvolvido no intuito de gerar um sistema CRUD baseado em PHP, que no geral é um sistema no qual é possivel: __Cadastrar, Exibir, Atualizar e Deletar__ itens em um banco de dados.
 
 __As tecnologias utilizadas nesse projeto são:__
