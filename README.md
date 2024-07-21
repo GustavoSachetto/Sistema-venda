@@ -1,11 +1,12 @@
 # Sistema-venda
 ![SV-exibe](https://github.com/GustavoSachetto/Sistema-venda/assets/136517074/ea2b0e9d-8ee3-4887-aba4-340d770532f4)
 
-__Sobre:__ Analisando uma loja de roupa, notei uma grande dificuldade no controle físico de seus clientes e produtos. Com base nisso realizei um projeto pensando em trazer este controle de maneira virtual. Ao final deste projeto trouxe um site com todo o controle de clientes e produtos da loja sem afetar sua regra de negócio, tornando-o mais eficiente e com menor probabilidade de erros.
+## Sobre 
+Analisando uma loja de roupa, notei uma grande dificuldade no controle físico de seus clientes e produtos. Com base nisso realizei um projeto pensando em trazer este controle de maneira virtual. Ao final deste projeto trouxe um site com todo o controle de clientes e produtos da loja sem afetar sua regra de negócio, tornando-o mais eficiente e com menor probabilidade de erros.
 
-__Link:__ https://sv-gustavo-sachetto.000webhostapp.com/index.php
+* __Link de acesso:__ https://sv-gustavo-sachetto.000webhostapp.com/index.php
 
-__Proteções básicas:__
+## Proteções básicas
 Para manter a integridade dos dados é necessário algumas verificações, que consiste em analizar alguns fatores antes de cadastrar ou alterar qualquer tipo de dado. Então verifique a lista abaixo alguns fatores que devem ser pontuados antes de qualquer alteração no site.
 
 __A pontuar:__
